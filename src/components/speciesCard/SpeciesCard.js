@@ -18,23 +18,25 @@ const SpeciesCard = ({student}) => {
     
     return (
         <div className="speciesCard">
-            <div>
+            <div className="speciesCard_profilePic">
                 <img src={pic} />
             </div>
-            <div className="speciesCard__name">
-                {`${firstName}  ${lastName}`}
-            </div>
-            <div>
-                Email: {email}
-            </div>
-            <div>
-                Company: {company}
-            </div>
-            <div>
-                Skill: {skill}
-            </div>
-            <div>
-                Average: {calculateAverage(grades)}%
+            <div className="speciesCard__info">
+                <div className="speciesCard__name">
+                    {`${firstName}  ${lastName}`}
+                </div>
+                <div className="speciesCard__infoLine">
+                    Email: {email}
+                </div>
+                <div className="speciesCard__infoLine">
+                    Company: {company}
+                </div>
+                <div className="speciesCard__infoLine">
+                    Skill: {skill}
+                </div>
+                <div className="speciesCard__infoLine">
+                    Average: {calculateAverage(grades)}%
+                </div>
             </div>
         </div>
     )
