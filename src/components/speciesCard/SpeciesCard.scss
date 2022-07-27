@@ -1,0 +1,10 @@
+.speciesCard {
+
+    > * {
+        margin-bottom: 8px;
+    } 
+
+    &__name {
+        font-weight: 600;
+    }
+}
