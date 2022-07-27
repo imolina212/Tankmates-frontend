@@ -1,26 +1,32 @@
 import React, { useEffect, useState } from 'react';
 
+import SpeciesCard from '../speciesCard/SpeciesCard';
+import './SpeciesList.scss'
+
 const SpeciesList = () => {
 
     //hooks
-    const [species, setSpecies] = useState([])
+    const [students, setStudents] = useState([])
 
     //functions
     useEffect(() =>{
-        const url = 'http://localhost:9000/species'
+        const url = 'https://tankmates-backend.herokuapp.com/species'
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
-                setSpecies(data.species)
+                setStudents(data.students)
             })
     },[])
 
     //return or JSX
 
     return (
-        <div>
-            SpeciesList
+        <div className="speciesList">
+            {students.map(student => {
+                return ( 
+                    <SpeciesCard student={student} />
+                )
+            })}
         </div>
     )
 }
