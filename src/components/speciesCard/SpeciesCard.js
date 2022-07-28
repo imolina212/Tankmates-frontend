@@ -11,7 +11,6 @@ const SpeciesCard = ({student}) => {
     //hooks
 
     const [showGrades, setShowGrades] = useState(false);
-    console.log(showGrades)
 
     // functions
 
@@ -48,7 +47,7 @@ const SpeciesCard = ({student}) => {
                 <div className="speciesCard__gradesList" style={{"display": showGrades ? "block" : "none"}}>
                     {grades.map((grade, index) => {
                         return(
-                            <div><span>Test {index+1}: </span><span>{grade}%</span></div>
+                            <div key={index}><span>Test {index+1}: </span><span>{grade}%</span></div>
                         )
                     })}
                 </div>

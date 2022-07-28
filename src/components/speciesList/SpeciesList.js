@@ -45,9 +45,9 @@ const SpeciesList = () => {
     return (
         <div className="speciesList">
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-            {filteredSpecies.map(specie => {
+            {filteredSpecies.map((specie, index) => {
                 return ( 
-                    <SpeciesCard student={specie} />
+                    <SpeciesCard student={specie} key={index} />
                 )
             })}
 
