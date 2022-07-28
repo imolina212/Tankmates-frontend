@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 
 import './SpeciesCard.scss'
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
 const SpeciesCard = ({student}) => {
     
+    // props deconstructed
     const {pic, firstName, lastName, email, company, skill, grades} = student;
     
+    //hooks
+
+    const [showGrades, setShowGrades] = useState(false);
+    console.log(showGrades)
+
     // functions
 
     const calculateAverage = (grades) => {
@@ -18,9 +25,10 @@ const SpeciesCard = ({student}) => {
     
     return (
         <div className="speciesCard">
-            <div className="speciesCard_profilePic">
+            <div className="speciesCard__profilePic">
                 <img src={pic} />
             </div>
+
             <div className="speciesCard__info">
                 <div className="speciesCard__name">
                     {`${firstName}  ${lastName}`}
@@ -37,6 +45,17 @@ const SpeciesCard = ({student}) => {
                 <div className="speciesCard__infoLine">
                     Average: {calculateAverage(grades)}%
                 </div>
+                <div className="speciesCard__gradesList" style={{"display": showGrades ? "block" : "none"}}>
+                    {grades.map((grade, index) => {
+                        return(
+                            <div><span>Test {index+1}: </span><span>{grade}%</span></div>
+                        )
+                    })}
+                </div>
+            </div>
+            <div className="speciesCard__toggleIcons">
+                    {!showGrades && <FaPlus className="speciesCard__toggleIcon" onClick={() => setShowGrades(true)} size="1.8em" />}
+                    {showGrades && <FaMinus className="speciesCard__toggleIcon" onClick={() => setShowGrades(false)} size="1.8em" />}
             </div>
         </div>
     )
