@@ -4,9 +4,15 @@
 
 .speciesCard {
 
-    display: flex;
     padding: 10px;
     border-bottom: 2px solid $background-gray;
+    background-color: white;
+
+    a {
+        display: flex;
+        text-decoration: none;
+        color: unset;
+    }
 
     &__profilePic {
 
@@ -47,6 +53,20 @@
         display: none;
     }
 
+    &__tagCollection {
+        @extend %gray-and-indented;
+        padding-top: 12px;
+    }
+
+    &__tag {
+        display: inline-block;
+        background-color: $tab-background;
+        padding: 8px 10px;
+        border-radius: 5px;
+        color: black;
+        margin: 0 5px 5px 0;
+    }
+
     &__toggleIcons {
         color: $shadow-gray;
         padding-top: 8px;
@@ -56,6 +76,12 @@
         cursor: pointer;
         &:hover{
             color:black;
+        }
+    }
+
+    @media only screen and (max-width: 440px) {
+        &__name {
+            font-size: 20px;
         }
     }
 
