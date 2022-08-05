@@ -1,8 +1,8 @@
 import React from 'react'
 
-import './SearchBar.scss'
+import './SingleTextInput.scss'
 
-function SearchBar({searchTerm, setSearchTerm}) {
+function SingleTextInput({searchTerm, setSearchTerm, placeholder= "Search by name"}) {
 
     const updateSearchTerm = (e) => {
         console.log(e.target.value)
@@ -14,11 +14,11 @@ function SearchBar({searchTerm, setSearchTerm}) {
         <div>
             <input 
                 className="searchBar" 
-                placeholder='Search by name'
+                placeholder={placeholder}
                 value={searchTerm}
                 onChange={updateSearchTerm} />
         </div>
     )
 }
 
-export default SearchBar
+export default SingleTextInput;

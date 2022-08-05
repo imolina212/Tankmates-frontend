@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import SearchBar from '../searchBar/SearchBar';
+import SingleTextInput from '../singleTextInput/SingleTextInput';
 import SpeciesCard from '../speciesCard/SpeciesCard';
 import './SpeciesList.scss'
-import '../searchBar/SearchBar.scss'
+import '../singleTextInput/SingleTextInput.scss'
 
 const SpeciesList = () => {
 
@@ -21,9 +21,6 @@ const SpeciesList = () => {
             })
     },[])
 
-
-    // when search term is updated, this component will rerender
-    // what to do on a re-render?
 
     let filteredSpecies = species;
     
@@ -44,10 +41,10 @@ const SpeciesList = () => {
 
     return (
         <div className="speciesList">
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-            {filteredSpecies.map((specie, index) => {
+            <SingleTextInput searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+            {filteredSpecies.map((specie) => {
                 return ( 
-                    <SpeciesCard student={specie} key={index} />
+                    <SpeciesCard student={specie} key={specie.id} />
                 )
             })}
 
