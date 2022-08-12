@@ -1,0 +1,22 @@
+@import '../designUtils/_colors.scss';
+
+.navbar {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: $background-green;
+
+    a {
+        padding-left: 30px;
+        text-decoration: none;
+        &:visited {
+            color: black;
+        }
+    }
+
+    &__menuExpand {
+        display: block;
+    }
+}
+
