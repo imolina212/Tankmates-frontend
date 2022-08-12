@@ -15,7 +15,7 @@ function NavBar(props) {
     return (
         <div className="navbar">
             <div className='navbar__logo'>Logo Here</div>
-                <nav className='navbar__menuItems' style={{'display' : expandNavbar ? "block" : "none"}}>
+                <nav className={expandNavbar ? 'navbar__menuItems navbar__menuItemsMobile active' : 'navbar__menuItems navbar__menuItemsMobile'} style={{'display' : expandNavbar ? "block" : "none"}}>
                     <NavLink to="/">
                         Home
                     </NavLink>
