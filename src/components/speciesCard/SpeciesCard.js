@@ -13,16 +13,23 @@ const SpeciesCard = ({student}) => {
     //hooks
 
     const [showGrades, setShowGrades] = useState(false);
+    const [tags, setTags] = useState(['new tag']);
 
     // functions
 
     const calculateAverage = (grades) => {
-        const sum = grades.reduce((sum, val) => sum + Number(val), 0);
+
+        let sum = 0;
+        
+        grades.map((grade )=> {
+            sum += Number(grade);
+        });
 
         return sum / grades.length;
     }
     
     const toggleGrades = (e) => {
+        e.stopPropagation();
         e.preventDefault();
         setShowGrades(!showGrades);
     }
@@ -57,23 +64,21 @@ const SpeciesCard = ({student}) => {
                             )
                         })}
                     </div>
-                    <div className="speciesCard__tagCollection">
-                        <div className="speciesCard__tags">
-                            <span className="speciesCard__tag">new tag</span>
-                            <span className="speciesCard__tag">a tag with a longer name</span>
-                            <span className="speciesCard__tag">new tag</span>
-                            <span className="speciesCard__tag">a tag with a longer name</span>
-                        </div>
-                        <div className="speciesCard__tagInput">
-                            <SingleTextInput placeholder="Add a tag" />
-                        </div>
-                    </div>
                 </div>
                 <div className="speciesCard__toggleIcons">
                         {!showGrades && <FaPlus className="speciesCard__toggleIcon" onClick={(e) => toggleGrades(true)} size="1.8em" />}
                         {showGrades && <FaMinus className="speciesCard__toggleIcon" onClick={(e) => toggleGrades(false)} size="1.8em" />}
                 </div>
             </Link>
+            <div className="speciesCard__tagCollection">
+                <div className="speciesCard__tags">
+                    <span className="speciesCard__tag">{tags[0]}</span>
+                    
+                </div>
+                <div className="speciesCard__tagInput">
+                    <SingleTextInput width="26%" placeholder="Add a tag" />
+                </div>
+            </div>
         </div>
     )
 }
