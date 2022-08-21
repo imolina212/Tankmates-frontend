@@ -4,20 +4,40 @@
 
     display: flex;
     justify-content: space-between;
-    padding: 25px 10%;
+    padding: 10px 20px;
     background-color: $background-green;
 
     a {
         padding-left: 30px;
         text-decoration: none;
+        color: $icon-color;
         &:visited {
-            color: black;
+            color: $icon-color;
+        }
+    }
+    
+    &__logo {
+        color: $icon-color;
+        
+        &__icon {
+            padding: 20px 10px 20px 10px;
+        }
+
+        &__title {
+            position: absolute;
+            top: 30px;
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
         }
     }
 
     &__menuExpand {
         display: block;
+        position: relative;
+        top: 20px;
     }
+
 }
 
 @media only screen and (max-width: 440px) {
@@ -29,6 +49,7 @@
 
         &__menuItems {
             display: none;
+            color: $icon-color;
             &Mobile {
                 position: absolute;
                 top: 68px;
@@ -39,11 +60,17 @@
                 padding: 15px 0 0 0;
                 text-align: center;
                 border-bottom: 2px solid black;
+                color: $icon-color;
 
                 a {
                     display: block;
+                    color: $icon-color;
                     // padding: 0 10px 0 0;
+                    :visited {
+                        color: $icon-color;
+                    }
                 }
+                
             }
         }
 
