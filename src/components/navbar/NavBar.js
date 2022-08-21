@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import './NavBar.scss'
 import { NavLink } from 'react-router-dom';
+import { GiCirclingFish } from "react-icons/gi";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function NavBar(props) {
 
@@ -14,7 +16,7 @@ function NavBar(props) {
 
     return (
         <div className="navbar">
-            <div className='navbar__logo'>Logo Here</div>
+            <div className='navbar__logo'><GiCirclingFish /></div>
                 <nav className={expandNavbar ? 'navbar__menuItems navbar__menuItemsMobile active' : 'navbar__menuItems navbar__menuItemsMobile'} style={{'display' : expandNavbar ? "block" : "none"}}>
                     <NavLink to="/">
                         Home
@@ -28,7 +30,7 @@ function NavBar(props) {
                 </nav>
                 <div
                 className="navbar__menuExpand"
-                onClick={()=> toggleMenu()}>=</div>
+                onClick={()=> toggleMenu()}><GiHamburgerMenu /></div>
         </div>
     )   
 }
