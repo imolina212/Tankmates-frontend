@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import SingleTextInput from '../singleTextInput/SingleTextInput';
+import SearchBar from '../searchBar/SearchBar';
 import SpeciesCard from '../speciesCard/SpeciesCard';
 import './SpeciesList.scss'
-import '../singleTextInput/SingleTextInput.scss'
+import '../searchBar/SearchBar'
 
 const SpeciesList = () => {
 
@@ -17,7 +17,8 @@ const SpeciesList = () => {
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                setSpecies(data.students)
+                console.log(data)
+                // setSpecies(data.students)
             })
     },[])
 
@@ -41,14 +42,13 @@ const SpeciesList = () => {
 
     return (
         <div className="speciesList">
-            <SingleTextInput searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
             {filteredSpecies.map((specie) => {
                 return ( 
                     <SpeciesCard student={specie} key={specie.id} />
                 )
             })}
-
-            {filteredSpecies.length == 0 && <div className="speciesList__noResults">No Results </div>}
+            {filteredSpecies.length === 0 && <div className="speciesList__noResults">No Results </div>}
         </div>
     )
 }

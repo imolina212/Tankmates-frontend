@@ -1,15 +1,16 @@
 @import './components/designUtils/colors.scss';
 
 body {
-    background-color: $background-gray;
+    background-color: $icon-color;
+    margin: 0 auto;
 }
 
 .App {
-    // margin: 0 0px 20px 0px;
+    margin: 0;
 }
 
 @media only screen and (max-width: 440px) {
     .App {
-        // margin: 0 0px 20px 0px;
+        margin: 0;
     }
 }

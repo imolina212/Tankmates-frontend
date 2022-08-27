@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import './SpeciesCard.scss'
 import { FaPlus, FaMinus } from 'react-icons/fa';
-import SingleTextInput from "../singleTextInput/SingleTextInput";
+import SearchBar from "../searchBar/SearchBar";
 
 const SpeciesCard = ({student}) => {
     
@@ -76,7 +76,7 @@ const SpeciesCard = ({student}) => {
                     
                 </div>
                 <div className="speciesCard__tagInput">
-                    <SingleTextInput width="26%" placeholder="Add a tag" />
+                    <SearchBar width="26%" placeholder="Add a tag" />
                 </div>
             </div>
         </div>
