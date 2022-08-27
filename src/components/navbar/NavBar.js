@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import './NavBar.scss'
 import { NavLink } from 'react-router-dom';
 import { GiCirclingFish } from "react-icons/gi";
-import { GiHamburgerMenu } from "react-icons/gi";
+// import { GiHamburgerMenu } from "react-icons/gi";
 
 function NavBar(props) {
 
@@ -13,7 +13,7 @@ function NavBar(props) {
         console.log('navbar toggled')
         setExpandNavbar(!expandNavbar)
     }
-
+    
     return (
         <div className="navbar">
             <div className="navbar__logo">
@@ -31,8 +31,10 @@ function NavBar(props) {
                     Contact
                 </NavLink>
             </nav>
-            <div className="navbar__menuExpand" onClick={()=> toggleMenu()}>
-                <GiHamburgerMenu color="white" size="2em"/>
+            <div className="navbar__menuExpand" onClick={() => toggleMenu()}>
+                    <div className={expandNavbar ? "change bar1" : "bar1"}></div>
+                    <div className={expandNavbar ? "change bar2" : "bar2"}></div>
+                    <div className={expandNavbar ? "change bar3" : "bar3"}></div>
             </div>
         </div>
     )   

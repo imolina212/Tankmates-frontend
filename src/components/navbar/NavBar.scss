@@ -3,12 +3,17 @@
 .navbar {
 
     display: flex;
+    height: 100px;
+    width: 100%;
     justify-content: space-between;
-    padding: 10px 20px;
     background-color: $background-green;
 
     a {
         padding-left: 30px;
+        position: relative;
+        top: 28px;
+        font-size:  22px;
+        font-weight: 500;
         text-decoration: none;
         color: $icon-color;
         &:visited {
@@ -18,39 +23,87 @@
     
     &__logo {
         color: $icon-color;
+        margin-left: 15px;
         
         &__icon {
-            padding: 20px 10px 20px 10px;
+            position: relative;
+            top: 25px;
+            height: 50px;
         }
 
         &__title {
+            margin-left: 8px;
             position: absolute;
             top: 30px;
-            font-size: 30px;
-            font-weight: 600;
+            font-size: 34px;
+            font-weight: 500;
             text-align: center;
         }
     }
 
     &__menuExpand {
-        display: block;
+        margin-right: 15px;
         position: relative;
-        top: 20px;
+        top: 38px;
+        cursor: pointer;
+        height: 32px;
+
+
+        
+        .bar1, .bar2, .bar3 {
+            width: 30px;
+            height: 3px;
+            background-color: $icon-color;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        
+        .change .changedBar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+        
+        .change .bar2 {opacity: 0;}
+        
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px);
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
     }
+
+
 
 }
 
 @media only screen and (max-width: 440px) {
     .navbar {
-        
+        margin: 0 auto;
+        width: 100%;
         &__menuExpand {
-            display: block;
+            display: inline-block;
+        }
+
+        &__logo {
+            color: $icon-color;
+            
+            
+            &__icon {
+                // padding: 10px;
+            }
+    
+            &__title {
+                position: absolute;
+                // top: 25px;
+                font-size: 26px;
+                font-weight: 600;
+                text-align: center;
+            }
         }
 
         &__menuItems {
             display: none;
             color: $icon-color;
-            &Mobile {
+            &:Mobile {
                 position: absolute;
                 top: 68px;
                 left: 0;
@@ -65,15 +118,19 @@
                 a {
                     display: block;
                     color: $icon-color;
-                    // padding: 0 10px 0 0;
                     :visited {
-                        color: $icon-color;
+                        color: blue;
                     }
                 }
                 
             }
         }
 
+        &__menuExpand {
+            margin-right: 15px;
+            position: relative;
+            top: 35px;
+        }
 
     }
 }
