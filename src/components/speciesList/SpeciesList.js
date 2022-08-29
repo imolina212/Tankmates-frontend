@@ -42,7 +42,7 @@ const SpeciesList = () => {
 
     return (
         <div className="speciesList">
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+            <SearchBar className="searchbar" searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
             {filteredSpecies.map((specie) => {
                 return ( 
                     <SpeciesCard student={specie} key={specie.id} />
