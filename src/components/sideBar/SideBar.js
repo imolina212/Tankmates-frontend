@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import * as FaIcons from 'react-icons/fa'
+import * as BiIcons from 'react-icons/bi'
 import * as AiIcons from 'react-icons/ai';
 import { SideBarData } from './SideBarData';
 import './SideBar.scss'
@@ -13,17 +13,17 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className='sidebar'>
-                <Link  to='#' className='sidebar__menu-bars'>
-                    <FaIcons.FaBars onClick={toggleSidebar} />
+            <div className='navbar'>
+                <Link  to='#' className='navbar__icon'>
+                    <BiIcons.BiMenuAltLeft onClick={toggleSidebar} />
                 </Link>
-                <h1 className='sidebar__title'>Tankmates</h1>
+                <h1>Tankmates</h1>
             </div>
-            <nav className={sidebar ? 'sidebar__nav-menu active' : 'sidebar__nav-menu'}>
-                <ul className='sidebar__nav-menu-items'>
-                    <li className='sidebar__toggle'>
-                        <Link to="#">
-                            <AiIcons.AiOutlineClose />
+            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+                <ul className='nav-menu__items' onClick={toggleSidebar} >
+                    <li className='nav-menu__header'>
+                        <Link to="#" className='nav-menu__header__icon'>
+                            <AiIcons.AiOutlineClose size="30px" />
                         </Link>
                     </li>
                     {SideBarData.map((item, index) => {
@@ -31,7 +31,7 @@ const Sidebar = () => {
                             <li key={index} className={item.className} >
                                 <Link to ={item.path} >
                                     {item.icon}
-                                    <span className='sidebar__label'>{item.title}</span>
+                                    <span className='label'>{item.title}</span>
                                 </Link>
                             </li>
                         );

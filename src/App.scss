@@ -1,12 +1,8 @@
 @import './components/designUtils/colors.scss';
 
-body {
-    background-color: $icon-color;
+* {
     margin: 0 auto;
-}
-
-.App {
-    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (max-width: 440px) {
