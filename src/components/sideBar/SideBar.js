@@ -19,7 +19,7 @@ const Sidebar = () => {
                     <BiIcons.BiMenuAltLeft onClick={toggleSidebar} />
                 </Link>
                 <h1>Tankmates</h1>
-                <div className='navbar__search-bar'>
+                <div className={sidebar ? 'navbar__search-bar active' : 'navbar__search-bar'}>
                     <SearchBar />
                 </div>
             </div>
