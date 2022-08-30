@@ -1,8 +1,9 @@
 import React from 'react';
-import * as FcIcons from 'react-icons/fc';
-import * as AiIcons from 'react-icons/ai';
+import * as GiIcons from 'react-icons/gi';
+import * as DiIcons from 'react-icons/di';
 import * as IoIcons from 'react-icons/io';
 import * as FiIcons from 'react-icons/fi';
+import * as MdIcons from 'react-icons/md';
 
 export const SideBarData = [
     {
@@ -14,19 +15,19 @@ export const SideBarData = [
     {
         title: 'learn',
         path: '/',
-        icon: <AiIcons.AiFillHome />,
+        icon: <DiIcons.DiStackoverflow />,
         className: 'nav-menu__text'
     },
     {
         title: 'About',
         path: '/',
-        icon: <FcIcons.FcAbout />,
+        icon: <GiIcons.GiCirclingFish />,
         className: 'nav-menu__text'
     },
     {
         title: 'Club',
         path: '/',
-        icon: <IoIcons.IoMdPeople />,
+        icon: <MdIcons.MdGroups />,
         className: 'nav-menu__text'
     },
     {

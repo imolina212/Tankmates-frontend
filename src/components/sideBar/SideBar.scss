@@ -20,6 +20,19 @@
         top: 5px;
     
     }
+
+    &__search-bar {
+        width: 40%;
+        margin-left: 15px;
+
+        input { 
+            border-radius: 5px;
+            padding-left: 12px;
+        }
+    }
+
+    
+    
 }
 
 
@@ -76,14 +89,9 @@
         justify-content: right;
         align-items: center;
         padding: 3px 0;
-
-        a {
-            margin-right: 10px;
-        }
+        margin-right: 10px;
     }
 
-    
-    
     span {
         margin-left: 16px;
     }

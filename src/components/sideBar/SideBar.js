@@ -4,6 +4,7 @@ import * as BiIcons from 'react-icons/bi'
 import * as AiIcons from 'react-icons/ai';
 import { SideBarData } from './SideBarData';
 import './SideBar.scss'
+import SearchBar from '../searchBar/SearchBar';
 
 
 const Sidebar = () => {
@@ -18,6 +19,9 @@ const Sidebar = () => {
                     <BiIcons.BiMenuAltLeft onClick={toggleSidebar} />
                 </Link>
                 <h1>Tankmates</h1>
+                <div className='navbar__search-bar'>
+                    <SearchBar />
+                </div>
             </div>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu__items' onClick={toggleSidebar} >
