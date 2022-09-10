@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 // import NavBar from "./components/navbar/NavBar";
 import './App.scss';
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import SpeciesDetailPage from './pages/SpeciesDetailPage'
 import Sidebar from "./components/sideBar/SideBar";
 
@@ -12,7 +12,7 @@ function App() {
       {/* <NavBar /> */}
       <Sidebar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/species/:id" element={<SpeciesDetailPage />} />
       </Routes>
     </div>
