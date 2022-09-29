@@ -5,6 +5,7 @@ import './App.scss';
 import Home from "./pages/home/Home";
 import SpeciesDetailPage from './pages/SpeciesDetailPage'
 import Sidebar from "./components/sideBar/SideBar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
