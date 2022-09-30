@@ -14,7 +14,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <nav className='navbar'>
+            <nav className={sidebar ? 'navbar expand' : 'navbar'}>
                 <div className='navbar__menuToggle'>
                     <Link to='#'>
                         <BiIcons.BiMenuAltLeft onClick={toggleSidebar} />
@@ -26,10 +26,10 @@ const Sidebar = () => {
                 <div className='navbar__searchbar'>
                     <SearchBar />
                 </div>
-                {/* <ul className='navbar__menuItems' onClick={toggleSidebar} >
+                <ul className='navbar__menuItems' >
                     <li className='navbar__collapseMenu'>
                         <Link to="#">
-                            <AiIcons.AiOutlineClose size="30px" />
+                            <AiIcons.AiOutlineClose size="30px" onClick={toggleSidebar}/>
                         </Link>
                     </li>
                     {SideBarData.map((item, index) => {
@@ -37,12 +37,12 @@ const Sidebar = () => {
                             <li key={index} className={item.className} >
                                 <Link to ={item.path} >
                                     {item.icon}
-                                    <span className='label'>{item.title}</span>
+                                    <span>{item.title}</span>
                                 </Link>
                             </li>
                         );
                     })}
-                </ul> */}
+                </ul>
             </nav>
         </>
     );
