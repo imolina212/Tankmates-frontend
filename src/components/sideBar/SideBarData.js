@@ -10,30 +10,30 @@ export const SideBarData = [
         title: 'Shop',
         path: '/',
         icon: <FiIcons.FiShoppingBag />,
-        className: 'nav-menu__text'
+        className: 'navbar__menuItem'
     },
     {
         title: 'learn',
         path: '/',
         icon: <DiIcons.DiStackoverflow />,
-        className: 'nav-menu__text'
+        className: 'navbar__menuItem'
     },
     {
         title: 'About',
         path: '/',
         icon: <GiIcons.GiCirclingFish />,
-        className: 'nav-menu__text'
+        className: 'navbar__menuItem'
     },
     {
         title: 'Club',
         path: '/',
         icon: <MdIcons.MdGroups />,
-        className: 'nav-menu__text'
+        className: 'navbar__menuItem'
     },
     {
         title: 'Help',
         path: '/help',
         icon: <IoIcons.IoMdHelpCircle />,
-        className: 'nav-menu__text'
+        className: 'navbar__menuItem'
     }
 ]

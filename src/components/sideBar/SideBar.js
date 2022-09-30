@@ -14,19 +14,21 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className='navbar'>
-                <Link  to='#' className='navbar__icon'>
-                    <BiIcons.BiMenuAltLeft onClick={toggleSidebar} />
-                </Link>
-                <h1>Tankmates</h1>
-                <div className={sidebar ? 'navbar__search-bar active' : 'navbar__search-bar'}>
+            <nav className='navbar'>
+                <div className='navbar__menuToggle'>
+                    <Link to='#'>
+                        <BiIcons.BiMenuAltLeft onClick={toggleSidebar} />
+                    </Link>
+                </div>
+                <div className='navbar__title'>
+                    <h1>Tankmates</h1>
+                </div>
+                <div className='navbar__searchbar'>
                     <SearchBar />
                 </div>
-            </div>
-            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                <ul className='nav-menu__items' onClick={toggleSidebar} >
-                    <li className='nav-menu__header'>
-                        <Link to="#" className='nav-menu__header__icon'>
+                {/* <ul className='navbar__menuItems' onClick={toggleSidebar} >
+                    <li className='navbar__collapseMenu'>
+                        <Link to="#">
                             <AiIcons.AiOutlineClose size="30px" />
                         </Link>
                     </li>
@@ -40,7 +42,7 @@ const Sidebar = () => {
                             </li>
                         );
                     })}
-                </ul>
+                </ul> */}
             </nav>
         </>
     );
