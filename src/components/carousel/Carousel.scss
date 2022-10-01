@@ -22,7 +22,8 @@
         background-color: $icon-color;
         position: absolute;
         top: 250px;
-        left: 30px;
+        left: 80px;
+        cursor: pointer;
     }
     #right {
         display: flex;
@@ -34,7 +35,8 @@
         background-color: $icon-color;
         position: absolute;
         top: 250px;
-        right: 30px;
+        right: 80px;
+        cursor: pointer;
     }
 }
 
