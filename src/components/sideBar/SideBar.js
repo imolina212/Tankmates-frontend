@@ -14,7 +14,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <nav className={sidebar ? 'navbar expand' : 'navbar'}>
+            <nav className='navbar'>
                 <div className='navbar__menuToggle'>
                     <Link to='#'>
                         <BiIcons.BiMenuAltLeft onClick={toggleSidebar} />
@@ -26,10 +26,10 @@ const Sidebar = () => {
                 <div className='navbar__searchbar'>
                     <SearchBar />
                 </div>
-                <ul className='navbar__menuItems' >
-                    <li className='navbar__collapseMenu'>
+                <ul className={sidebar ? 'navbar__menuItems' : 'navbar__collapsedMenuItems'} >
+                    <li>
                         <Link to="#">
-                            <AiIcons.AiOutlineClose size="30px" onClick={toggleSidebar}/>
+                            <AiIcons.AiOutlineClose size="30px"  onClick={toggleSidebar}/>
                         </Link>
                     </li>
                     {SideBarData.map((item, index) => {
