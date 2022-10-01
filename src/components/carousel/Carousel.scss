@@ -1,18 +1,40 @@
+@import '../designUtils/_colors.scss';
+
 .carousel {
     margin:0;
     padding: 0;
-    height: 100vh;
+    height: 30vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: #23E3C9;
-}
 
-.slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 800px;
+    img {
+        height: 30vh;
+        width: 100%;
+    }
+
+    #left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: $icon-color;
+        position: absolute;
+        top: 250px;
+        left: 30px;
+    }
+    #right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: $icon-color;
+        position: absolute;
+        top: 250px;
+        right: 30px
+    }
 }
 

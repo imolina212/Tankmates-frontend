@@ -1,62 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 import pic1 from '../../images/2022_Fish-Shop-ePLP-Hero-Default-LARGE-1440.webp'
 import pic2 from '../../images/2022-Halloween-GoodyBox-HP-Hero-LARGE-Multipet.webp'
 import pic3 from '../../images/pharmacy-refresh-large.webp'
+import './Carousel.scss'
 
-import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
 
-function ControlledCarousel() {
-    const [index, setIndex] = useState(0);
+function Carousel() {
 
-    const handleSelect = (selectedIndex, e) => {
-        setIndex(selectedIndex);
-};
+    const [imageIndex, setImageIndex] = useState(0);
 
-return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item>
-        <img
-            className="d-block w-100"
-            src="holder.js/800x400?text=First slide&bg=373940"
-            alt="First slide"
-        />
-        <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-        <img
-            className="d-block w-100"
-            src="holder.js/800x400?text=Second slide&bg=282c34"
-            alt="Second slide"
-        />
+    const imageArr = [
+        {
+            src: pic1
+        },
+        {
+            src: pic2
+        },
+        {
+            src: pic3
+        },
+    ]
+    
+    const changeIndex = (e) => {
+        if (e.target.id === 'right') {
+            if (imageIndex + 1 < imageArr.length) {
+                setImageIndex(imageIndex + 1);
+            } else {
+                setImageIndex(0);
+            }
+        } else {
+            if (imageIndex - 1 < 0) {
+            setImageIndex(imageArr.length - 1);
+            } else {
+            setImageIndex(imageIndex - 1);
+            }
+        }
+    }
 
-        <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-        <img
-            className="d-block w-100"
-            src="holder.js/800x400?text=Third slide&bg=20232a"
-            alt="Third slide"
-        />
-
-        <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-        </Carousel.Caption>
-        </Carousel.Item>
-    </Carousel>
-    );
+    return (
+        <>
+            <div className="carousel">
+                <div id="left" onClick={(e) => changeIndex(e)} >&#60;</div>
+                <img src={imageArr[imageIndex].src} />
+                <div id="right" onClick={(e) => changeIndex(e)} >&#62;</div>
+            </div>
+        </>
+    )
 }
 
-render(<ControlledCarousel />);
 
 export default Carousel;
