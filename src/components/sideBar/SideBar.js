@@ -23,8 +23,8 @@ const Sidebar = () => {
                 <div className='navbar__title'>
                     <h1>Tankmates</h1>
                 </div>
-                <div className='navbar__searchbar'>
-                    <SearchBar />
+                <div >
+                    <SearchBar className="searchBar" />
                 </div>
                 <ul className={sidebar ? 'navbar__menuItems' : 'navbar__collapsedMenuItems'} >
                     <li>
