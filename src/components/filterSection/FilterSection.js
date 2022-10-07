@@ -1,11 +1,13 @@
 import React from 'react'
 
+import './FilterSection.scss'
+
 
 function FilterSection() {
     
     return (
-        <div class="filter">
-            <div class="filter__category">
+        <div className="filter">
+            <div className="filter__category">
                 <p>Category</p>
                 <ul>
                     <li><a href="#" >Pond Shop</a></li>
@@ -21,7 +23,7 @@ function FilterSection() {
                     <li><a href="#" >Gifts &#38; Books</a></li>
                 </ul>
             </div>
-            <div class="filter__fish-type">
+            <div className="filter__fish-type">
                 <p>Fish Type</p>
                 <ul>
                     <li>
@@ -56,7 +58,7 @@ function FilterSection() {
                     </li>
                 </ul>
             </div>
-            <div class="filter__brand">
+            <div className="filter__brand">
                 <p>Brand</p>
                 <ul>
                     <li>
@@ -109,7 +111,7 @@ function FilterSection() {
                     </li>
                 </ul>
             </div>
-            <div class="filter__category">
+            <div className="filter__category">
                 <p>Price</p>
                 <ul>
                     <li>
@@ -132,7 +134,7 @@ function FilterSection() {
                     </li>
                 </ul>
             </div>
-            <div class="filter__category">
+            <div className="filter__category">
                 <p>Customer rating</p>
                 <ul>
                     <li>

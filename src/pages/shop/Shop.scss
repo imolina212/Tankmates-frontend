@@ -1,0 +1,9 @@
+.shop-page {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    margin: 20px;
+    .product-grid {
+
+        grid-column: 2 / span 3;
+    }
+}
