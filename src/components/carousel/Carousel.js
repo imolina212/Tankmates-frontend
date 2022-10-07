@@ -42,7 +42,7 @@ function Carousel() {
         <>
             <div className="carousel">
                 <div id="left" onClick={(e) => changeIndex(e)} >&#60;</div>
-                <img src={imageArr[imageIndex].src} />
+                <img src={imageArr[imageIndex].src} alt="" />
                 <div id="right" onClick={(e) => changeIndex(e)} >&#62;</div>
             </div>
         </>
