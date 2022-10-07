@@ -8,7 +8,7 @@ import * as MdIcons from 'react-icons/md';
 export const SideBarData = [
     {
         title: 'Shop',
-        path: '/',
+        path: '/shop',
         icon: <FiIcons.FiShoppingBag />,
         className: 'navbar__menuItem'
     },

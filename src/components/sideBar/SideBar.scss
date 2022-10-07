@@ -27,6 +27,10 @@
     &__searchbar {
         width: 40%;
 
+        :active {
+            border-style: none;
+        }
+
         input { 
             border-radius: 5px;
             padding-left: 12px;
@@ -45,6 +49,7 @@
         left: 0px;
         height: 100vh;
         width: 30%;
+        z-index: 999;
 
         a {
             color: $text-color-secondary;

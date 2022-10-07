@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 
-// import NavBar from "./components/navbar/NavBar";
 import './App.scss';
 import Home from "./pages/home/Home";
-import SpeciesDetailPage from './pages/SpeciesDetailPage'
+import Shop from "./pages/shop/Shop";
+import SpeciesDetailPage from './pages/SpeciesDetailPage';
 import Sidebar from "./components/sideBar/SideBar";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <Sidebar />
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
         <Route path="/species/:id" element={<SpeciesDetailPage />} />
       </Routes>
     </div>
