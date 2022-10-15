@@ -7,8 +7,12 @@ import './Home.scss'
 export default function Home() {
   return (
     <div className='home-page'>
-      <Carousel />
-      <Categories />
+      <div className="carousel-container">
+        <Carousel />
+      </div>
+      <div className="category-container">
+        <Categories />
+      </div>
     </div>
   );
 }
