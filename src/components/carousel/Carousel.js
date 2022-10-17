@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import pic1 from '../../images/2022_Fish-Shop-ePLP-Hero-Default-LARGE-1440.webp'
 import pic2 from '../../images/2022-Halloween-GoodyBox-HP-Hero-LARGE-Multipet.webp'
 import pic3 from '../../images/pharmacy-refresh-large.webp'
-import './Carousel.scss'
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+import { IconContext } from "react-icons";
+import './Carousel.scss';
 
 
 function Carousel() {
@@ -41,9 +43,19 @@ function Carousel() {
     return (
         <>
             <div className="carousel">
-                <div id="left" onClick={(e) => changeIndex(e)} >&#60;</div>
-                <img src={imageArr[imageIndex].src} alt="" />
-                <div id="right" onClick={(e) => changeIndex(e)} >&#62;</div>
+                <button type='button' className="carousel__control previous" onClick={(e) => changeIndex(e)}>
+                    <IconContext.Provider value={{ size:"1.5em" }}>
+                        <MdKeyboardArrowLeft />
+                    </IconContext.Provider>
+                </button>
+                <div className="carousel__image">
+                    <img src={imageArr[imageIndex].src} alt="" />
+                </div>
+                <button type="button" className="carousel__control next" onClick={(e) => changeIndex(e)} >
+                    <IconContext.Provider value={{ size:"1.5em" }}>
+                        <MdKeyboardArrowRight value={{ className: 'react-icons' }}/>
+                    </IconContext.Provider>
+                </button>
             </div>
         </>
     )

@@ -1,42 +1,37 @@
 @import '../designUtils/_colors.scss';
 
 .carousel {
-    margin:0;
-    padding: 0;
-    height: 30vh;
-    width: 100%;
-    background: #23E3C9;
+    display: flex;
 
     img {
         height: 30vh;
         width: 100%;
     }
 
-    #left {
+    &__control {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 35px;
-        height: 35px;
+        border: 0;
         border-radius: 50%;
-        background-color: $icon-color;
-        position: absolute;
-        top: 250px;
-        left: 80px;
+        background-color: $background-dim;
+        color: $icon-color;
+        position: relative;
+        top: 15vh;
         cursor: pointer;
+        height: 40px;
+        min-width: 40px;
+        z-index: 998;
+        
     }
-    #right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        background-color: $icon-color;
-        position: absolute;
-        top: 250px;
-        right: 80px;
-        cursor: pointer;
+    .previous {
+        left: 60px;
+    }
+    .next {
+        right: 60px;
+    }
+    .react-icons{
+        background-color: $background-gray;
     }
 }
 
