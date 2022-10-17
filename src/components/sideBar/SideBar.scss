@@ -22,6 +22,9 @@
         :visited{
             color: $icon-color;
         }
+        h1 a{
+            text-decoration: none;
+        }
     }
 
     &__searchbar {
