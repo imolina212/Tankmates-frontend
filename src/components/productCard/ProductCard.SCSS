@@ -1,8 +1,11 @@
+@import './../designUtils/colors';
+
 .product-card{
     display: flex;
     border-radius: 0.8rem;
     flex-direction: column;
-    max-width: 216px;
+    max-width: 260px;
+    max-height: 420px;
     border: 0.1rem solid #eee;
     font-size: 14px;
     
@@ -15,6 +18,45 @@
         }
     
         &__content{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             padding:10px;
+
+            &__choices{
+                font-size: .7rem;
+                margin-bottom: 8px;
+                color: $link-color-secondary;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                } 
+            }
+
+            &__title{
+                margin-bottom: 8px;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+                span{
+                    margin-left: 5px;
+                }
+            }
+            &__rating{
+                color: $star-rating-color;
+                margin-bottom: 5px;
+            }
+            &__pricing{
+                color: $text-color-alt;
+                font-family: Work Sans,Noto Sans,Franklin Gothic Medium,Tahoma,sans-serif;
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+            &__message{
+                font-size: .8rem;
+                padding: 5px;
+            }
         }
 }
