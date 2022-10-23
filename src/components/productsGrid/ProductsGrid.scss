@@ -1,7 +1,7 @@
 .product-grid{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-start;
     gap: 20px 20px;
 
 }
