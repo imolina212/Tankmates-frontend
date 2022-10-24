@@ -8,7 +8,7 @@ function ProductCard({product}) {
   return (
     <div className="product-card">
       <div className="product-card__canvas">
-        <img src="https://via.placeholder.com/260x260" alt="" />
+        <img src={product.pic} alt="" />
       </div>
       <div className="product-card__content">
         <div className="product-card__content__choices">

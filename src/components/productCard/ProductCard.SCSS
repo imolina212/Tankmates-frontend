@@ -16,7 +16,18 @@
                 text-decoration: underline;
             }
         }
-    
+
+        &__canvas{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            img{
+                max-width: 260px;
+                max-height: 260px;
+            }
+        }
+
         &__content{
             display: flex;
             flex-direction: column;
