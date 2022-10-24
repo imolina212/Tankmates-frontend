@@ -1,12 +1,9 @@
 @import '../designUtils/colors.scss';
 
 .filter{
-    // width: 20vw;
     min-width: 220px;
-    // max-width: 250px;
-
     
-    div{
+    &__category{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -21,19 +18,39 @@
 
         li{
             list-style: none;
+
+            font-size: 14px;
             
             a{
                 line-height: 1.8rem;
-                font-weight: 400;
-                letter-spacing: .04em;
+                font-weight: 300;
+                letter-spacing: .05em;
                 text-decoration: none;
-                color: $link-color;
 
                 &:hover{
                 text-decoration: underline;
                 }
+                &:visited{
+                    color: black;
+                }
                 input {
                     color: $star-rating-color;
+                    height: 1rem;
+                    width: 1rem;
+                }
+                label{
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        &__ratings{
+            li{
+                label{
+                    color: $star-rating-color;
+                }
+                span{
+                    color: black;
                 }
             }
         }

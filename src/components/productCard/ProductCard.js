@@ -15,7 +15,9 @@ function ProductCard({product}) {
             <p>More Choices available</p>
         </div>
         <div className="product-card__content__title">
+          <a href={`/shop/${product.id}`}>
             <strong>{product.brand}</strong><span>{product.product_name}</span>
+          </a>
         </div>
         <div className="product-card__content__rating">
           {getStars(product.rating)}

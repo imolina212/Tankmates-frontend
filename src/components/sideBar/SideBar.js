@@ -21,7 +21,7 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className='navbar__title'>
-                    <h1>Tankmates</h1>
+                    <h1><a href="/">Tankmates</a></h1>
                 </div>
                 <div >
                     <SearchBar className="searchBar" />
@@ -34,7 +34,7 @@ const Sidebar = () => {
                     </li>
                     {SideBarData.map((item, index) => {
                         return (
-                            <li key={index} className={item.className} >
+                            <li key={index} className={item.className} onClick={toggleSidebar}>
                                 <Link to ={item.path} >
                                     {item.icon}
                                     <span>{item.title}</span>
