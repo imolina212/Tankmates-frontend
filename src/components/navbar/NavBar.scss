@@ -1,137 +1,84 @@
-// @import '../designUtils/_colors.scss';
+@import './../designUtils/colors';
 
-// .navbar {
+.navbar {
 
-//     display: flex;
-//     height: 100px;
-//     width: 100%;
-//     align-items: left;
-//     justify-content: left;
-//     background-color: $background-green;
+    background-color: $background-green;
+    height: 75px;
+    // padding: 0 30px;
+  
+    &__items {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    &__logo {
 
-//     a {
-//         padding-left: 30px;
-//         position: relative;
-//         top: 28px;
-//         font-size:  22px;
-//         font-weight: 500;
-//         text-decoration: none;
-//         color: $icon-color;
-//         &:visited {
-//             color: $icon-color;
-//         // }
-//     }
-    
-//     &__logo {
-//         color: $icon-color;
-//         margin-left: 15px;
-        
-//         &__icon {
-//             position: relative;
-//             top: 25px;
-//             height: 50px;
-//         }
+      img{
+        vertical-align: middle;
+        width: 60px;
+        height: 60px;
+        padding: 7.5px 0;
+        cursor: pointer;
+      }
+      span{
+        position: absolute;
+        top: 22px;
+        color: $icon-color;
+        margin-left: 20px;
+        font-size: 30px;
+        font-weight: 600;
+        a {
+          text-decoration: none;
+          &:visited{
 
-//         &__title {
-//             margin-left: 8px;
-//             position: absolute;
-//             top: 30px;
-//             font-size: 34px;
-//             font-weight: 500;
-//             text-align: center;
-//         }
-//     }
+            color: $icon-color;
+          }
+        }
+      }
+    }
+    &__title{
+      color: $icon-color;
+      font-size: 30px;
+      font-weight: 600;
+      margin-left: 15px;
+    }
+  
+    &__itemLinks {
+      color: $icon-color;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+      font-weight: 100;
+      line-height: 43px;
+      cursor: pointer;
+      
 
-//     &__menuExpand {
-//         margin-right: 15px;
-//         position: relative;
-//         top: 38px;
-//         cursor: pointer;
-//         height: 32px;
+      li {
+        display: inline-block;
+        position: relative;
+        top: 12px;
+        line-height: 33px;
+        padding: 16px 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
 
-
-        
-//         .bar1, .bar2, .bar3 {
-//             width: 30px;
-//             height: 3px;
-//             background-color: $icon-color;
-//             margin: 6px 0;
-//             transition: 0.4s;
-//         }
-        
-//         .change .changedBar1 {
-//             -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-//             transform: rotate(-45deg) translate(-9px, 6px);
-//         }
-        
-//         .change .bar2 {opacity: 0;}
-        
-//         .change .bar3 {
-//             -webkit-transform: rotate(45deg) translate(-8px, -8px);
-//             transform: rotate(45deg) translate(-8px, -8px);
-//         }
-//     }
-
-
-
-// }
-
-// @media only screen and (max-width: 440px) {
-//     .navbar {
-//         margin: 0 auto;
-//         width: 100%;
-//         &__menuExpand {
-//             display: inline-block;
-//         }
-
-//         &__logo {
-//             color: $icon-color;
-            
-            
-//             &__icon {
-//                 // padding: 10px;
-//             }
-    
-//             &__title {
-//                 position: absolute;
-//                 // top: 25px;
-//                 font-size: 26px;
-//                 font-weight: 600;
-//                 text-align: center;
-//             }
-//         }
-
-//         &__menuItems {
-//             display: none;
-//             color: $icon-color;
-//             &:Mobile {
-//                 position: absolute;
-//                 top: 68px;
-//                 left: 0;
-//                 display: block;
-//                 background-color: green;
-//                 width: 100%;
-//                 padding: 15px 0 0 0;
-//                 text-align: center;
-//                 border-bottom: 2px solid black;
-//                 color: $icon-color;
-
-//                 a {
-//                     display: block;
-//                     color: $icon-color;
-//                     :visited {
-//                         color: blue;
-//                     }
-//                 }
-                
-//             }
-//         }
-
-//         &__menuExpand {
-//             margin-right: 15px;
-//             position: relative;
-//             top: 35px;
-//         }
-
-//     }
-// }
+        &:hover{
+          color: #000000;
+          background-color: $icon-color;
+        }
+        a {
+          &:visited{
+            color: inherit;
+          }
+        }
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+        span{
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+  }
+  
