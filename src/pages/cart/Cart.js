@@ -1,4 +1,4 @@
-import './Cart.css'
+import './Cart.scss'
 import Total from '../../components/cart/Total'
 import CartItem from '../../components/cart/CartItem'
 import { useSelector } from 'react-redux'
