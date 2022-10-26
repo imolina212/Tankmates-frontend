@@ -14,7 +14,7 @@ export default function Home() {
       <div className="category-container">
         <Categories />
       </div>
-      <div className="emailNewsletter-conatiner">
+      <div className="emailNewsletter-container">
         <Newsletter />
       </div>
     </div>

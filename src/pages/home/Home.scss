@@ -1,3 +1,10 @@
 .home-page{
     margin: 0 50px;
+
+    .emailNewsletter-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+    }
 }
