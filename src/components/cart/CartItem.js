@@ -1,4 +1,4 @@
-import './CartItem.css'
+import './CartItem.scss'
 import { incrementQuantity, decrementQuantity, removeItem} from '../../redux/cartSlice'
 import { useDispatch } from 'react-redux'
 
