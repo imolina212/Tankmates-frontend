@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { /*useState*/ } from 'react'
 
 import './NavBar.scss'
 import { Link } from 'react-router-dom';
@@ -36,7 +36,7 @@ function NavBar(props) {
                 <div className="navbar__right">
                     <ul className="navbar__itemLinks">
                         <li><Link to="/shop">Shop<span><MdKeyboardArrowDown /></span></Link></li>
-                        <li>My Tanks</li>
+                        <li><Link to="/tanks">My Tanks</Link></li>
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/cart" className="cart-icon"><FiShoppingCart /><p className='cart-totalItems'>{getTotalQuantity() || 0}</p></Link></li>
                     </ul>

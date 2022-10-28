@@ -1,77 +1,79 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 import {HiStar, HiOutlineStar} from 'react-icons/hi';
-import axios from 'axios';
-import getCategories from '../designUtils/getCategories';
-import getFishType from '../designUtils/getFishType';
-import './FilterSection.scss'
-
+import axios from "axios";
+import getCategories from "../designUtils/getCategories";
+import getFishType from "../designUtils/getFishType";
+import "./FilterSection.scss";
 
 const API = process.env.REACT_APP_API_URL;
 
 function FilterSection() {
+  const [categories, setCategories] = useState([]);
+  const [fishType, setFishType] = useState([]);
 
-    const [categories, setCategories] = useState([])
-    const [fishType, setFishType] = useState([])
-    
-    useEffect(()=> {
-        axios.get(`${API}/products`)
-            .then((response) =>{
-                setCategories(getCategories(response.data))
-            }).catch((err) => {
-                console.log(err);
-            })
-    }, [])
+  useEffect(() => {
+    axios
+      .get(`${API}/products`)
+      .then((response) => {
+        setCategories(getCategories(response.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-    useEffect(()=> {
-        axios.get(`${API}/species`)
-            .then((response) =>{
-                setFishType(getFishType(response.data))
-            }).catch((err) => {
-                console.log(err);
-            })
-    }, [])
+  useEffect(() => {
+    axios
+      .get(`${API}/species`)
+      .then((response) => {
+        setFishType(getFishType(response.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-    return (
-      <div className="filter">
-        <div className="filter__category">
-          <h3>Category</h3>
-          <ul>
-            {categories.map((category, index) => {
-              return (
-                <li key={index} category={category}>
-                  <a href="#">{category}</a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="filter__category">
-          <h3>Fish Type</h3>
-          <ul>
-            {fishType.map((species, index) => {
-              return (
-                    <li key={index} type={species}>
-                      <a href="" >
-                        <input type="checkbox" />
-                        <label htmlFor={species}>{species}</label>
-                      </a>
-                    </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="filter__category">
+  return (
+    <div className="filter">
+      <div className="filter__category">
+        <h3>Category</h3>
+        <ul>
+          {categories.map((category, index) => {
+            return (
+              <li key={index} category={category}>
+                <button>{category}</button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="filter__category">
+        <h3>Fish Type</h3>
+        <ul>
+          {fishType.map((species, index) => {
+            return (
+              <li key={index} type={species}>
+                <button>
+                  <input type="checkbox" />
+                  <label htmlFor={species}>{species}</label>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="filter__category">
           <h3>Brand</h3>
           <ul>
             <li>
-              <a href="#">
+              <button>
                 <input type="checkbox" id="api" name="brand-name" value="API" />
                 <label htmlFor="api">API</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="aqueon"
@@ -79,10 +81,10 @@ function FilterSection() {
                   value="Aqueon"
                 />
                 <label htmlFor="aqueon">Aqueon</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="aquaclear"
@@ -90,10 +92,10 @@ function FilterSection() {
                   value="Aquaclear"
                 />
                 <label htmlFor="aquaclear">Aquaclear</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="caribsea"
@@ -101,10 +103,10 @@ function FilterSection() {
                   value="CaribSea"
                 />
                 <label htmlFor="caribsea">CaribSea</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="cobaltaquatics"
@@ -112,10 +114,10 @@ function FilterSection() {
                   value="Cobalt Aquatics"
                 />
                 <label htmlFor="cobaltaquatics">Cobalt Aquatics</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="dr.tims-aquatics"
@@ -123,10 +125,10 @@ function FilterSection() {
                   value="Dr. Tim's Aquatics"
                 />
                 <label htmlFor="dr.tims-aquatics">Dr. Tim's Aquatics</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="eheim"
@@ -134,10 +136,10 @@ function FilterSection() {
                   value="Eheim"
                 />
                 <label htmlFor="">Eheim</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="fluval"
@@ -145,10 +147,10 @@ function FilterSection() {
                   value="Fluval"
                 />
                 <label htmlFor="fluval">Fluval</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="fritz"
@@ -156,10 +158,10 @@ function FilterSection() {
                   value="Fritz"
                 />
                 <label htmlFor="fritz">Fritz</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="hikari"
@@ -167,10 +169,10 @@ function FilterSection() {
                   value="Hikari"
                 />
                 <label htmlFor="hikari">Hikari</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="kent"
@@ -178,10 +180,10 @@ function FilterSection() {
                   value="Kent"
                 />
                 <label htmlFor="kent">Kent</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="marina"
@@ -189,10 +191,10 @@ function FilterSection() {
                   value="Marina"
                 />
                 <label htmlFor="marina">Marina</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="marineland"
@@ -200,48 +202,16 @@ function FilterSection() {
                   value="Marineland"
                 />
                 <label htmlFor="marineland">Marineland</label>
-              </a>
+              </button>
             </li>
-            <li>
-              <a href="#">
-                <input
-                  type="checkbox"
-                  id="northfin"
-                  name="brand-name"
-                  value="Northfin"
-                />
-                <label htmlFor="northfin">Northfin</label>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <input
-                  type="checkbox"
-                  id="penn-plax"
-                  name="brand-name"
-                  value="Penn-plax"
-                />
-                <label htmlFor="penn-plax">Penn-plax</label>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <input
-                  type="checkbox"
-                  id="tetra"
-                  name="brand-name"
-                  value="Tetra"
-                />
-                <label htmlFor="tetra">Tetra</label>
-              </a>
-            </li>
+            
           </ul>
         </div>
-        <div className="filter__category">
+      <div className="filter__category">
           <h3>Price</h3>
           <ul>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="10-or-less"
@@ -249,10 +219,10 @@ function FilterSection() {
                   value="Less than $10"
                 />
                 <label htmlFor="10-or-less">Less than $10</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="10to20"
@@ -260,10 +230,10 @@ function FilterSection() {
                   value="$10 to $20"
                 />
                 <label htmlFor="10to20">$10 to $20</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="20to30"
@@ -271,10 +241,10 @@ function FilterSection() {
                   value="$20 to $30"
                 />
                 <label htmlFor="20to30">$20 to $30</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="30to40"
@@ -282,10 +252,10 @@ function FilterSection() {
                   value="$30 to $40"
                 />
                 <label htmlFor="">$30 to $40</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="40to50"
@@ -293,10 +263,10 @@ function FilterSection() {
                   value="$40 to $50"
                 />
                 <label htmlFor="">$40 to $50</label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="50-or-more"
@@ -304,15 +274,15 @@ function FilterSection() {
                   value="$50 & Above"
                 />
                 <label htmlFor="50-or-more">$50 &#38; Above</label>
-              </a>
+              </button>
             </li>
           </ul>
         </div>
-        <div className="filter__category">
+      <div className="filter__category">
           <h3>Customer rating</h3>
           <ul className='filter__category__ratings'>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="4-or-more"
@@ -327,10 +297,10 @@ function FilterSection() {
                   <HiOutlineStar />
                   <span> &#38; up</span>
                 </label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="3-or-more"
@@ -345,10 +315,10 @@ function FilterSection() {
                   <HiOutlineStar />
                   <span> &#38; up</span>
                 </label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="2-or-more"
@@ -363,10 +333,10 @@ function FilterSection() {
                   <HiOutlineStar />
                   <span> &#38; up</span>
                 </label>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#">
+              <button>
                 <input
                   type="checkbox"
                   id="1-or-more"
@@ -381,12 +351,12 @@ function FilterSection() {
                   <HiOutlineStar />
                   <span> &#38; up</span>
                 </label>
-              </a>
+              </button>
             </li>
           </ul>
         </div>
-      </div>
-    );
+    </div>
+  );
 }
 
-export default FilterSection
+export default FilterSection;
