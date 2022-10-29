@@ -21,11 +21,13 @@
 
             font-size: 14px;
             
-            a{
+            button{
                 line-height: 1.8rem;
                 font-weight: 300;
                 letter-spacing: .05em;
                 text-decoration: none;
+                background-color: $icon-color;
+                border: none;
 
                 &:hover{
                 text-decoration: underline;
