@@ -1,11 +1,12 @@
 import React, { /*useState*/ } from 'react'
-
-import './NavBar.scss'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import MenuItem from '../menuItem/MenuItem';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
-import { useSelector } from 'react-redux';
 // import { GiHamburgerMenu } from "react-icons/gi";
+import './NavBar.scss'
 
 function NavBar(props) {
 
@@ -35,10 +36,10 @@ function NavBar(props) {
             
                 <div className="navbar__right">
                     <ul className="navbar__itemLinks">
-                        <li><Link to="/shop">Shop<span><MdKeyboardArrowDown /></span></Link></li>
-                        <li><Link to="/tanks">My Tanks</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/cart" className="cart-icon"><FiShoppingCart /><p className='cart-totalItems'>{getTotalQuantity() || 0}</p></Link></li>
+                        <Link to="/shop"><MenuItem text="Shop" /></Link>
+                        <Link to="/tanks"><MenuItem text="My Tanks" /></Link>
+                        <Link to="/about"><MenuItem text="About" /></Link>
+                        <Link to="/cart"><MenuItem text={<><FiShoppingCart className="cart-icon" /><p className='cart-totalItems'>{getTotalQuantity() || 0}</p></>} /></Link>
                     </ul>
                 </div>
             </div>
