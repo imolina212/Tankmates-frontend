@@ -1,16 +1,13 @@
 @import './../designUtils/colors';
 
 .navbar {
-
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     background-color: $background-green;
     height: 75px;
-  
-    &__items {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    padding-left: 4rem;
+    padding-right: 4rem;
   
     &__logo {
 
@@ -21,6 +18,7 @@
         padding: 7.5px 0;
         cursor: pointer;
       }
+
       span{
         position: absolute;
         top: 22px;
@@ -37,7 +35,7 @@
         }
       }
     }
-   
+
     &__title{
       color: $icon-color;
       font-size: 30px;
@@ -48,7 +46,7 @@
     &__itemLinks {
       display: flex;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
 
       a{
         text-decoration: none;

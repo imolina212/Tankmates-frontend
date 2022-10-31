@@ -28,7 +28,6 @@ function NavBar(props) {
     
     return (
         <div className="navbar">
-            <div className="navbar__items">
                 <div className="navbar__logo">
                     <img src="https://via.placeholder.com/150" alt="TankMates logo" />
                     <span><Link to="/">Tankmates app</Link></span>
@@ -39,10 +38,9 @@ function NavBar(props) {
                         <Link to="/shop"><MenuItem text="Shop" /></Link>
                         <Link to="/tanks"><MenuItem text="My Tanks" /></Link>
                         <Link to="/about"><MenuItem text="About" /></Link>
-                        <Link to="/cart"><MenuItem text={<><FiShoppingCart className="cart-icon" /><p className='cart-totalItems'>{getTotalQuantity() || 0}</p></>} /></Link>
+                        <Link to="/cart"><MenuItem text={<><FiShoppingCart className="cart-icon" /><div className='cart-totalItems'>{getTotalQuantity() || 0}</div></>} /></Link>
                     </ul>
                 </div>
-            </div>
         </div>
     )   
 }
