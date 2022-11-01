@@ -1,13 +1,13 @@
 function getCategories(products) {
     
-    let distinctCategories = [];
+    let distinctCategories = new Set();
 
     for (const product of products){
-        if(!distinctCategories.includes(product.category)){
-            distinctCategories.push(product.category)
+        if(!distinctCategories.has(product.category)){
+            distinctCategories.add(product.category)
         }
     }
-    return distinctCategories;
+    return [...distinctCategories];
 }
 
 export default getCategories;
