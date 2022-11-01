@@ -1,7 +1,6 @@
-import './../productCard/ProductCard.scss'
-import './../../components/productCard/ProductCard.scss'
 import { useDispatch } from 'react-redux';
 import {addToCart} from '../../redux/cartSlice';
+import './ProductCard.scss'
 
 import getStars from '../designUtils/getStars.js'
 
