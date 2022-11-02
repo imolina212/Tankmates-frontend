@@ -29,8 +29,8 @@ function NavBar(props) {
     return (
         <div className="navbar">
                 <div className="navbar__logo">
-                    <img src="https://via.placeholder.com/150" alt="TankMates logo" />
-                    <span><Link to="/">Tankmates app</Link></span>
+                    <img src="/tankmates_logo2.png" alt="TankMates logo" />
+                    <span><Link to="/">tankmates</Link></span>
                 </div>
             
                 <div className="navbar__right">

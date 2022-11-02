@@ -10,23 +10,20 @@
     padding-right: 4rem;
   
     &__logo {
-
       img{
-        vertical-align: middle;
-        width: 60px;
-        height: 60px;
-        padding: 7.5px 0;
+        height: 70px;
         cursor: pointer;
       }
 
       span{
         position: absolute;
-        top: 22px;
+        top: 12px;
         color: $icon-color;
         margin-left: 20px;
-        font-size: 30px;
-        font-weight: 600;
+        font-size: 45px;
+        
         a {
+          font-family: 'Modak', cursive;
           text-decoration: none;
           color: $icon-color;
           &:visited{
@@ -36,12 +33,12 @@
       }
     }
 
-    &__title{
-      color: $icon-color;
-      font-size: 30px;
-      font-weight: 600;
-      margin-left: 15px;
-    }
+    // &__title{
+    //   color: $icon-color;
+    //   font-size: 30px;
+    //   font-weight: 600;
+    //   margin-left: 15px;
+    // }
   
     &__itemLinks {
       display: flex;
