@@ -5,13 +5,16 @@
     justify-content: space-between;
     background-color: $background-green;
     height: 75px;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding: 0 4rem;
+
+    &__hamburgerMenu{
+      display: none;
+    }
   
     &__logo {
       display: flex;
       justify-content: flex-start;
-
+      
       img{
         height: 70px;
         cursor: pointer;
@@ -47,7 +50,85 @@
           text-decoration: none;
         }
       }
+
+      &__cart{
+        display: none;
+      }
     }
     
   }
   
+  @media (max-width: 750px){
+    .navbar{
+      background-color: $background-green;
+      padding: 0 2rem;
+
+
+      &__hamburgerMenu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        color: $icon-color;
+        cursor: pointer;
+      }
+
+      &__logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+  
+        img{
+          display: none;
+        }
+  
+        &__title{
+          color: $icon-color;
+          margin-left: 20px;
+          font-size: 35px;
+          padding-bottom: 10px;
+          
+          a {
+            font-family: 'Modak', cursive;
+            text-decoration: none;
+            color: $icon-color;
+            &:visited{
+              color: $icon-color;
+            }
+          }
+        }
+      }
+
+      &__right{
+        display: flex;
+        justify-content: space-between;
+        
+        &__itemLinks {
+          display: none;
+        }
+        &
+
+        &__cart{
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+
+          &__icon{
+            color: $icon-color;
+            font-size: 25px;
+          }
+          &__totalItems{
+            background-color: red;
+            color: $icon-color;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            text-align: center;
+            position: relative;
+            bottom: 40px;
+            right: -20px;
+          }
+        }
+      }
+    }
+  }
