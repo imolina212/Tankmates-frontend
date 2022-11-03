@@ -3,24 +3,25 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
     background-color: $background-green;
     height: 75px;
     padding-left: 4rem;
     padding-right: 4rem;
   
     &__logo {
+      display: flex;
+      justify-content: flex-start;
+
       img{
         height: 70px;
         cursor: pointer;
       }
 
-      span{
-        position: absolute;
-        top: 12px;
+      &__title{
         color: $icon-color;
         margin-left: 20px;
         font-size: 45px;
+        padding-bottom: 10px;
         
         a {
           font-family: 'Modak', cursive;
@@ -32,22 +33,21 @@
         }
       }
     }
-
-    // &__title{
-    //   color: $icon-color;
-    //   font-size: 30px;
-    //   font-weight: 600;
-    //   margin-left: 15px;
-    // }
   
-    &__itemLinks {
+    &__right{
       display: flex;
-      justify-content: center;
-      align-items: center;
-
-      a{
-        text-decoration: none;
+      justify-content: space-between;
+      
+      &__itemLinks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        a{
+          text-decoration: none;
+        }
       }
     }
+    
   }
   

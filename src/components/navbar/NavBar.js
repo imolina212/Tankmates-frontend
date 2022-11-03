@@ -29,12 +29,16 @@ function NavBar(props) {
     return (
         <div className="navbar">
                 <div className="navbar__logo">
-                    <img src="/tankmates_logo2.png" alt="TankMates logo" />
-                    <span><Link to="/">tankmates</Link></span>
+                    <div className="navbar__logo__image">
+                        <img src="/tankmates_logo2.png" alt="TankMates logo" />
+                    </div>
+                    <div className="navbar__logo__title">
+                        <Link to="/">tankmates</Link>
+                    </div>
                 </div>
             
                 <div className="navbar__right">
-                    <ul className="navbar__itemLinks">
+                    <ul className="navbar__right__itemLinks">
                         <Link to="/shop"><MenuItem text="Shop" /></Link>
                         <Link to="/tanks"><MenuItem text="My Tanks" /></Link>
                         <Link to="/about"><MenuItem text="About" /></Link>
