@@ -5,17 +5,18 @@ import './Newsletter.scss'
 function Newsletter() {
     return (
         <div className="newsletterSubscription">
-            <div className="newsletterSubscription__title">Join the newsletter!</div>
-            <p>Subscribe to get the latest info on events & sales!!</p>
-            <form>
+            <div className="newsletterSubscription__title">
+              <p>Subscribe to all the fun</p>
+              <p>Stay in touch with tankmates, see latest on updates, events and much more!</p>
+            </div>
+            <div>
+              <form>
                 <div className="newsletterSubscription__formInput">
-                    <input type="text" placeholder="Your first name"></input>
+                  <input type="text" placeholder="Enter your email address"></input>
+                  <button>SIGN UP NOW</button>
                 </div>
-                <div className="newsletterSubscription__formInput">
-                    <input type="text" placeholder="Your email address"></input>
-                </div>
-                <button>Subscribe</button>
-            </form>
+              </form>
+            </div>
         </div>
     )
 }

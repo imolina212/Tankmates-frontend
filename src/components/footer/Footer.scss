@@ -1,0 +1,27 @@
+@import './../designUtils/colors';
+
+.footer{
+    display: block;
+    background-color: $footer-bg-color;
+    height: 500px;
+    width: 100%;
+    padding: 0 30px;
+    margin-top: 60vh;
+
+    &__newsletter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__itemLinks{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        li{
+            list-style-type: none;
+        }
+    }
+    
+}
