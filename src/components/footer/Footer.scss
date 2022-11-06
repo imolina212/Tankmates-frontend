@@ -18,9 +18,17 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        padding: 50px 0px;
         
         li{
             list-style-type: none;
+            line-height: 2rem;
+            color: $background-green;
+            cursor: pointer;
+
+            &:hover{
+                text-decoration: underline;
+            }
         }
     }
     
