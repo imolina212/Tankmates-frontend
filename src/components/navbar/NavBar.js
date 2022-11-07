@@ -57,8 +57,10 @@ function NavBar(props) {
 						</div>
 						<div className="navbar__header__right__cart__text">
 							<span>
-								your cart
-								<MdKeyboardArrowDown />
+								<Link to="/cart">
+									your cart
+									<MdKeyboardArrowDown />
+								</Link>
 							</span>
 						</div>
 					</div>
