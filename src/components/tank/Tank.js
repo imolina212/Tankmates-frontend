@@ -1,42 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import { GrStatusGoodSmall } from 'react-icons/gr';
-import './Tank.scss'
+import axios from "axios";
+import SpeciesCard from "../speciesCard/SpeciesCard";
+import { GrStatusGoodSmall } from "react-icons/gr";
+import "./Tank.scss";
 
-function Tank() {
-  return (
-    <div className="tank">
-        <div className="tank__border"></div>    
-        <div className="tank__mate">
-            <div className="tank__mate_image">
-                <img src="https://via.placeholder.com/50" alt="tankmate" />
-            </div>
-            <div className="tank__mate__info">
-                <p>12 x Red Cherry Shrimp <span>Status:<GrStatusGoodSmall className='bad-status'/></span></p>
-            </div>
-        </div>
-        <div className="tank__mate">
-            <div className="tank__mate_image">
-                <img src="https://via.placeholder.com/50" alt="tankmate" />
-            </div>
-            <div className="tank__mate__info">
-                <p>2 x Bristlenose Plecos <span>Status:<GrStatusGoodSmall className='good-status'/></span></p>
-            </div>
-        </div>
-        <div className="tank__mate">
-            <div className="tank__mate_image">
-                <img src="https://via.placeholder.com/50" alt="tankmate" />
-            </div>
-            <div className="tank__mate__info">
-                <p>1 x FlowerHorn Cichlid <span>Status:<GrStatusGoodSmall className='good-status'/></span></p>
-            </div>
-        </div>
-        <div className="tank__status">
-            <p>Tank Status: Water Change Due <span><GrStatusGoodSmall className='bad-status'/></span></p>
-        </div>
-        <div className="tank__border"></div>  
-    </div>
-  )
-}
+const API = process.env.REACT_APP_API_URL;
 
-export default Tank
+const Tank = ({
+	id,
+	is_saltwater,
+	size,
+	tank_name,
+	user_id,
+	waterchange_frequency,
+	tankMates,
+	getSpeciesInfo,
+}) => (
+	<div className="tank">
+		{tank_name}
+		{tankMates.map((tankMate, index) => (
+			<SpeciesCard
+				key={index}
+				{...tankMate}
+				getSpeciesInfo={getSpeciesInfo}
+			/>
+		))}
+		<div className="tank__status">
+			<p>
+				Tank Status: Water Change Due{" "}
+				<span>
+					<GrStatusGoodSmall className="bad-status" />
+				</span>
+			</p>
+		</div>
+	</div>
+);
+
+export default Tank;

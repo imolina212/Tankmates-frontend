@@ -1,32 +1,30 @@
-.tank{
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-    width: 400px;
-    background-color: lightblue;
-    border: 1px solid black;
+.tank {
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	width: 400px;
+	background-color: lightblue;
+	border: 1px solid black;
+	border-top: 8px solid black;
+	border-bottom: 8px solid black;
+	margin: 10px;
 
-    &__mate{
-        display: flex;
-        flex-direction: row;
-        
-        &__info{
-           
-        }
-    }
+	&__mate {
+		display: flex;
+		flex-direction: row;
 
-    &__status{
-        margin-top: auto;
-        flex-grow: 1;
-    }
-    &__border{
-        height: 8px;
-        background-color: black;
-    }
-    .bad-status{
-        color: red;
-    }
-    .good-status{
-        color:green;
-    }
+		&__info {
+		}
+	}
+
+	&__status {
+		margin-top: auto;
+		flex-grow: 1;
+	}
+	.bad-status {
+		color: red;
+	}
+	.good-status {
+		color: green;
+	}
 }
