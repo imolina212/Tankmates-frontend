@@ -1,23 +1,22 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
-import './MenuItem.scss';
+import { MdKeyboardArrowDown } from "react-icons/md";
+import "./MenuItem.scss";
 
-const MenuItem = ({text, ...props}) => {
+const MenuItem = ({ text, ...props }) => {
+	const [displaySubMenu, setDisplaySubMenu] = useState(false);
 
+	return (
+		<li
+			className="menuItem"
+			onMouseEnter={() => setDisplaySubMenu(true)}
+			onMouseLeave={() => setDisplaySubMenu(false)}
+		>
+			{text}
+			<MdKeyboardArrowDown />
+			{displaySubMenu && props.children}
+		</li>
+	);
+};
 
-    const [displaySubMenu, setDisplaySubMenu] = useState(false);
-
-
-    return (
-        <li
-            className='menuItem'
-            onMouseEnter={() => setDisplaySubMenu(true)}
-            onMouseLeave={() => setDisplaySubMenu(false)}
-        >
-            {text}
-            {displaySubMenu && props.children}
-        </li>
-    )
-}
-
-export default MenuItem;;
+export default MenuItem;
