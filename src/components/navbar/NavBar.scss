@@ -55,6 +55,7 @@
 				min-width: 60px;
 				font-size: 20px;
 				color: $icon-color;
+				gap: 15px;
 
 				a {
 					color: $icon-color;
@@ -63,6 +64,7 @@
 
 				&__icon {
 					font-size: 25px;
+					align-self: flex-end;
 				}
 
 				&__totalItems {
@@ -73,8 +75,8 @@
 					border-radius: 50%;
 					text-align: center;
 					position: relative;
-					top: -15px;
-					right: 5px;
+					top: -40px;
+					right: -15px;
 				}
 			}
 		}
@@ -125,26 +127,11 @@
 				}
 
 				&__title {
-					color: $icon-color;
-					margin-left: 20px;
 					font-size: 35px;
-					padding-bottom: 10px;
-
-					a {
-						font-family: "Modak", cursive;
-						text-decoration: none;
-						color: $icon-color;
-						&:visited {
-							color: $icon-color;
-						}
-					}
 				}
 			}
 
 			&__right {
-				display: flex;
-				justify-content: space-between;
-
 				&__menu {
 					display: block;
 					position: absolute;

@@ -49,11 +49,13 @@ function NavBar(props) {
 					<div className="navbar__header__right__cart">
 						<div className="navbar__header__right__cart__icon">
 							<Link to="/cart">
-								<FiShoppingCart />
+								<div>
+									<FiShoppingCart />
+								</div>
+								<div className="navbar__header__right__cart__totalItems">
+									{getTotalQuantity() || 0}
+								</div>
 							</Link>
-						</div>
-						<div className="navbar__header__right__cart__totalItems">
-							{getTotalQuantity() || 0}
 						</div>
 						<div className="navbar__header__right__cart__text">
 							<span>
