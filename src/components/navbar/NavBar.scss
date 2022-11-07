@@ -164,24 +164,8 @@
 					}
 				}
 				&__cart {
-					display: flex;
-					justify-content: center;
-					align-items: flex-end;
-					margin-right: 30px;
-					&__icon {
-						color: $icon-color;
-						font-size: 25px;
-					}
-					&__totalItems {
-						background-color: red;
-						color: $icon-color;
-						height: 20px;
-						width: 20px;
-						border-radius: 50%;
-						text-align: center;
-						position: relative;
-						// bottom: 40px;
-						// right: -20px;
+					&__text {
+						display: none;
 					}
 				}
 			}
