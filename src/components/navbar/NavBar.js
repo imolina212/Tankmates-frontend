@@ -17,6 +17,7 @@ function NavBar(props) {
 	};
 
 	const cart = useSelector((state) => state.cart);
+
 	const getTotalQuantity = () => {
 		let total = 0;
 		cart.forEach((item) => {
@@ -28,6 +29,10 @@ function NavBar(props) {
 	useEffect(() => {
 		setExpandNavbar(false);
 	}, []);
+
+	const handleClick = () => {
+		setExpandNavbar(false);
+	};
 
 	return (
 		<div className="navbar">
@@ -74,13 +79,13 @@ function NavBar(props) {
 				}
 			>
 				<ul className={"navbar__bottom__menu"}>
-					<Link to="/shop">
+					<Link to="/shop" onClick={handleClick}>
 						<MenuItem text="Shop" />
 					</Link>
-					<Link to="/tanks">
+					<Link to="/tanks" onClick={handleClick}>
 						<MenuItem text="My Tanks" />
 					</Link>
-					<Link to="/about">
+					<Link to="/about" onClick={handleClick}>
 						<MenuItem text="About" />
 					</Link>
 					<Link to="/cart" className="bottomnavcart">

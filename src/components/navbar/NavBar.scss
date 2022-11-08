@@ -163,7 +163,7 @@
 			right: 0;
 			left: 0;
 			top: 75px;
-			z-index: 100;
+			z-index: 999;
 
 			&__collapsed {
 				position: absolute;
@@ -174,9 +174,9 @@
 
 			&__menu {
 				margin: 0 0 0 auto;
-				background-color: blue;
 				flex-flow: column wrap;
-				max-width: 80%;
+				max-width: 100%;
+				gap: 0;
 			}
 		}
 	}

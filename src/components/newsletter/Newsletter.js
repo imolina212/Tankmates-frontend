@@ -11,7 +11,7 @@ function Newsletter() {
               <p>Stay in touch with tankmates, see latest on updates, events and much more!</p>
             </div>
             <div>
-              <form>
+              <form onSubmit={(e)=> e.preventDefault()}>
                 <div className="newsletterSubscription__formInput">
                   <input type="text" placeholder="Enter your email address"></input>
                   <button>SIGN UP NOW <IoArrowForwardCircle className="button-icon"/></button>
