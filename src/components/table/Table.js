@@ -1,43 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
+import axios from "axios";
 import "./Table.scss";
 
-const Table = () => {
+const Table = ({ id }) => {
+	const [tankLogs, setTankLogs] = useState([]);
+	const API = process.env.REACT_APP_API_URL;
+
+	useEffect(() => {
+		axios
+			.get(`${API}/tanklogs/${id}`)
+			.then((response) => {
+				console.log("TABLE RES.DATA", response.data);
+				setTankLogs(response.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, [API, id]);
+
 	return (
 		<div className="table">
+			<div>Water Change History</div>
 			<table>
-				<tr>
-					<th>Date</th>
-					<th>G's changed</th>
-					<th>Ph</th>
-					<th>Ammonia</th>
-					<th>Nitrite</th>
-					<th>Nitrates</th>
-				</tr>
-				<tr>
-					<td>10/18/22</td>
-					<td>20</td>
-					<td>7</td>
-					<td>0</td>
-					<td>0</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>11/08/22</td>
-					<td>20</td>
-					<td>7</td>
-					<td>0</td>
-					<td>0</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td>11/28/22</td>
-					<td>20</td>
-					<td>7</td>
-					<td>0</td>
-					<td>0</td>
-					<td>0</td>
-				</tr>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>G's changed</th>
+						<th>Ph</th>
+						<th>Ammonia</th>
+						<th>Nitrite</th>
+						<th>Nitrates</th>
+					</tr>
+				</thead>
+				<tbody>
+					{tankLogs.map((tanklog) => {
+						return (
+							<tr>
+								<td>{tanklog.waterchange_date}</td>
+								<td>{tanklog.gallons_changed}</td>
+								<td>{tanklog.ph}</td>
+								<td>{tanklog.ammonia}</td>
+								<td>{tanklog.nitrite}</td>
+								<td>{tanklog.nitrate}</td>
+							</tr>
+						);
+					})}
+				</tbody>
 			</table>
 		</div>
 	);
