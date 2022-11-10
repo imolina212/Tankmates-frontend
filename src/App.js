@@ -7,8 +7,9 @@ import Shop from "./pages/shop/Shop";
 import NavBar from "./components/navbar/NavBar.js";
 import MyTanks from "./pages/myTanks/MyTanks.js";
 import ProductDetails from "./components/productDetails/ProductDetails";
-import Footer from "./components/footer/Footer";
 import TankDetails from "./components/tankDetails/TankDetails";
+import Users from "./pages/users/Users";
+import Footer from "./components/footer/Footer";
 import "./App.scss";
 
 function App() {
@@ -20,8 +21,9 @@ function App() {
 					<Route exact path="/" element={<Home />} />
 					<Route path="/shop" element={<Shop />} />
 					<Route path="/shop/:id" element={<ProductDetails />} />
-					<Route path="/tanks" element={<MyTanks />} />
+					<Route path="/tanks/users/:userId" element={<MyTanks />} />
 					<Route path="/tanks/:tankId" element={<TankDetails />} />
+					<Route path="/users" element={<Users />} />
 					<Route path="/cart" element={<Cart />} />
 				</Routes>
 			</div>
