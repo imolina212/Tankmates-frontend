@@ -1,0 +1,41 @@
+@import "./../designUtils/colors";
+
+.userCard {
+	display: flex;
+	height: 300px;
+	width: 600px;
+	border: 1px solid $border-color;
+	padding: 20px 20px;
+	background-color: #076fa9;
+
+	&:hover {
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+			rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	}
+
+	&__pic img {
+		height: 260px;
+		width: 260px;
+		border-radius: 100%;
+	}
+
+	&__info {
+		font-size: 20px;
+		color: $icon-color;
+		margin-left: 20px;
+
+		&__username {
+			font-family: "Modak", cursive;
+			font-size: 2.8rem;
+			font-weight: 100;
+			letter-spacing: 2px;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+a {
+	text-decoration: none;
+}

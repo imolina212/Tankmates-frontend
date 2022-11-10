@@ -13,7 +13,7 @@ const MenuItem = ({ text, ...props }) => {
 			onMouseLeave={() => setDisplaySubMenu(false)}
 		>
 			{text}
-			<MdKeyboardArrowDown />
+			<MdKeyboardArrowDown className="arrow" />
 			{displaySubMenu && props.children}
 		</li>
 	);

@@ -25,6 +25,11 @@
 		background-color: $icon-color;
 		text-decoration: none;
 	}
+
+	&:hover .arrow {
+		transform: rotate(3.142rad);
+	}
+
 	.cart-totalItems {
 		display: flex;
 		justify-content: center;

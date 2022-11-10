@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 import UserCard from "./../../components/userCard/UserCard";
+import "./Users.scss";
 
 const API = process.env.REACT_APP_API_URL;
 

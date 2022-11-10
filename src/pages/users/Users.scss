@@ -1,0 +1,11 @@
+@import "./../../components/designUtils/colors";
+
+.users {
+	padding: 40px;
+	&__container {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		gap: 40px;
+	}
+}
