@@ -1,0 +1,21 @@
+.login {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	height: 400px;
+	width: 400px;
+	border: 1px solid black;
+	// padding: 20px 20px;
+
+	&__heading {
+		font-size: 24px;
+	}
+	&__form {
+		padding: 0;
+	}
+	// &__message{
+
+	// }
+}

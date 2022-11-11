@@ -34,9 +34,9 @@ const Table = ({ id }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{tankLogs.map((tanklog) => {
+					{tankLogs.map((tanklog, i) => {
 						return (
-							<tr>
+							<tr key={i}>
 								<td>{tanklog.waterchange_date}</td>
 								<td>{tanklog.gallons_changed}</td>
 								<td>{tanklog.ph}</td>

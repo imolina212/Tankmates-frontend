@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home/Home";
@@ -9,22 +9,65 @@ import MyTanks from "./pages/myTanks/MyTanks.js";
 import ProductDetails from "./components/productDetails/ProductDetails";
 import TankDetails from "./components/tankDetails/TankDetails";
 import Users from "./pages/users/Users";
+import UserCardDetails from "./components/userCardDetails/UserCardDetails";
+import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
 import "./App.scss";
 
 function App() {
+	const [userId, setUserId] = useState(0);
+
 	return (
 		<div className="App">
-			<NavBar />
+			<NavBar loggedIn={userId} setUserId={setUserId} />
 			<div className="page-content">
-				<Routes>
-					<Route exact path="/" element={<Home />} />
-					<Route path="/shop" element={<Shop />} />
-					<Route path="/shop/:id" element={<ProductDetails />} />
-					<Route path="/tanks/users/:userId" element={<MyTanks />} />
-					<Route path="/tanks/:tankId" element={<TankDetails />} />
-					<Route path="/users" element={<Users />} />
-					<Route path="/cart" element={<Cart />} />
+				<Routes loggedInUserId={userId}>
+					<Route
+						exact
+						path="/"
+						element={<Home loggedInUserId={userId} />}
+					/>
+					<Route
+						path="/shop"
+						element={<Shop loggedInUserId={userId} />}
+					/>
+					<Route
+						path="/shop/:id"
+						element={<ProductDetails loggedInUserId={userId} />}
+					/>
+					<Route
+						path="/users/:userId/tanks/:tankId"
+						element={<TankDetails loggedInUserId={userId} />}
+					/>
+					<Route
+						path="/tanks"
+						element={<MyTanks loggedInUserId={userId} />}
+					/>
+					<Route
+						path="/users/:userId/tanks"
+						element={<MyTanks loggedInUserId={userId} />}
+					/>
+					<Route
+						path="/users/:userId"
+						element={<UserCardDetails loggedInUserId={userId} />}
+					/>
+					<Route
+						path="/users"
+						element={<Users loggedInUserId={userId} />}
+					/>
+					<Route
+						path="/login"
+						element={
+							<Login
+								setUser={setUserId}
+								loggedInUserId={userId}
+							/>
+						}
+					/>
+					<Route
+						path="/cart"
+						element={<Cart loggedInUserId={userId} />}
+					/>
 				</Routes>
 			</div>
 			<Footer />

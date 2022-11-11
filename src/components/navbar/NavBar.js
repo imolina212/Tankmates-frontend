@@ -8,7 +8,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "./NavBar.scss";
 
-function NavBar(props) {
+function NavBar({ loggedIn, setUserId }) {
 	const [expandNavbar, setExpandNavbar] = useState(false);
 
 	const toggleMenu = () => {
@@ -46,14 +46,16 @@ function NavBar(props) {
 						<img src="/tankmates_logo2.png" alt="TankMates logo" />
 					</div>
 					<div className="navbar__header__logo__title">
-						<Link to="/">tankmates</Link>
+						<Link to="/" onClick={handleClick}>
+							tankmates
+						</Link>
 					</div>
 				</div>
 
 				<div className="navbar__header__right">
 					<div className="navbar__header__right__cart">
 						<div className="navbar__header__right__cart__icon">
-							<Link to="/cart">
+							<Link to="/cart" onClick={handleClick}>
 								<div>
 									<FiShoppingCart />
 								</div>
@@ -64,7 +66,7 @@ function NavBar(props) {
 						</div>
 						<div className="navbar__header__right__cart__text">
 							<span>
-								<Link to="/cart">
+								<Link to="/cart" onClick={handleClick}>
 									your cart
 									<MdKeyboardArrowDown />
 								</Link>
@@ -87,6 +89,15 @@ function NavBar(props) {
 					</Link>
 					<Link to="/about" onClick={handleClick}>
 						<MenuItem text="About" />
+					</Link>
+					{/* <Link to="/users" onClick={handleClick}>
+						<MenuItem text="Users" />
+					</Link> */}
+					<Link
+						to={loggedIn ? "/" : "/login"}
+						onClick={loggedIn ? () => setUserId(0) : handleClick}
+					>
+						<MenuItem text={loggedIn ? "Log out" : "Log in"} />
 					</Link>
 					<Link to="/cart" className="bottomnavcart">
 						<MenuItem

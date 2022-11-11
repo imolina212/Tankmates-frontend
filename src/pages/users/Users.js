@@ -18,13 +18,13 @@ const Users = () => {
 			.catch((err) => {
 				console.log(err);
 			});
-	});
+	}, [API]);
 
 	return (
 		<div className="users">
 			<div className="users__container">
-				{users.map((user) => {
-					return <UserCard user={user} />;
+				{users.map((user, i) => {
+					return <UserCard key={i} user={user} />;
 				})}
 			</div>
 		</div>
