@@ -1,21 +1,59 @@
+@import "./../designUtils/colors";
+
 .login {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 	height: 400px;
 	width: 400px;
-	border: 1px solid black;
-	// padding: 20px 20px;
+	background-color: #f2eee9;
+	border: 1px solid #eee;
+	padding: 20px 20px;
+	gap: 20px;
 
 	&__heading {
 		font-size: 24px;
 	}
 	&__form {
-		padding: 0;
-	}
-	// &__message{
+		width: 100%;
+		padding: 20px;
 
-	// }
+		label {
+			font-size: 0.8rem;
+		}
+		&__inputField {
+			height: 40px;
+			width: 100%;
+		}
+		&__inputFieldWrapper::after {
+			content: "";
+			display: block;
+			width: 20px;
+			height: 20px;
+			background: #fff;
+			position: relative;
+			top: -30px;
+			left: 290px;
+		}
+		&__button {
+			height: 40px;
+			width: 100%;
+			color: $icon-color;
+			background-color: $background-green;
+			border-radius: 5px;
+			border: none;
+			margin-top: 20px;
+			cursor: pointer;
+		}
+	}
+	&__message {
+		text-align: center;
+		&__error span {
+			color: #e02924;
+		}
+		&__terms {
+			font-size: 0.8rem;
+		}
+	}
 }

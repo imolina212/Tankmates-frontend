@@ -13,7 +13,7 @@ const Login = ({ loggedInUserId, setUser }) => {
 
 	useEffect(() => {
 		if (loggedInUserId) {
-			navigate("/tanks");
+			setTimeout(() => navigate("/tanks"), 500);
 		}
 	}, [loggedInUserId]);
 
@@ -41,14 +41,31 @@ const Login = ({ loggedInUserId, setUser }) => {
 			<div className="login__form">
 				<form onSubmit={handleSubmit}>
 					<label htmlFor="email" value="email">
-						Email:
-						<input type="text" ref={inputRef} />
+						Email:<span style={{ color: "red" }}>*</span>
+						<div className="login__form__inputFieldWrapper">
+							<input
+								type="text"
+								className="login__form__inputField"
+								ref={inputRef}
+							/>
+						</div>
 					</label>
-					<input type="submit" value="Log in" />
+					<input
+						type="submit"
+						className="login__form__button"
+						value="Log in"
+					/>
 				</form>
 			</div>
 			<div className="login__message">
-				{err && <span style={{ color: "red" }}>{err}</span>}
+				<div className="login__message__error">
+					{err && <span>{err}</span>}
+				</div>
+				<div className="login__message__terms">
+					By clicking "Log In", you agree to tankmates Terms of Use
+					and Privacy Policy. California residents can review our
+					Notice of Financial Incentives here.
+				</div>
 			</div>
 		</div>
 	);
