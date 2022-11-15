@@ -1,0 +1,29 @@
+.tankmates {
+	display: flex;
+	flex-flow: column nowrap;
+	// height: 600px;
+	width: 70%;
+	border: 1px solid black;
+	font-size: 22px;
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		margin-left: 10px;
+		border-bottom: 1px solid #efefef;
+		padding: 0px 50px;
+
+		&__pic img {
+			height: 50px;
+			width: 50px;
+		}
+		&__quantity {
+			display: flex;
+			flex-flow: row nowrap;
+			column-gap: 10px;
+			.button {
+				cursor: pointer;
+			}
+		}
+	}
+}
