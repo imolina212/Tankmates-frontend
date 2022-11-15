@@ -12,6 +12,9 @@ import Users from "./pages/users/Users";
 import UserCardDetails from "./components/userCardDetails/UserCardDetails";
 import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
+import NewTankmate from "./components/tankmates/NewTankmate";
+import NewTankLog from "./components/newTankLog/NewTankLog";
+import About from "./pages/about/About";
 import "./App.scss";
 
 function App() {
@@ -40,11 +43,15 @@ function App() {
 						element={<TankDetails loggedInUserId={userId} />}
 					/>
 					<Route
-						path="/tanks"
-						element={<MyTanks loggedInUserId={userId} />}
+						path="/users/:userId/tanks/:tankId/newTankmate"
+						element={<NewTankmate loggedInUserId={userId} />}
 					/>
 					<Route
-						path="/users/:userId/tanks"
+						path="/users/:userId/tanks/:tankId/newTankLog"
+						element={<NewTankLog loggedInUserId={userId} />}
+					/>
+					<Route
+						path="/tanks"
 						element={<MyTanks loggedInUserId={userId} />}
 					/>
 					<Route
@@ -55,6 +62,7 @@ function App() {
 						path="/users"
 						element={<Users loggedInUserId={userId} />}
 					/>
+					<Route path="/about" element={<About />} />
 					<Route
 						path="/login"
 						element={
