@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: Poppins,Noto Sans,Franklin Gothic Medium,Tahoma,sans-serif;
+    box-sizing: border-box;
 }
 
 .page-content{
@@ -13,6 +14,10 @@
 
 @media only screen and (max-width: 440px) {
     .App {
+        margin: 0;
+    }
+    .page-content{
+        // max-width: 1400px;
         margin: 0;
     }
 }
