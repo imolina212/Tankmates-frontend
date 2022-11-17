@@ -3,34 +3,46 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Tank from "../../components/tank/Tank";
 import "./MyTanks.scss";
+import { useNavigate, useParams } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-const MyTanks = () => {
+const MyTanks = ({ loggedInUserId }) => {
 	const [tanks, setTanks] = useState([]);
-	const [commonSpecies, setCommonSpecies] = useState({});
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (!loggedInUserId) {
+			setTimeout(() => navigate("/login"), 2000);
+		}
+	}, []);
+
 	useEffect(() => {
 		axios
-			.get(`${API}/tanks`)
+			.get(`${API}/tanks/user/${loggedInUserId}`)
 			.then((response) => {
-				console.log("MY TANKS RESPONSE", response.data);
-				setTanks(response.data.tanks);
-				setCommonSpecies(response.data.commonSpecies);
+				console.log("MYTANKS RESPONSE", response.data);
+				setTanks(response.data);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	}, [API]);
-
+	}, [loggedInUserId]);
+	if (!loggedInUserId) {
+		return (
+			<div className="myTanks-page">
+				<p>Please log in to view or add tanks</p>
+				<p>Redirecting to login page</p>
+			</div>
+		);
+	}
 	return (
 		<div className="myTanks-page">
-			{tanks.map((tank, index) => (
-				<Tank
-					key={index}
-					getSpeciesInfo={(id) => commonSpecies[id]}
-					{...tank}
-				/>
-			))}
+			<div className="tanks">
+				{tanks.map((tank, index) => {
+					return <Tank key={index} {...tank} />;
+				})}
+			</div>
 		</div>
 	);
 };

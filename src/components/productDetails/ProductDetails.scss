@@ -1,43 +1,54 @@
-@import './../designUtils/colors';
+@import "./../designUtils/colors";
 
-.productDetails{
-    display: flex;
-    align-items: flex-start;
-    margin: 10px;
+.productDetails {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	padding: 40px;
 
-    &__info{
-        margin-left: 10px;
-        padding: 10px;
+	&__info {
+		margin-left: 10px;
+		padding: 10px;
 
-        &__title{
-            font-family: Poppins,Noto Sans,Franklin Gothic Medium,Tahoma,sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            letter-spacing: .01em;
-            line-height: 2.5rem;
-            a{
-                font-size: 10px;
-                font-weight: 100;
-            }
-        }
-        &__rating{
-            color: $star-rating-color;
-        }
-        &__price{
-            color: $text-color-alt;
-            font-size: 24px;
-            font-weight: 700;
-        }
-        &__availability{
-            margin: 10px 0px;
-        }
-    }
-    .green{
-        color: green;
-        font-size: 14px;
-    }
-    .red{
-        color: red;
-        font-size: 14px;
-    }
+		&__title {
+			font-family: Poppins, Noto Sans, Franklin Gothic Medium, Tahoma,
+				sans-serif;
+			font-size: 20px;
+			font-weight: 600;
+			letter-spacing: 0.01em;
+			line-height: 2.5rem;
+
+			button {
+				background-color: white;
+				font-size: 12px;
+				font-weight: 100;
+				border: none;
+
+				&:hover {
+					text-decoration: underline;
+					cursor: pointer;
+				}
+			}
+		}
+		&__rating {
+			color: $star-rating-color;
+		}
+		&__price {
+			color: $text-color-alt;
+			font-size: 24px;
+			font-weight: 700;
+		}
+		&__availability {
+			margin: 10px 0px;
+		}
+	}
+	.green {
+		color: green;
+		font-size: 14px;
+	}
+	.red {
+		color: red;
+		font-size: 14px;
+	}
 }
