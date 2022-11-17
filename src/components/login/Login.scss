@@ -8,18 +8,19 @@
 }
 .login {
 	display: flex;
-	flex-direction: column;
+	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
-	height: 400px;
-	width: 400px;
+	height: 500px;
+	width: 500px;
 	background-color: #f2eee9;
 	border: 1px solid #eee;
-	padding: 20px 20px;
+	padding: 30px 30px;
 	gap: 20px;
 
 	&__heading {
-		font-size: 24px;
+		font-size: 26px;
+		padding-top: 10px;
 	}
 	&__form {
 		width: 100%;
@@ -29,7 +30,7 @@
 			font-size: 0.8rem;
 		}
 		&__inputField {
-			height: 40px;
+			height: 45px;
 			width: 100%;
 			font-size: 18px;
 			padding-left: 10px;
@@ -58,7 +59,7 @@
 	&__visibility {
 		position: relative;
 		top: -30px;
-		left: 280px;
+		left: 360px;
 		cursor: pointer;
 	}
 
