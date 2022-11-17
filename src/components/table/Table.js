@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 import "./Table.scss";
 
-const Table = ({ id }) => {
+const API = process.env.REACT_APP_API_URL;
+
+const Table = ({ userId, tankId }) => {
 	const [tankLogs, setTankLogs] = useState([]);
-	const API = process.env.REACT_APP_API_URL;
 
 	useEffect(() => {
 		axios
-			.get(`${API}/tanklogs/${id}`)
+			.get(`${API}/tanklogs/${tankId}`)
 			.then((response) => {
 				console.log("TABLE RES.DATA", response.data);
 				setTankLogs(response.data);
@@ -17,7 +19,14 @@ const Table = ({ id }) => {
 			.catch((err) => {
 				console.log(err);
 			});
-	}, [API, id]);
+	}, [tankId]);
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		axios.put(`${API}/tanklogs/${tankId}`, tankLogs).then(() => {
+			console.log("updated");
+		});
+	};
 
 	return (
 		<div className="table">
@@ -37,7 +46,11 @@ const Table = ({ id }) => {
 					{tankLogs.map((tanklog, i) => {
 						return (
 							<tr key={i}>
-								<td>{tanklog.waterchange_date}</td>
+								<td>
+									{new Date(
+										tanklog.waterchange_date
+									).toLocaleDateString("en-us")}
+								</td>
 								<td>{tanklog.gallons_changed}</td>
 								<td>{tanklog.ph}</td>
 								<td>{tanklog.ammonia}</td>
@@ -48,6 +61,11 @@ const Table = ({ id }) => {
 					})}
 				</tbody>
 			</table>
+			<div className="table__buttons">
+				<Link to={`${API}/users/${userId}/tanks/${tankId}/newTanklog`}>
+					<button>add tank log</button>
+				</Link>
+			</div>
 		</div>
 	);
 };

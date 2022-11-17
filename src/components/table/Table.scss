@@ -1,6 +1,5 @@
 .table {
 	width: 100%;
-	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -20,5 +19,21 @@
 	td {
 		text-align: center;
 		border-right: 1px solid black;
+	}
+	&__buttons {
+		display: flex;
+		justify-content: center;
+
+		button {
+			background-color: green;
+			border: none;
+			color: white;
+			height: 50px;
+			width: 120px;
+			margin-top: 15px;
+			border-radius: 5px;
+			font-size: 18px;
+			cursor: pointer;
+		}
 	}
 }
