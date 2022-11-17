@@ -9,12 +9,12 @@ import MyTanks from "./pages/myTanks/MyTanks.js";
 import ProductDetails from "./components/productDetails/ProductDetails";
 import TankDetails from "./components/tankDetails/TankDetails";
 import Users from "./pages/users/Users";
-import UserCardDetails from "./components/userCardDetails/UserCardDetails";
 import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
 import NewTankmate from "./components/tankmates/NewTankmate";
 import NewTankLog from "./components/newTankLog/NewTankLog";
 import About from "./pages/about/About";
+import Signup from "./components/signup/Signup";
 import "./App.scss";
 
 function App() {
@@ -55,10 +55,6 @@ function App() {
 						element={<MyTanks loggedInUserId={userId} />}
 					/>
 					<Route
-						path="/users/:userId"
-						element={<UserCardDetails loggedInUserId={userId} />}
-					/>
-					<Route
 						path="/users"
 						element={<Users loggedInUserId={userId} />}
 					/>
@@ -67,6 +63,15 @@ function App() {
 						path="/login"
 						element={
 							<Login
+								setUser={setUserId}
+								loggedInUserId={userId}
+							/>
+						}
+					/>
+					<Route
+						path="/signup"
+						element={
+							<Signup
 								setUser={setUserId}
 								loggedInUserId={userId}
 							/>
