@@ -1,0 +1,11 @@
+.tankDetails {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	gap: 30px;
+
+	.table,
+	.tankmates {
+		margin-bottom: 80px;
+	}
+}

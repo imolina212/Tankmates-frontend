@@ -9,7 +9,7 @@ import "./TankDetails.scss";
 function TankDetails() {
 	const [tank, setTank] = useState({});
 	const API = process.env.REACT_APP_API_URL;
-	const { tankId } = useParams();
+	const { userId, tankId } = useParams();
 
 	useEffect(() => {
 		axios
@@ -26,7 +26,7 @@ function TankDetails() {
 		<div className="tankDetails">
 			Tank Details Page
 			<Tankmates tankId={tankId} />
-			<Table tankId={tankId} />
+			<Table userId={userId} tankId={tankId} />
 		</div>
 	);
 }
