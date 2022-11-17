@@ -102,12 +102,12 @@ const Signup = () => {
 						Use and Privacy Policy. California residents can review
 						our Notice of Financial Incentives here.
 					</div>
-				</div>
-				<div className="signup__loginLink">
-					<p>
-						<span>Already a tankmates member? </span>
-						<Link to="/login">Log in here</Link>
-					</p>
+					<div className="signup__loginLink">
+						<p>
+							<span>Already a tankmates member? </span>
+							<Link to="/login">Log in here</Link>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
