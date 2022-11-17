@@ -14,23 +14,35 @@ const About = () => {
 					A: Being able to continue learning while having the
 					opportunity to apply those skills on a project related to a
 					hobby that I am passionate about makes is by far my most
-					favorite and rewarding part of working on tankmates.{" "}
+					favorite and rewarding part of working on tankmates. Working
+					on tankmates has allowed me to be able to familiarize myself
+					with redux and be able to successfully implement it. It also
+					has given me the opportunity to continue providing future
+					updates to tankmates in integrating a payment API (Stripe,
+					Dwolla, etc.) and user authentication services like Firebase
+					for its popular federated identity providers like Google,
+					Facebook and Twitter, and more.
 				</div>
 			</div>
 			<div>
-				<div>Q: Your Favorite thing about working at tankmates?</div>
-				<div>A:</div>
-			</div>
-			<div>
 				<div>Q: What is your favorite fish and why?</div>
-				<div>A: My favorite fish is a </div>
+				<div>
+					A: My favorite fish is a Red Cherry Shrimp / Crystal Red
+					Shrimp. A younger me would have preferred something like a
+					dragon looking Arowana but ever since I was able to
+					successfully maintain a shrimp colony during the pandemic,
+					these shrimps have taken its spot. A bonus has been
+					discovering how much I love the de-stress factors that a
+					planted aquarium.{" "}
+				</div>
 			</div>
 			<div>
 				<div>Q: What would your dream aquarium be?</div>
 				<div>
 					A: My dream aquarium would be to have backyard pond with
 					some waterfalls and koi fish so I can have a nice place to
-					relax and drink my morning coffee.
+					relax after a long day of work and to drink my morning
+					coffee.
 				</div>
 			</div>
 			<div>
