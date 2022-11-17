@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Signup.scss";
 
@@ -41,14 +42,18 @@ const Signup = () => {
 					</form>
 				</div>
 				<div className="signup__message">
-					<div className="signup__message__error">
-						{/* {err && <span>{err}</span>} */}
-					</div>
+					<div className="signup__message__error"></div>
 					<div className="signup__message__terms">
-						By clicking "Log In", you agree to tankmates Terms of
+						By clicking "Sign up", you agree to tankmates Terms of
 						Use and Privacy Policy. California residents can review
 						our Notice of Financial Incentives here.
 					</div>
+				</div>
+				<div className="signup__loginLink">
+					<p>
+						<span>Already a tankmates member? </span>
+						<Link to="/login">Log in here</Link>
+					</p>
 				</div>
 			</div>
 		</div>
