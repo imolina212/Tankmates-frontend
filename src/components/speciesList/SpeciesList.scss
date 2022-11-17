@@ -1,35 +1,50 @@
-@import '../designUtils/colors.scss';
+@import "../designUtils/colors.scss";
 
 .speciesList {
-    width: 100%;
-    margin: 0;
-    height: 80vh;
-    background-color: white;
-    overflow-y: scroll;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px $shadow-gray;
+	position: absolute;
+	top: 223px;
+	border-radius: 8px;
+	background-color: $icon-color;
+	box-shadow: 0px 2px 5px $shadow-gray;
+	width: inherit;
 
-    &__noResults {
-        display: flex;
-        height: 80vh;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        font-weight: 600;
-    }
+	&__info {
+		display: flex;
+		flex-flow: row nowrap;
+		padding-left: 10px;
+		gap: 15px;
+		cursor: pointer;
 
-    .searchbar {
-        width: 100%;
-    }
+		&:hover {
+			background-color: #eee;
+		}
 
-    @media only screen and (max-width: 440px) {
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        overflow-y: unset;
-        box-shadow: unset;
-        border-radius: 0;
+		&__pic img {
+			height: 50px;
+			width: 50px;
+		}
 
-    }
+		&__addSpecies {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 40px;
+			padding: 0px 10px;
+			border-radius: 5px;
+			font-size: 16px;
+			background-color: green;
+			color: white;
+			cursor: pointer;
+		}
+	}
+
+	&__noResults {
+		display: flex;
+		height: 80vh;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		font-weight: 600;
+	}
 }

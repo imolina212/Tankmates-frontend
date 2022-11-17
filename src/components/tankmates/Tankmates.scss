@@ -1,11 +1,23 @@
 .tankmates {
 	display: flex;
 	flex-flow: column nowrap;
-	// height: 600px;
 	width: 70%;
-	border: 1px solid black;
+	border: 1px solid #eee;
 	font-size: 22px;
 
+	input {
+		height: 40px;
+		margin-bottom: 5px;
+		font-size: 18px;
+		border-radius: 5px;
+		border: none;
+		border-bottom: 1px solid black;
+		padding-left: 15px;
+
+		&:focus {
+			outline: none;
+		}
+	}
 	&__info {
 		display: flex;
 		justify-content: space-between;
