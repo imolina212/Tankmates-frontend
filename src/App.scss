@@ -1,23 +1,26 @@
-@import './components/designUtils/colors.scss';
+@import "./components/designUtils/colors.scss";
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Poppins,Noto Sans,Franklin Gothic Medium,Tahoma,sans-serif;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Poppins, Noto Sans, Franklin Gothic Medium, Tahoma, sans-serif;
+	box-sizing: border-box;
+}
+.App {
+	background-color: $bg-color-solarizedLight;
 }
 
-.page-content{
-    max-width: 1400px;
-    margin: 0 auto;
+.page-content {
+	max-width: 1400px;
+	margin: 0 auto;
 }
 
 @media only screen and (max-width: 440px) {
-    .App {
-        margin: 0;
-    }
-    .page-content{
-        // max-width: 1400px;
-        margin: 0;
-    }
+	.App {
+		margin: 0;
+	}
+	.page-content {
+		// max-width: 1400px;
+		margin: 0;
+	}
 }
