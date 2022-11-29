@@ -1,12 +1,9 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import getStars from "../designUtils/getStars.js";
 import "./ProductCard.scss";
 
 function ProductCard({ id, title, image, price, brand, rating }) {
-	const dispatch = useDispatch();
-
 	return (
 		<div className="product-card">
 			<div className="product-card__canvas">
@@ -32,16 +29,6 @@ function ProductCard({ id, title, image, price, brand, rating }) {
 					<p>FREE 1-3 day shipping over $49</p>
 				</div>
 			</div>
-			<button
-				className="button"
-				onClick={() =>
-					dispatch(
-						addToCart({ id, title, brand, image, price, rating })
-					)
-				}
-			>
-				Add to Cart
-			</button>
 		</div>
 	);
 }
