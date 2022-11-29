@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import MenuItem from "../menuItem/MenuItem";
+import MegaMenu from "../megaMenu/MegaMenu";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -82,7 +83,9 @@ function NavBar({ loggedIn, setUserId }) {
 			>
 				<ul className={"navbar__bottom__menu"}>
 					<Link to="/shop" onClick={handleClick}>
-						<MenuItem text="Shop" />
+						<MenuItem text="Shop">
+							<MegaMenu />
+						</MenuItem>
 					</Link>
 					<Link to="/tanks" onClick={handleClick}>
 						<MenuItem text="My Tanks" />

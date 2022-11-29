@@ -1,0 +1,42 @@
+@import "./../designUtils/colors";
+
+.megaMenu {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	background-color: #fff;
+	padding: 0px 50px;
+	position: absolute;
+	top: 133px;
+	left: 0px;
+	z-index: 100;
+	border-bottom: 1px solid #026725;
+	cursor: default;
+
+	&__category {
+		padding-bottom: 30px;
+		cursor: pointer;
+
+		&__image {
+			height: 200px;
+			width: 200px;
+		}
+
+		&__header {
+			margin: 10px 0px;
+			background-color: $background-green;
+			color: $icon-color;
+			text-align: center;
+			border-radius: 5px;
+		}
+
+		&__item {
+			list-style-type: none;
+			color: #026725;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
