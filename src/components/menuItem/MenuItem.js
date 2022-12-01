@@ -14,7 +14,11 @@ const MenuItem = ({ text, ...props }) => {
 		>
 			{text}
 			<MdKeyboardArrowDown className="arrow" />
-			{displaySubMenu && props.children}
+			{displaySubMenu && (
+				<div onClick={() => setDisplaySubMenu(false)}>
+					{props.children}
+				</div>
+			)}
 		</li>
 	);
 };

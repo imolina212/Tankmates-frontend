@@ -13,7 +13,6 @@ function NavBar({ loggedIn, setUserId }) {
 	const [expandNavbar, setExpandNavbar] = useState(false);
 
 	const toggleMenu = () => {
-		console.log("navbar toggled");
 		setExpandNavbar(!expandNavbar);
 	};
 
