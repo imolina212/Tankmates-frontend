@@ -82,20 +82,15 @@ function NavBar({ loggedIn, setUserId }) {
 				}
 			>
 				<ul className={"navbar__bottom__menu"}>
-					<Link to="/shop" onClick={handleClick}>
-						<MenuItem text="Shop">
-							<MegaMenu />
-						</MenuItem>
-					</Link>
+					<MenuItem text="Shop">
+						<MegaMenu />
+					</MenuItem>
 					<Link to="/tanks" onClick={handleClick}>
 						<MenuItem text="My Tanks" />
 					</Link>
 					<Link to="/about" onClick={handleClick}>
 						<MenuItem text="About" />
 					</Link>
-					{/* <Link to="/users" onClick={handleClick}>
-						<MenuItem text="Users" />
-					</Link> */}
 					<Link
 						to={loggedIn ? "/" : "/login"}
 						onClick={loggedIn ? () => setUserId(0) : handleClick}
