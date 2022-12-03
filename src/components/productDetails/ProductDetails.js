@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import getStars from "../designUtils/getStars.js";
 import CustomerReviews from "../customerReviews/CustomerReviews.js";
+import NewReviewForm from "../newReviewForm/NewReviewForm.js";
 import "./ProductDetails.scss";
 
 function ProductDetails() {
@@ -97,6 +98,9 @@ function ProductDetails() {
 				</div>
 			</div>
 			<CustomerReviews />
+			<div className="product-details__new-review-form-wrapper">
+				<NewReviewForm />
+			</div>
 		</div>
 	);
 }
