@@ -2,56 +2,80 @@
 
 .customer-reviews {
 	grid-column: 1 / span 2;
-	padding: 0px 30px;
+	margin: 15px 40px;
+	border-bottom: 1px solid rgba(51, 153, 153, 0.1);
+	color: $text-color;
 
 	&__header {
 		font-size: 30px;
-		padding-bottom: 20px;
+		margin-bottom: 20px;
 	}
 
 	&__overview {
 		display: flex;
-		flex-flow: row nowrap;
+		flex: 1 1 100%;
 		justify-content: space-evenly;
 		align-items: center;
-		padding: 0px 40px;
+		padding: 0px 0px 12px;
 
 		&__summary {
-			display: flex;
-			flex-flow: column nowrap;
+			white-space: nowrap;
+			.stars {
+				color: $star-rating-color;
+				padding-right: 8px;
+
+				.star {
+					padding: 0px 2px;
+				}
+			}
 		}
 
 		&__histogram {
-			display: flex;
-			flex-flow: column nowrap;
-			padding: 0px 50px;
+			margin: 0px 0px 24px;
+			padding: 0px 40px;
+			font-size: 80%;
+			border-left: 1px solid rgba(51, 153, 153, 0.1);
+			border-right: 1px solid rgba(51, 153, 153, 0.1);
 
 			&__item {
 				display: flex;
 				flex-flow: row nowrap;
+				align-items: center;
+				margin: 0px 0px 6px;
 				gap: 30px;
+				color: $text-color-secondary;
+
+				&__stars {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: nowrap;
+					color: $star-rating-color;
+					.star {
+						padding: 0px 2px;
+					}
+				}
 			}
 		}
-		.stars {
-			color: $star-rating-color;
-		}
 
-		&__button button {
-			height: 34px;
-			width: 200px;
-			border: none;
-			border-radius: 16px;
-			font-size: 16px;
-			background-color: $background-green;
-			color: $icon-color;
-			cursor: pointer;
+		&__button {
+			padding: 8px 20px;
+			button {
+				height: 34px;
+				width: 200px;
+				border: none;
+				border-radius: 16px;
+				font-size: 16px;
+				background-color: $btn-primary-color;
+				color: $icon-color;
+				cursor: pointer;
+			}
 		}
 	}
 
 	&__progress-bar {
 		background-color: #efeee7;
 		height: 14px;
-		width: 80px;
+		width: 140px;
 		border-radius: 10px;
 
 		&__container {
@@ -59,6 +83,22 @@
 			width: 50%;
 			border-radius: inherit;
 			background-color: $star-rating-color;
+		}
+	}
+}
+@media (max-width: 992px) {
+	.customer-reviews {
+		&__overview {
+			flex-flow: column;
+
+			&__summary {
+				padding: 16px 0px;
+			}
+
+			&__histogram {
+				padding: 8px 0px 0px;
+				border: none;
+			}
 		}
 	}
 }

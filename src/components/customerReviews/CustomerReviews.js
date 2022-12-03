@@ -10,41 +10,52 @@ const CustomerReviews = () => {
 			<div className="customer-reviews__overview">
 				<div className="customer-reviews__overview__summary">
 					<p>
-						<span className="stars">{getStars(5)}</span> 5 out of 5
+						<span className="stars">{getStars(5)}</span>
+						<span className="average">5 out of 5</span>
 					</p>
-					<p>Based on 132 reviews</p>
+					<p className="text">Based on 132 reviews</p>
 				</div>
 				<div className="customer-reviews__overview__histogram">
 					<div className="customer-reviews__overview__histogram__item">
-						<div className="stars">{getStars(5)}</div>
+						<div className="customer-reviews__overview__histogram__item__stars">
+							{getStars(5)}
+						</div>
 						<div className="customer-reviews__progress-bar">
 							<div className="customer-reviews__progress-bar__container"></div>
 						</div>
 						<div>126</div>
 					</div>
 					<div className="customer-reviews__overview__histogram__item">
-						<div className="stars">{getStars(4)}</div>
+						<div className="customer-reviews__overview__histogram__item__stars">
+							{getStars(4)}
+						</div>
 						<div className="customer-reviews__progress-bar">
 							<div className="customer-reviews__progress-bar__container"></div>
 						</div>
 						<div>4</div>
 					</div>
 					<div className="customer-reviews__overview__histogram__item">
-						<div className="stars">{getStars(3)}</div>
+						<div className="customer-reviews__overview__histogram__item__stars">
+							{getStars(3)}
+						</div>
 						<div className="customer-reviews__progress-bar">
 							<div className="customer-reviews__progress-bar__container"></div>
 						</div>
 						<div>1</div>
 					</div>
 					<div className="customer-reviews__overview__histogram__item">
-						<div className="stars">{getStars(2)}</div>
+						<div className="customer-reviews__overview__histogram__item__stars">
+							{getStars(2)}
+						</div>
 						<div className="customer-reviews__progress-bar">
 							<div className="customer-reviews__progress-bar__container"></div>
 						</div>
 						<div>1</div>
 					</div>
 					<div className="customer-reviews__overview__histogram__item">
-						<div className="stars">{getStars(1)}</div>
+						<div className="customer-reviews__overview__histogram__item__stars">
+							{getStars(1)}
+						</div>
 						<div className="customer-reviews__progress-bar">
 							<div className="customer-reviews__progress-bar__container"></div>
 						</div>
