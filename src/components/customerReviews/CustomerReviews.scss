@@ -69,6 +69,12 @@
 				background-color: $btn-primary-color;
 				color: $icon-color;
 				cursor: pointer;
+
+				&:hover {
+					transition: 0.4s;
+					opacity: 0.8;
+					text-decoration: underline;
+				}
 			}
 		}
 	}
