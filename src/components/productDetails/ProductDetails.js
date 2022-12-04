@@ -98,7 +98,7 @@ function ProductDetails() {
 				</div>
 			</div>
 			<CustomerReviews />
-			<div className="product-details__new-review-form-wrapper">
+			<div className="productDetails__new-review-form-wrapper">
 				<NewReviewForm />
 			</div>
 		</div>
