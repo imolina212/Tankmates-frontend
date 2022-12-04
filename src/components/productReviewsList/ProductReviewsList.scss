@@ -1,0 +1,86 @@
+@import "./../designUtils/colors";
+
+.productReviewsList {
+	.productReviewsList__item {
+		padding: 16px 0px;
+		border-top: 1px solid rgba(2, 103, 37, 0.1);
+
+		&__rating {
+			margin-bottom: 8px;
+
+			&__timestamp {
+				float: right;
+				font-size: 80%;
+				color: #7b7b7b;
+			}
+		}
+
+		&__profile {
+			display: block;
+			margin-bottom: 10px;
+
+			&__pic-container {
+				float: left;
+				position: relative;
+				margin-right: 8px;
+				height: 36px;
+				width: 36px;
+				font-size: 24px;
+				border-radius: 8px;
+				background-color: rgba(224, 224, 224, 0.5);
+
+				.pic {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+
+			&__name {
+				color: #026725;
+			}
+			&__location {
+				font-size: 80%;
+				opacity: 1;
+				color: #7b7b7b;
+			}
+		}
+		&__content {
+			padding: 10px 0px;
+
+			&__title {
+				margin-bottom: 8px;
+				font-weight: bold;
+			}
+			&__body {
+				overflow-wrap: break-word;
+			}
+		}
+	}
+
+	&__paginate {
+		display: flex;
+		justify-content: center;
+		padding-top: 16px;
+		width: 100%;
+		border-top: 1px solid $border-color;
+
+		&__btn {
+			padding: 10px 20px;
+			background-color: #10891a;
+			color: $icon-color;
+			text-align: center;
+			border-radius: 20px;
+			height: 40px;
+			width: 160px;
+			cursor: pointer;
+
+			&:hover {
+				transition: 0.4s;
+				opacity: 0.6;
+				text-decoration: underline;
+			}
+		}
+	}
+}
