@@ -1,0 +1,37 @@
+@import "./../designUtils/colors";
+
+.sticky-product-header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100px;
+	width: 100%;
+	padding: 10px;
+	position: fixed;
+	top: 133px;
+	left: 0px;
+	background-color: #fffcef;
+	color: #1d1d1d;
+	box-shadow: -1px 4px 10px 0px rgb(0 0 0 / 25%);
+
+	&__details {
+		display: flex;
+		flex-flow: column nowrap;
+		font-weight: bold;
+
+		&__title {
+			font-size: 20px;
+		}
+		&__price {
+			color: $btn-primary-color;
+		}
+	}
+}
+.show {
+	transition: 0.3s ease-in;
+	opacity: 1;
+}
+.hide {
+	transition: 0.3s ease-out;
+	opacity: 0;
+}
