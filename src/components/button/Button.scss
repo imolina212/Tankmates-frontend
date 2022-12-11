@@ -1,0 +1,53 @@
+@import "./../designUtils/colors";
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 0;
+
+	.btn {
+		border: none;
+		width: fit-content;
+		font-size: 14px;
+		padding: 10px 20px 10px 20px;
+		transition: 0.25s;
+		overflow: hidden;
+		letter-spacing: 0.1rem;
+		white-space: nowrap;
+
+		&:hover {
+			opacity: 0.8;
+			cursor: pointer;
+		}
+	}
+
+	.primary {
+		background-color: $btn-primary-color;
+		color: $icon-color;
+	}
+
+	.outline-primary {
+		background-color: inherit;
+		border: 2px solid $btn-primary-color;
+
+		&:hover {
+			background-color: $btn-primary-color;
+			color: $icon-color;
+		}
+	}
+
+	.rnd {
+		border-radius: 20px;
+	}
+
+	.sq {
+		border-radius: 5px;
+	}
+
+	.large {
+		text-transform: uppercase;
+		width: 100%;
+		padding: 12px 20px;
+	}
+}
