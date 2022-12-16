@@ -8,11 +8,19 @@
 	width: 100%;
 	padding: 10px;
 	position: fixed;
-	top: 133px;
+	top: 75px;
 	left: 0px;
-	background-color: #fffcef;
+	background-color: $bg-color-solarizedLight;
 	color: #1d1d1d;
 	box-shadow: -1px 4px 10px 0px rgb(0 0 0 / 25%);
+	z-index: 100;
+	opacity: 1;
+	transition: 0.3s ease-in-out;
+
+	&__hide {
+		visibility: hidden;
+		opacity: 0;
+	}
 
 	&__details {
 		display: flex;
@@ -26,12 +34,4 @@
 			color: $btn-primary-color;
 		}
 	}
-}
-.show {
-	transition: 0.3s ease-in;
-	opacity: 1;
-}
-.hide {
-	transition: 0.3s ease-out;
-	opacity: 0;
 }

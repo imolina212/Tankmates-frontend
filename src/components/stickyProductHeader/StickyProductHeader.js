@@ -23,8 +23,8 @@ const StickyProductHeader = () => {
 		<div
 			className={
 				bgColor
-					? "sticky-product-header show"
-					: "sticky-product-header hide"
+					? "sticky-product-header"
+					: "sticky-product-header sticky-product-header__hide"
 			}
 		>
 			<div className="sticky-product-header__image">
@@ -38,7 +38,7 @@ const StickyProductHeader = () => {
 					$24.99
 				</div>
 			</div>
-			<QuantityPicker />
+			<QuantityPicker name="Qty" />
 			<Button name="Add to Cart" variant="primary" size="sq large" />
 		</div>
 	);
