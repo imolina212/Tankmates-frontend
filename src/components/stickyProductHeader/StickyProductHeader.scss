@@ -22,6 +22,11 @@
 		opacity: 0;
 	}
 
+	&__image img {
+		height: 80px;
+		width: 80px;
+	}
+
 	&__details {
 		display: flex;
 		flex-flow: column nowrap;

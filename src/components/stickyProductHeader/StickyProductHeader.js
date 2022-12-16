@@ -4,7 +4,7 @@ import QuantityPicker from "../quantityPicker/QuantityPicker";
 import Button from "../button/Button";
 import "./StickyProductHeader.scss";
 
-const StickyProductHeader = () => {
+const StickyProductHeader = ({ title, price, pic }) => {
 	const [bgColor, setBgColor] = useState(false);
 
 	const changeBgColorOnScroll = () => {
@@ -28,14 +28,14 @@ const StickyProductHeader = () => {
 			}
 		>
 			<div className="sticky-product-header__image">
-				<img src="https://via.placeholder.com/80" />
+				<img src={pic} />
 			</div>
 			<div className="sticky-product-header__details">
 				<div className="sticky-product-header__details__title">
-					Aquarium Co-Op Auto Feeder
+					{title}
 				</div>
 				<div className="sticky-product-header__details__price">
-					$24.99
+					$ {price}
 				</div>
 			</div>
 			<QuantityPicker name="Qty" />

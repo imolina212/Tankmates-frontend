@@ -5,6 +5,10 @@ import axios from "axios";
 import getStars from "../designUtils/getStars.js";
 import CustomerReviews from "../customerReviews/CustomerReviews.js";
 import NewReviewForm from "../newReviewForm/NewReviewForm.js";
+import ProductReviewsList from "../productReviewsList/ProductReviewsList.js";
+import QuantityPicker from "../quantityPicker/QuantityPicker.js";
+import StickyProductHeader from "../stickyProductHeader/StickyProductHeader.js";
+import Button from "../button/Button.js";
 import "./ProductDetails.scss";
 
 function ProductDetails() {
@@ -35,6 +39,7 @@ function ProductDetails() {
 
 	return (
 		<div className="productDetails">
+			<StickyProductHeader title={product_name} price={price} pic={pic} />
 			<div className="productDetails__image">
 				<img src={pic} alt="" />
 			</div>
@@ -61,6 +66,12 @@ function ProductDetails() {
 					<div className="productDetails__info__description">
 						{product_description}
 					</div>
+					<QuantityPicker name="Quantity" />
+					<Button
+						variant="primary"
+						name="Add To Cart"
+						size="sq large"
+					/>
 				</div>
 			)}
 			<div className="productDetails__specifications">
@@ -99,7 +110,10 @@ function ProductDetails() {
 			</div>
 			<CustomerReviews />
 			<div className="productDetails__new-review-form-wrapper">
-				<NewReviewForm />
+				<NewReviewForm id="review-form" />
+			</div>
+			<div className="productDetails__review-list">
+				<ProductReviewsList />
 			</div>
 		</div>
 	);
