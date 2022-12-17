@@ -7,6 +7,8 @@
 	background-color: $background-green;
 	width: 100%;
 	padding: 0 30px;
+	position: fixed;
+	z-index: 4;
 
 	&__header {
 		display: flex;
@@ -15,9 +17,22 @@
 		width: 100%;
 		max-width: 1200px;
 
-		&__hamburgerMenu {
-			display: none;
+		&__left {
+			display: flex;
+			align-items: center;
 		}
+
+		&__hamburgerMenu {
+			margin-right: 15px;
+			font-size: 30px;
+			color: $icon-color;
+			cursor: pointer;
+
+			&__hide {
+				display: none;
+			}
+		}
+
 		&__logo {
 			display: flex;
 			justify-content: flex-start;
@@ -95,10 +110,14 @@
 			flex-flow: row wrap;
 			justify-content: flex-start;
 			gap: 1rem;
+			z-index: 100;
 		}
 		&__menu .bottomnavcart {
 			display: none;
 		}
+	}
+	.collapsed {
+		display: none;
 	}
 }
 
@@ -163,7 +182,7 @@
 			right: 0;
 			left: 0;
 			top: 75px;
-			z-index: 999;
+			z-index: 100;
 
 			&__collapsed {
 				position: absolute;

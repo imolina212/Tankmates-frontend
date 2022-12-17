@@ -4,16 +4,19 @@ import { useSelector } from "react-redux";
 
 import MenuItem from "../menuItem/MenuItem";
 import MegaMenu from "../megaMenu/MegaMenu";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowDown, MdClear } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "./NavBar.scss";
 
 function NavBar({ loggedIn, setUserId }) {
 	const [expandNavbar, setExpandNavbar] = useState(false);
+	const [condenseNavbar, setCondenseNavbar] = useState(false);
+	const [showNavBottom, setShowNavBottom] = useState(true);
 
 	const toggleMenu = () => {
 		setExpandNavbar(!expandNavbar);
+		setShowNavBottom(!showNavBottom);
 	};
 
 	const cart = useSelector((state) => state.cart);
@@ -34,21 +37,56 @@ function NavBar({ loggedIn, setUserId }) {
 		setExpandNavbar(false);
 	};
 
+	const collapseNavBarOnScroll = () => {
+		const y = window.scrollY;
+
+		if (y === 0) {
+			setShowNavBottom(true);
+			setExpandNavbar(true);
+		}
+
+		if (y >= 300) {
+			setCondenseNavbar(true);
+			setExpandNavbar(false);
+		} else {
+			setCondenseNavbar(false);
+		}
+	};
+
+	window.addEventListener("scroll", collapseNavBarOnScroll);
+
 	return (
 		<div className="navbar">
 			<div className="navbar__header">
-				<div className="navbar__header__hamburgerMenu">
-					<GiHamburgerMenu onClick={toggleMenu} />
-				</div>
-
-				<div className="navbar__header__logo">
-					<div className="navbar__header__logo__image">
-						<img src="/tankmates_logo2.png" alt="TankMates logo" />
+				<div className="navbar__header__left">
+					<div
+						className={
+							condenseNavbar
+								? "navbar__header__hamburgerMenu"
+								: "navbar__header__hamburgerMenu__hide"
+						}
+					>
+						<div className="navbar__header__hamburgerMenu_icon">
+							{showNavBottom ? (
+								<GiHamburgerMenu onClick={toggleMenu} />
+							) : (
+								<MdClear className="" onClick={toggleMenu} />
+							)}
+						</div>
 					</div>
-					<div className="navbar__header__logo__title">
-						<Link to="/" onClick={handleClick}>
-							tankmates
-						</Link>
+
+					<div className="navbar__header__logo">
+						<div className="navbar__header__logo__image">
+							<img
+								src="/tankmates_logo2.png"
+								alt="TankMates logo"
+							/>
+						</div>
+						<div className="navbar__header__logo__title">
+							<Link to="/" onClick={handleClick}>
+								tankmates
+							</Link>
+						</div>
 					</div>
 				</div>
 
