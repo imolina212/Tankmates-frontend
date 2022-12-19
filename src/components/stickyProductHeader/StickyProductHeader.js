@@ -4,7 +4,7 @@ import QuantityPicker from "../quantityPicker/QuantityPicker";
 import Button from "../button/Button";
 import "./StickyProductHeader.scss";
 
-const StickyProductHeader = ({ title, price, pic }) => {
+const StickyProductHeader = ({ id, title, price, pic }) => {
 	const [bgColor, setBgColor] = useState(false);
 
 	const changeBgColorOnScroll = () => {
@@ -28,7 +28,7 @@ const StickyProductHeader = ({ title, price, pic }) => {
 			}
 		>
 			<div className="sticky-product-header__image">
-				<img src={pic} />
+				<img src={pic} alt="product-thumbnail" />
 			</div>
 			<div className="sticky-product-header__details">
 				<div className="sticky-product-header__details__title">
@@ -38,7 +38,7 @@ const StickyProductHeader = ({ title, price, pic }) => {
 					$ {price}
 				</div>
 			</div>
-			<QuantityPicker name="Qty" />
+			<QuantityPicker label="Qty" id={id} />
 			<Button name="Add to Cart" variant="primary" size="sq large" />
 		</div>
 	);
