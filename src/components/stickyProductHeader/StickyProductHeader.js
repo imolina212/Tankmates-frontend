@@ -2,10 +2,13 @@ import React, { useState } from "react";
 
 import QuantityPicker from "../quantityPicker/QuantityPicker";
 import Button from "../button/Button";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice.js";
 import "./StickyProductHeader.scss";
 
-const StickyProductHeader = ({ id, title, price, pic }) => {
+const StickyProductHeader = ({ id, title, brand, price, pic, rating }) => {
 	const [bgColor, setBgColor] = useState(false);
+	const dispatch = useDispatch();
 
 	const changeBgColorOnScroll = () => {
 		const y = window.scrollY;
@@ -39,7 +42,23 @@ const StickyProductHeader = ({ id, title, price, pic }) => {
 				</div>
 			</div>
 			<QuantityPicker label="Qty" id={id} />
-			<Button name="Add to Cart" variant="primary" size="sq large" />
+			<Button
+				name="Add to Cart"
+				variant="primary"
+				size="sq large"
+				onClick={() =>
+					dispatch(
+						addToCart({
+							id,
+							title,
+							brand,
+							image: pic,
+							price,
+							rating,
+						})
+					)
+				}
+			/>
 		</div>
 	);
 };
