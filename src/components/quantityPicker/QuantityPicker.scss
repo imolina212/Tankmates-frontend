@@ -1,0 +1,42 @@
+@import "./../designUtils/colors";
+
+.qty-picker-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 40px;
+	width: 200px;
+	margin: 10px 0;
+
+	.qty-picker {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		border: 1px solid $border-color;
+		border-radius: 3px;
+
+		input {
+			text-align: center;
+			height: 80%;
+			width: 50px;
+			border: none;
+		}
+		input[type="number"]::-webkit-inner-spin-button,
+		input[type="number"]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		button {
+			height: 100%;
+			width: 30px;
+			background-color: inherit;
+			border: none;
+			font-size: 20px;
+
+			&:hover {
+				background-color: #eee;
+				cursor: pointer;
+			}
+		}
+	}
+}
