@@ -10,7 +10,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "./NavBar.scss";
 
 function NavBar({ loggedIn, setUserId }) {
-	const [expandNavbar, setExpandNavbar] = useState(false);
+	const [expandNavbar, setExpandNavbar] = useState(true);
 	const [condenseNavbar, setCondenseNavbar] = useState(false);
 	const [showNavBottom, setShowNavBottom] = useState(true);
 
@@ -29,9 +29,9 @@ function NavBar({ loggedIn, setUserId }) {
 		return total;
 	};
 
-	useEffect(() => {
-		setExpandNavbar(false);
-	}, []);
+	// useEffect(() => {
+	// 	setExpandNavbar(true);
+	// }, []);
 
 	const handleClick = () => {
 		setExpandNavbar(false);
@@ -40,7 +40,7 @@ function NavBar({ loggedIn, setUserId }) {
 	const collapseNavBarOnScroll = () => {
 		const y = window.scrollY;
 
-		if (y === 0) {
+		if (y < 100) {
 			setShowNavBottom(true);
 			setExpandNavbar(true);
 		}
@@ -70,9 +70,16 @@ function NavBar({ loggedIn, setUserId }) {
 							{showNavBottom ? (
 								<GiHamburgerMenu onClick={toggleMenu} />
 							) : (
-								<MdClear className="" onClick={toggleMenu} />
+								<MdClear size={35} onClick={toggleMenu} />
 							)}
 						</div>
+						<div
+							className={
+								expandNavbar
+									? "navbar__header__mobileMenu"
+									: "navbar__header__mobileMenu__hide"
+							}
+						></div>
 					</div>
 
 					<div className="navbar__header__logo">
@@ -83,34 +90,28 @@ function NavBar({ loggedIn, setUserId }) {
 							/>
 						</div>
 						<div className="navbar__header__logo__title">
-							<Link to="/" onClick={handleClick}>
-								tankmates
-							</Link>
+							<Link to="/">tankmates</Link>
 						</div>
 					</div>
 				</div>
 
 				<div className="navbar__header__right">
-					<div className="navbar__header__right__cart">
-						<div className="navbar__header__right__cart__icon">
-							<Link to="/cart" onClick={handleClick}>
-								<div>
-									<FiShoppingCart />
-								</div>
+					<Link to="/cart">
+						<div className="navbar__header__right__cart">
+							<div className="navbar__header__right__cart__icon">
+								<FiShoppingCart size={25} />
 								<div className="navbar__header__right__cart__totalItems">
 									{getTotalQuantity() || 0}
 								</div>
-							</Link>
-						</div>
-						<div className="navbar__header__right__cart__text">
-							<span>
-								<Link to="/cart" onClick={handleClick}>
+							</div>
+							<div className="navbar__header__right__cart__text">
+								<span>
 									your cart
 									<MdKeyboardArrowDown />
-								</Link>
-							</span>
+								</span>
+							</div>
 						</div>
-					</div>
+					</Link>
 				</div>
 			</div>
 			<div
@@ -122,15 +123,15 @@ function NavBar({ loggedIn, setUserId }) {
 					<MenuItem text="Shop">
 						<MegaMenu />
 					</MenuItem>
-					<Link to="/tanks" onClick={handleClick}>
+					<Link to="/tanks">
 						<MenuItem text="My Tanks" />
 					</Link>
-					<Link to="/about" onClick={handleClick}>
+					<Link to="/about">
 						<MenuItem text="About" />
 					</Link>
 					<Link
 						to={loggedIn ? "/" : "/login"}
-						onClick={loggedIn ? () => setUserId(0) : handleClick}
+						onClick={loggedIn ? () => setUserId(0) : ""}
 					>
 						<MenuItem text={loggedIn ? "Log out" : "Log in"} />
 					</Link>
