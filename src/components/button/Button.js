@@ -2,10 +2,17 @@ import React from "react";
 
 import "./Button.scss";
 
-const Button = ({ name = "name", variant = "variant", size = "size" }) => {
+const Button = ({
+	name = "name",
+	variant = "variant",
+	size = "size",
+	...buttonProps
+}) => {
 	return (
 		<div className="button-container">
-			<button className={`btn ${variant} ${size}`}>{name}</button>
+			<button {...buttonProps} className={`btn ${variant} ${size}`}>
+				{name}
+			</button>
 		</div>
 	);
 };
