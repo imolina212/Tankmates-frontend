@@ -38,5 +38,10 @@
 				cursor: pointer;
 			}
 		}
+		.not-allowed {
+			&:hover {
+				cursor: not-allowed;
+			}
+		}
 	}
 }

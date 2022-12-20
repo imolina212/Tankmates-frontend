@@ -8,7 +8,10 @@ const QuantityPicker = ({ label, quantity = 1, onIncrement, onDecrement }) => {
 		<div className="qty-picker-container">
 			<span>{label}</span>
 			<div className="qty-picker">
-				<button onClick={onDecrement}>
+				<button
+					className={quantity === 1 ? "not-allowed" : ""}
+					onClick={onDecrement}
+				>
 					<AiOutlineMinus />
 				</button>
 				<input type="number" value={quantity} />
