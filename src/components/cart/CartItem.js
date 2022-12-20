@@ -4,7 +4,7 @@ import {
 	removeItem,
 } from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
-import { FiMinus, FiPlus } from "react-icons/fi";
+import QuantityPicker from "./../quantityPicker/QuantityPicker";
 import "./CartItem.scss";
 
 function CartItem({ id, image, title, price, quantity = 0 }) {
@@ -19,14 +19,13 @@ function CartItem({ id, image, title, price, quantity = 0 }) {
 					<small>$</small>
 					<strong>{price}</strong>
 				</p>
-				<div className="cartItem__incrDec">
-					<button onClick={() => dispatch(decrementQuantity(id))}>
-						<FiMinus />
-					</button>
-					<p>{quantity}</p>
-					<button onClick={() => dispatch(incrementQuantity(id))}>
-						<FiPlus />
-					</button>
+				<div className="cartItem__quantityPicker">
+					<QuantityPicker
+						label="Qty :"
+						quantity={quantity}
+						onIncrement={() => dispatch(incrementQuantity(id))}
+						onDecrement={() => dispatch(decrementQuantity(id))}
+					/>
 				</div>
 				<button
 					className="cartItem__removeButton"

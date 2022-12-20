@@ -36,46 +36,23 @@
 		line-height: 35px;
 	}
 
-	&__incrDec {
+	&__quantityPicker {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 		margin: 10px 0;
-		width: 100px;
-	}
-
-	&__incrDec button {
-		width: 25px;
-		height: 25px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: gainsboro;
-		border: none;
-		border-radius: 100px;
-		cursor: pointer;
-	}
-
-	&__incrDec button:hover {
-		background-color: green;
-		color: white;
-	}
-
-	&__incrDec button:active {
-		box-shadow: unset;
 	}
 
 	&__removeButton {
 		color: rgb(241, 131, 131);
 		cursor: pointer;
-	}
 
-	&__removeButton:hover {
-		color: rgb(243, 92, 92);
-	}
+		&:hover {
+			color: rgb(243, 92, 92);
+		}
 
-	&__removeButton:active {
-		color: rgb(241, 131, 131);
+		&:active {
+			color: rgb(241, 131, 131);
+		}
 	}
 }
 
