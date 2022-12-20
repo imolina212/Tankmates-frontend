@@ -6,7 +6,7 @@ import "./QuantityPicker.scss";
 const QuantityPicker = ({ label, quantity = 1, onIncrement, onDecrement }) => {
 	return (
 		<div className="qty-picker-container">
-			<span>{label}</span>
+			<span className="qty-picker__label">{label}</span>
 			<div className="qty-picker">
 				<button
 					className={quantity === 1 ? "not-allowed" : ""}

@@ -41,7 +41,7 @@ const StickyProductHeader = ({ id, title, brand, price, pic, rating }) => {
 					$ {price}
 				</div>
 			</div>
-			<QuantityPicker label="Qty" id={id} />
+			<QuantityPicker label="Qty :" id={id} />
 			<Button
 				name="Add to Cart"
 				variant="primary"
