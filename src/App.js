@@ -15,6 +15,7 @@ import NewTankmate from "./components/tankmates/NewTankmate";
 import NewTankLog from "./components/newTankLog/NewTankLog";
 import About from "./pages/about/About";
 import Signup from "./components/signup/Signup";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import "./App.scss";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<ScrollToTop />
 			<NavBar loggedIn={userId} setUserId={setUserId} />
 			<div className="page-content">
 				<Routes loggedInUserId={userId}>
