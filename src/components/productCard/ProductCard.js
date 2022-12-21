@@ -1,9 +1,15 @@
 import React from "react";
-import { addToCart } from "../../redux/cartSlice";
 import getStars from "../designUtils/getStars.js";
 import "./ProductCard.scss";
 
-function ProductCard({ id, title, image, price, brand, rating }) {
+const ProductCard = ({
+	id,
+	product_name: title,
+	pic: image,
+	price,
+	brand,
+	rating,
+}) => {
 	return (
 		<div className="product-card">
 			<div className="product-card__canvas">
@@ -31,6 +37,6 @@ function ProductCard({ id, title, image, price, brand, rating }) {
 			</div>
 		</div>
 	);
-}
+};
 
 export default ProductCard;
