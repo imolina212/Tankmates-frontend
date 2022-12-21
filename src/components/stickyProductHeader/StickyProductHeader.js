@@ -7,25 +7,23 @@ import { addToCart } from "../../redux/cartSlice.js";
 import "./StickyProductHeader.scss";
 
 const StickyProductHeader = ({ id, title, brand, price, pic, rating }) => {
-	const [bgColor, setBgColor] = useState(false);
+	const [visibility, setVisibility] = useState(false);
 	const dispatch = useDispatch();
 
-	const changeBgColorOnScroll = () => {
-		const y = window.scrollY;
-
-		if (y >= 400) {
-			setBgColor(true);
+	const changeVisibilityOnScroll = () => {
+		if (window.scrollY >= 400) {
+			setVisibility(true);
 		} else {
-			setBgColor(false);
+			setVisibility(false);
 		}
 	};
 
-	window.addEventListener("scroll", changeBgColorOnScroll);
+	window.addEventListener("scroll", changeVisibilityOnScroll);
 
 	return (
 		<div
 			className={
-				bgColor
+				visibility
 					? "sticky-product-header"
 					: "sticky-product-header sticky-product-header__hide"
 			}
