@@ -44,6 +44,7 @@ const StickyProductHeader = ({ id, title, brand, price, pic, rating }) => {
 				name="Add to Cart"
 				variant="primary"
 				size="sq large"
+				arrow={true}
 				onClick={() =>
 					dispatch(
 						addToCart({
