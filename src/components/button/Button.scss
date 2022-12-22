@@ -43,6 +43,17 @@
 	}
 }
 
+.outline-danger {
+	background-color: $icon-color;
+	color: red;
+	border: 1px solid red;
+
+	&:hover {
+		background-color: red;
+		color: $btn-primary-text-color;
+	}
+}
+
 .rnd {
 	border-radius: 20px;
 }
@@ -51,12 +62,23 @@
 	border-radius: 5px;
 }
 
-.medium {
+.small {
 	height: 34px;
 	padding: 10px 20px;
 }
+
+.medium {
+	height: 45px;
+	padding: 10px 20px;
+	text-transform: uppercase;
+}
+
 .large {
 	text-transform: uppercase;
 	height: 47px;
 	padding: 12px 20px;
+}
+
+.extend {
+	width: 100%;
 }
