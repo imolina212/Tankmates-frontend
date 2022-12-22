@@ -28,6 +28,11 @@
 	color: $btn-primary-text-color;
 }
 
+.dark:hover {
+	background-color: #0b5b11;
+	opacity: unset;
+}
+
 .outline-primary {
 	background-color: inherit;
 	border: 2px solid $btn-primary-color;

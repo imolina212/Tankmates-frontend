@@ -18,7 +18,7 @@ export default function Home() {
 							<Link to="/shop">
 								<Button
 									name="Shop Live Plants"
-									variant="primary"
+									variant="primary dark"
 									size="sq large"
 									arrow={true}
 								/>
@@ -36,7 +36,7 @@ export default function Home() {
 							<Link to="/shop">
 								<Button
 									name="Shop Fish Food"
-									variant="primary"
+									variant="primary dark"
 									size="sq large"
 									arrow={true}
 								/>
@@ -54,7 +54,7 @@ export default function Home() {
 							<Link to="/shop">
 								<Button
 									name="Shop the easy range"
-									variant="primary"
+									variant="primary dark"
 									size="sq large"
 									arrow={true}
 								/>
