@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IoArrowForwardCircle } from "react-icons/io5";
+import Button from "./../button//Button";
 import "./Newsletter.scss";
 
 function Newsletter() {
@@ -20,10 +20,12 @@ function Newsletter() {
 							type="text"
 							placeholder="Enter your email address"
 						></input>
-						<div className="button">
-							SIGN UP NOW
-							<IoArrowForwardCircle className="button-icon" />
-						</div>
+						<Button
+							name="sign up now"
+							variant="primary"
+							size="sq large"
+							arrow={true}
+						></Button>
 					</div>
 				</form>
 			</div>

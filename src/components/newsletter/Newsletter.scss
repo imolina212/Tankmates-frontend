@@ -24,41 +24,22 @@
 		display: flex;
 		align-items: center;
 		flex-flow: row wrap;
+		background-color: $icon-color;
+		height: 70px;
+		padding: 0 20px;
+		border-radius: 5px;
 
 		input {
-			height: 45px;
-			width: 300px;
+			height: 50px;
+			width: 400px;
 			border-top-left-radius: 5px;
 			border-bottom-left-radius: 5px;
-			border: 1px solid #eee;
+			border: none;
 			font-size: 18px;
 			padding-left: 10px;
 
 			&:focus {
 				outline: none;
-			}
-		}
-
-		.button {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			background-color: $background-green;
-			color: $icon-color;
-			height: 42px;
-			width: 160px;
-			font-weight: 200;
-			border: none;
-			border-top-right-radius: 5px;
-			border-bottom-right-radius: 5px;
-			padding: 0px 12px;
-			cursor: pointer;
-
-			.button-icon {
-				font-size: 20px;
-				background-color: $background-green;
-				color: $icon-color;
-				margin-left: 5px;
 			}
 		}
 	}
@@ -70,9 +51,6 @@
 		flex-direction: column wrap;
 		&__formInput {
 			input {
-				width: 100%;
-			}
-			button {
 				width: 100%;
 			}
 		}
