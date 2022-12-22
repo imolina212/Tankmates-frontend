@@ -66,6 +66,15 @@ export default function Home() {
 					</Link>
 				</div>
 			</div>
+			<div className="home-page__text">
+				<div className="home-page__text__heading">
+					At tankmates, we focus on your aquarium
+				</div>
+				<div className="home-page__text__content">
+					We specialize in aquatic plants, freshwater tropical fish
+					and supporting the freshwater fishkeeping community.
+				</div>
+			</div>
 			<div className="carousel-container">
 				<Carousel />
 			</div>

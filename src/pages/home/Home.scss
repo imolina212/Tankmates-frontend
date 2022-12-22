@@ -10,6 +10,7 @@
 		grid-template-rows: repeat(2, 1fr);
 		grid-gap: 10px;
 		margin: 30px 0;
+		padding: 0 0 30px;
 
 		&__item {
 			border: 1px solid $border-color;
@@ -58,6 +59,24 @@
 			h2 {
 				color: $text-color-light;
 			}
+		}
+	}
+
+	&__text {
+		padding: 35px 0;
+		font-size: 22px;
+		font-weight: normal;
+		text-align: center;
+		line-height: 1.5;
+
+		&__heading {
+			margin-bottom: 18px;
+			font-size: 30px;
+		}
+
+		&__content {
+			margin: 0 100px;
+			padding: 0 145px;
 		}
 	}
 }
