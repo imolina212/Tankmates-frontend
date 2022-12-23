@@ -46,7 +46,7 @@ function Categories() {
 			label: "Discus",
 		},
 	];
-	console.log(imageArr);
+
 	return (
 		<div className="image-slider">
 			{imageArr.map((image, index) => {

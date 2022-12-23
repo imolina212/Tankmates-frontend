@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Tank from "../../components/tank/Tank";
 import "./MyTanks.scss";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -21,7 +21,6 @@ const MyTanks = ({ loggedInUserId }) => {
 		axios
 			.get(`${API}/tanks/user/${loggedInUserId}`)
 			.then((response) => {
-				console.log("MYTANKS RESPONSE", response.data);
 				setTanks(response.data);
 			})
 			.catch((err) => {
@@ -31,8 +30,10 @@ const MyTanks = ({ loggedInUserId }) => {
 	if (!loggedInUserId) {
 		return (
 			<div className="myTanks-page">
-				<p>Please log in to view or add tanks</p>
-				<p>Redirecting to login page</p>
+				<div className="myTanks-page__message">
+					<p>Please log in to view or add tanks</p>
+					<p>Redirecting to login page</p>
+				</div>
 			</div>
 		);
 	}

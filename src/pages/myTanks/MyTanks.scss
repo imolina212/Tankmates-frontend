@@ -2,4 +2,9 @@
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
+	align-items: center;
+
+	&__message {
+		font-size: 26px;
+	}
 }
