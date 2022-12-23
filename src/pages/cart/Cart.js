@@ -23,6 +23,7 @@ function Cart() {
 									name="Continue Shopping"
 									variant="primary"
 									size="sq large"
+									arrow={true}
 								/>
 							</Link>
 						</div>

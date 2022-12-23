@@ -10,7 +10,7 @@ const MegaMenu = () => {
 				<img
 					className="megaMenu__category__image"
 					src="/productImages/plants.avif"
-					alt="category-image"
+					alt="Plants"
 				/>
 				<div className="megaMenu__category__header">Plants</div>
 				<ul>
@@ -35,15 +35,21 @@ const MegaMenu = () => {
 				<img
 					className="megaMenu__category__image"
 					src="/productImages/fish.avif"
-					alt="category-image"
+					alt="Fish Supplies"
 				/>
 				<div className="megaMenu__category__header">Fish Supplies</div>
 				<ul>
-					<li className="megaMenu__category__item">Fish Food</li>
-					<li className="megaMenu__category__item">Fish Meds</li>
-					<li className="megaMenu__category__item">
-						Breeding Supplies
-					</li>
+					<Link to="/shop">
+						<li className="megaMenu__category__item">Fish Food</li>
+					</Link>
+					<Link to="/shop">
+						<li className="megaMenu__category__item">Fish Meds</li>
+					</Link>
+					<Link to="/shop">
+						<li className="megaMenu__category__item">
+							Breeding Supplies
+						</li>
+					</Link>
 					<li className="megaMenu__category__item">Live Fish</li>
 				</ul>
 			</div>
@@ -51,7 +57,7 @@ const MegaMenu = () => {
 				<img
 					className="megaMenu__category__image"
 					src="/productImages/chemicals.avif"
-					alt="category-image"
+					alt="Aquarium Care"
 				/>
 				<div className="megaMenu__category__header">Aquarium Care</div>
 				<ul>
@@ -73,7 +79,7 @@ const MegaMenu = () => {
 				<img
 					className="megaMenu__category__image"
 					src="/productImages/merch.webp"
-					alt="category-image"
+					alt="Gifts & Merch"
 				/>
 				<div className="megaMenu__category__header">Gifts & Merch</div>
 				<ul>
