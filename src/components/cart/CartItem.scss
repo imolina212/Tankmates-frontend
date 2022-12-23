@@ -1,9 +1,9 @@
 .cartItem {
 	display: flex;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 20px 0;
 	border-bottom: 1px solid gainsboro;
 	padding-bottom: 20px;
+	position: relative;
 
 	&:last-child {
 		border-bottom: none;
@@ -43,16 +43,10 @@
 	}
 
 	&__removeButton {
-		color: rgb(241, 131, 131);
+		position: absolute;
+		top: 0;
+		right: 0;
 		cursor: pointer;
-
-		&:hover {
-			color: rgb(243, 92, 92);
-		}
-
-		&:active {
-			color: rgb(241, 131, 131);
-		}
 	}
 }
 
