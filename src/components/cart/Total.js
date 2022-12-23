@@ -28,7 +28,7 @@ function Total() {
 			</div>
 			<div className="total__buttonStack">
 				<Button
-					name="Proceed to Checkout"
+					name={"Checkout - $" + getTotal().totalPrice}
 					variant="primary"
 					size="sq medium extend"
 					arrow={true}
