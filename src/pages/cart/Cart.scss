@@ -4,12 +4,23 @@
 		margin: 30px auto;
 		height: max-content;
 		padding: 20px 20px 0 20px;
-		gap: 20px;
+		gap: 50px;
 		flex: 1;
 
 		&__left {
 			padding: 20px;
 			width: 100%;
+
+			&__message {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				height: 80px;
+				padding: 20px 0;
+				margin: 30px 0;
+				gap: 15px;
+			}
 		}
 
 		&__left h3 {
