@@ -110,6 +110,8 @@
 	}
 
 	&__bottom {
+		display: flex;
+		justify-content: space-between;
 		width: 100%;
 		max-width: 1200px;
 
@@ -124,8 +126,22 @@
 			gap: 1rem;
 			z-index: 100;
 		}
-		&__menu .bottomnavcart {
-			display: none;
+
+		&__login {
+			&__greeting {
+				float: right;
+				font-size: 70%;
+				position: relative;
+				top: 8px;
+				right: 5px;
+			}
+
+			&__text {
+				font-weight: bold;
+				clear: right;
+				position: relative;
+				top: -5px;
+			}
 		}
 	}
 	.collapsed {
@@ -198,27 +214,6 @@
 		&__bottom {
 			display: none;
 		}
-		// &__bottom {
-		// 	position: absolute;
-		// 	right: 0;
-		// 	left: 0;
-		// 	top: 75px;
-		// 	z-index: 100;
-
-		// 	&__collapsed {
-		// 		position: absolute;
-		// 		right: 0;
-		// 		right: -100%;
-		// 		top: 75px;
-		// 	}
-
-		// 	&__menu {
-		// 		margin: 0 0 0 auto;
-		// 		flex-flow: column wrap;
-		// 		max-width: 100%;
-		// 		gap: 0;
-		// 	}
-		// }
 	}
 
 	.collapsed {

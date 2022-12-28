@@ -129,25 +129,28 @@ function NavBar({ loggedIn, setUserId }) {
 					<Link to="/about">
 						<MenuItem text="About" />
 					</Link>
-					<Link
-						to={loggedIn ? "/" : "/login"}
-						onClick={loggedIn ? () => setUserId(0) : ""}
-					>
-						<MenuItem text={loggedIn ? "Log out" : "Log in"} />
-					</Link>
-					<Link to="/cart" className="bottomnavcart">
-						<MenuItem
-							text={
-								<>
-									<FiShoppingCart className="cart-icon" />
-									<div className="cart-totalItems">
-										{getTotalQuantity() || 0}
-									</div>
-								</>
-							}
-						/>
+					<Link to="/help">
+						<MenuItem text="Help" />
 					</Link>
 				</ul>
+				<Link
+					to={loggedIn ? "/" : "/login"}
+					onClick={loggedIn ? () => setUserId(0) : ""}
+				>
+					<MenuItem
+						text={
+							<div className="navbar__bottom__login">
+								<p className="navbar__bottom__login__greeting">
+									Hello, {loggedIn ? "Username" : "Login"}
+								</p>
+								<p className="navbar__bottom__login__text">
+									Accounts & Lists
+									<MdKeyboardArrowDown className="arrow" />
+								</p>
+							</div>
+						}
+					/>
+				</Link>
 			</div>
 		</div>
 	);
