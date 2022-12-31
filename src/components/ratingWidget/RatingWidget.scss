@@ -1,0 +1,22 @@
+@import "./../designUtils/colors";
+
+.ratingWidget {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: color 0.2s;
+	padding: 15px 0;
+
+	label {
+		padding: 0 1px;
+	}
+
+	input[type="radio"] {
+		display: none;
+	}
+
+	.star {
+		cursor: pointer;
+		font-size: 30px;
+	}
+}
