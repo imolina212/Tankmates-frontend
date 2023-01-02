@@ -8,6 +8,7 @@ import "./StickyProductHeader.scss";
 
 const StickyProductHeader = ({ id, title, brand, price, pic, rating }) => {
 	const [visibility, setVisibility] = useState(false);
+	const [quantity, setQuantity] = useState(1);
 	const dispatch = useDispatch();
 
 	const changeVisibilityOnScroll = () => {
@@ -39,9 +40,15 @@ const StickyProductHeader = ({ id, title, brand, price, pic, rating }) => {
 					$ {price}
 				</div>
 			</div>
-			<QuantityPicker label="Qty :" id={id} />
+			<QuantityPicker
+				label="Qty :"
+				id={id}
+				quantity={quantity}
+				onIncrement={() => setQuantity(quantity + 1)}
+				onDecrement={() => setQuantity(Math.max(quantity - 1, 1))}
+			/>
 			<Button
-				name="Add to Cart"
+				name={`Add to Cart - $${(price * quantity).toFixed(2)}`}
 				variant="primary"
 				size="sq large"
 				arrow={true}
