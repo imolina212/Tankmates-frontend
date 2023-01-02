@@ -1,14 +1,13 @@
 @import "./../designUtils/colors";
 
 .imageSlider {
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column nowrap;
+	-webkit-user-select: none;
 
 	&__selected {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-position: center;
-		background-size: cover;
 		position: relative;
 		width: inherit;
 		max-width: 530px;
@@ -59,6 +58,7 @@
 		display: flex;
 		justify-content: flex-start;
 		flex-flow: row wrap;
+		cursor: pointer;
 
 		&__item {
 			height: 120px;
@@ -72,6 +72,7 @@
 				width: 120px;
 				border: 2px solid $background-green;
 			}
+
 			&:hover {
 				opacity: 0.5;
 				cursor: pointer;
