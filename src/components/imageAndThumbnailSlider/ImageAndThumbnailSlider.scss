@@ -1,3 +1,5 @@
+@import "./../designUtils/colors";
+
 .imageSlider {
 	display: block;
 
@@ -33,8 +35,6 @@
 			cursor: pointer;
 			background-color: #fffcef;
 			opacity: 0.6;
-			// &:hover {
-			// }
 		}
 
 		&__right {
@@ -70,7 +70,7 @@
 			&__selected {
 				height: 120px;
 				width: 120px;
-				border: 1px solid red;
+				border: 2px solid $background-green;
 			}
 			&:hover {
 				opacity: 0.5;
