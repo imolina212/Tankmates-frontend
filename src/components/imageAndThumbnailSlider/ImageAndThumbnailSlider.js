@@ -33,7 +33,9 @@ const ImageAndThumbnailSlider = ({ id }) => {
 						onMouseEnter={() => setHover(true)}
 						onMouseLeave={() => setHover(false)}
 						onClick={() => {
-							selectedImg > 0 && setSelectedImg(selectedImg - 1);
+							selectedImg > 0
+								? setSelectedImg(selectedImg - 1)
+								: setSelectedImg(imageArray.length - 1);
 						}}
 					>
 						<IoIosArrowBack className="imageSlider__selected__btn" />
@@ -53,8 +55,9 @@ const ImageAndThumbnailSlider = ({ id }) => {
 						onMouseEnter={() => setHover(true)}
 						onMouseLeave={() => setHover(false)}
 						onClick={() => {
-							selectedImg < imageArray.length - 1 &&
-								setSelectedImg(selectedImg + 1);
+							selectedImg < imageArray.length - 1
+								? setSelectedImg(selectedImg + 1)
+								: setSelectedImg(0);
 						}}
 					>
 						<IoIosArrowForward className="imageSlider__selected__btn" />
