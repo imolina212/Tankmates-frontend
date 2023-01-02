@@ -17,8 +17,7 @@ const ImageAndThumbnailSlider = ({ id }) => {
 	const [hover, setHover] = useState(false);
 
 	const handleClick = (index) => {
-		console.log("index ->", index);
-		setSelectedImg(imageArray[index]);
+		setSelectedImg(index);
 	};
 
 	return (
@@ -67,8 +66,8 @@ const ImageAndThumbnailSlider = ({ id }) => {
 					return (
 						<img
 							className={
-								image.id === i
-									? "imageSlider__collection__item__selected"
+								imageArray[selectedImg].id === i
+									? "imageSlider__collection__item imageSlider__collection__item__selected"
 									: "imageSlider__collection__item"
 							}
 							src={image.src}

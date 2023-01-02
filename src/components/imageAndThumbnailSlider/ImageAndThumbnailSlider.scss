@@ -5,7 +5,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		// border: 1px solid red;
 		background-position: center;
 		background-size: cover;
 		position: relative;
@@ -66,6 +65,7 @@
 			width: 120px;
 			padding: 2px;
 			margin-right: 10px;
+			margin-bottom: 5px;
 
 			&__selected {
 				height: 120px;
