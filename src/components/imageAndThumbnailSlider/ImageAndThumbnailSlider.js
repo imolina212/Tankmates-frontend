@@ -33,7 +33,10 @@ const ImageAndThumbnailSlider = ({ id, pic: imageArray }) => {
 					>
 						<IoIosArrowBack className="imageSlider__selected__btn" />
 					</div>
-					<img src={imageArray[selectedImg]} alt="" />
+					<img
+						src={imageArray ? imageArray[selectedImg] : ""}
+						alt=""
+					/>
 					<div
 						className={
 							hover
@@ -51,24 +54,22 @@ const ImageAndThumbnailSlider = ({ id, pic: imageArray }) => {
 				</div>
 			</div>
 			<div className="imageSlider__collection">
-				{imageArray.map((image, i) => {
-					return (
-						<div
-							key={i}
-							className={
-								selectedImg === i
-									? "imageSlider__collection__item imageSlider__collection__item__selected"
-									: "imageSlider__collection__item"
-							}
-						>
-							<img
-								src={image}
-								alt=""
+				{imageArray &&
+					imageArray.map((image, i) => {
+						return (
+							<div
+								key={i}
+								className={
+									selectedImg === i
+										? "imageSlider__collection__item imageSlider__collection__item__selected"
+										: "imageSlider__collection__item"
+								}
 								onClick={() => handleClick(i)}
-							/>
-						</div>
-					);
-				})}
+							>
+								<img src={image} alt="" />
+							</div>
+						);
+					})}
 			</div>
 		</div>
 	);
