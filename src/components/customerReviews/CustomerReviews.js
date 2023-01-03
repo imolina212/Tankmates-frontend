@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-import "./CustomerReviews.scss";
 import getStars from "../designUtils/getStars";
+import Button from "./../button/Button";
+import NewReviewForm from "../newReviewForm/NewReviewForm";
+import "./CustomerReviews.scss";
 
 const CustomerReviews = () => {
+	const [writeReview, setWriteReview] = useState(true);
+
 	return (
 		<div className="customer-reviews">
 			<div className="customer-reviews__header">Customer Reviews</div>
@@ -63,8 +67,26 @@ const CustomerReviews = () => {
 					</div>
 				</div>
 				<div className="customer-reviews__overview__button">
-					<button type="submit">Write a review</button>
+					<Button
+						name={writeReview ? "Cancel Review" : "Write A Review"}
+						type="submit"
+						onClick={() => setWriteReview(!writeReview)}
+						variant="primary"
+						size="rnd small"
+					/>
 				</div>
+			</div>
+			<div
+				className={
+					writeReview
+						? "customer-reviews__newForm"
+						: "customer-reviews__newForm__hide"
+				}
+			>
+				<NewReviewForm
+					writeReview={writeReview}
+					setWriteReview={setWriteReview}
+				/>
 			</div>
 		</div>
 	);

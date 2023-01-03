@@ -2,7 +2,7 @@
 
 .customer-reviews {
 	grid-column: 1 / span 2;
-	border-bottom: 1px solid rgba(51, 153, 153, 0.1);
+	border-bottom: 1px solid $border-color;
 	color: $text-color;
 
 	&__header {
@@ -34,8 +34,8 @@
 			margin: 0px 0px 24px;
 			padding: 0px 40px;
 			font-size: 80%;
-			border-left: 1px solid rgba(51, 153, 153, 0.1);
-			border-right: 1px solid rgba(51, 153, 153, 0.1);
+			border-left: 1px solid $border-color;
+			border-right: 1px solid $border-color;
 
 			&__item {
 				display: flex;
@@ -89,6 +89,15 @@
 			width: 50%;
 			border-radius: inherit;
 			background-color: $star-rating-color;
+		}
+	}
+
+	&__newForm {
+		border-top: 1px solid $border-color;
+
+		&__hide {
+			visibility: hidden;
+			height: 0;
 		}
 	}
 }
