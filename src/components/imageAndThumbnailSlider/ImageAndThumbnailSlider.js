@@ -54,6 +54,7 @@ const ImageAndThumbnailSlider = ({ id, pic: imageArray }) => {
 				{imageArray.map((image, i) => {
 					return (
 						<div
+							key={i}
 							className={
 								selectedImg === i
 									? "imageSlider__collection__item imageSlider__collection__item__selected"
