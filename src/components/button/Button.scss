@@ -6,7 +6,7 @@
 	align-items: center;
 	padding: 10px 0;
 	border: none;
-	font-size: 14px;
+	font-size: 16px;
 	letter-spacing: 0.1rem;
 	transition: 0.25s;
 	white-space: nowrap;
@@ -63,8 +63,13 @@
 }
 
 .small {
-	height: 34px;
-	padding: 10px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 36px;
+	min-width: 200px;
+	padding: 15px 20px;
+	letter-spacing: 1px;
 }
 
 .medium {
