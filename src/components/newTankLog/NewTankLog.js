@@ -1,5 +1,6 @@
 import React from "react";
 
+import Button from "../button/Button";
 import "./NewTankLog.scss";
 
 const NewTankLog = () => {
@@ -35,6 +36,7 @@ const NewTankLog = () => {
 					<input type="text" name="nitrate" id="nitrate" />
 				</div>
 			</form>
+			<Button name="Add Tank Log" variant="primary" size="sq medium" />
 		</div>
 	);
 };

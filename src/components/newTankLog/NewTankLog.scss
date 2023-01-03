@@ -1,0 +1,16 @@
+.form__container {
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	flex-flow: column;
+	margin-top: 100px;
+
+	&__inputField {
+		display: flex;
+		flex-direction: column;
+		input {
+			height: 30px;
+			width: 200px;
+		}
+	}
+}
