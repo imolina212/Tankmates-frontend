@@ -4,14 +4,13 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import getStars from "../designUtils/getStars.js";
 import CustomerReviews from "../customerReviews/CustomerReviews.js";
-import NewReviewForm from "../newReviewForm/NewReviewForm.js";
 import ProductReviewsList from "../productReviewsList/ProductReviewsList.js";
 import QuantityPicker from "../quantityPicker/QuantityPicker.js";
 import StickyProductHeader from "../stickyProductHeader/StickyProductHeader.js";
 import Button from "../button/Button.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice.js";
-import { incrementQuantity, decrementQuantity } from "../../redux/cartSlice.js";
+import ImageAndThumbnailSlider from "../imageAndThumbnailSlider/ImageAndThumbnailSlider.js";
 import "./ProductDetails.scss";
 
 function ProductDetails() {
@@ -20,8 +19,6 @@ function ProductDetails() {
 	const { id } = useParams();
 	const URL = process.env.REACT_APP_API_URL;
 	const dispatch = useDispatch();
-
-	// const quantity = useSelector((state) => state.cart.find());
 
 	useEffect(() => {
 		axios
@@ -53,7 +50,7 @@ function ProductDetails() {
 				pic={pic}
 			/>
 			<div className="productDetails__image">
-				<img src={pic} alt="" />
+				<ImageAndThumbnailSlider id={id} pic={pic} />
 			</div>
 			{Object.keys(product).length && (
 				<div className="productDetails__info">
@@ -90,6 +87,7 @@ function ProductDetails() {
 						variant="primary"
 						name="Add To Cart"
 						size="sq large"
+						arrow={true}
 						onClick={() =>
 							dispatch(
 								addToCart({
@@ -141,9 +139,6 @@ function ProductDetails() {
 			</div>
 			<div className="productDetails__reviews">
 				<CustomerReviews />
-				<div className="productDetails__new-review-form-wrapper">
-					<NewReviewForm id="review-form" />
-				</div>
 				<div className="productDetails__review-list">
 					<ProductReviewsList />
 				</div>
