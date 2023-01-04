@@ -14,7 +14,7 @@ const ProductCard = ({
 		<div className="product-card">
 			<div className="product-card__canvas">
 				<a href={`/shop/${id}`}>
-					<img src={image[0]} alt="" />
+					<img src={image && image[0]} alt={title} />
 				</a>
 			</div>
 			<div className="product-card__content">
