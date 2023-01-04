@@ -14,7 +14,7 @@ function CartItem({ id, image, title, price, quantity = 0 }) {
 	return (
 		<div className="cartItem">
 			<>
-				<img className="cartItem__image" src={image} alt="item" />
+				<img className="cartItem__image" src={image[0]} alt="item" />
 				<div className="cartItem__info">
 					<p className="cartItem__title">{title}</p>
 					<p className="cartItem__price">

@@ -30,7 +30,7 @@ const StickyProductHeader = ({ id, title, brand, price, pic, rating }) => {
 			}
 		>
 			<div className="sticky-product-header__image">
-				<img src={pic} alt="product-thumbnail" />
+				<img src={pic && pic[0]} alt="product-thumbnail" />
 			</div>
 			<div className="sticky-product-header__details">
 				<div className="sticky-product-header__details__title">
