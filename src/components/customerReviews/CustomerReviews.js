@@ -8,6 +8,10 @@ import "./CustomerReviews.scss";
 const CustomerReviews = () => {
 	const [writeReview, setWriteReview] = useState(true);
 
+	const getPercentageOfRating = (number, total) => {
+		return `${(number / total).toFixed(2) * 100}%`;
+	};
+
 	return (
 		<div className="customer-reviews">
 			<div className="customer-reviews__header">Customer Reviews</div>
@@ -25,7 +29,12 @@ const CustomerReviews = () => {
 							{getStars(5)}
 						</div>
 						<div className="customer-reviews__progress-bar">
-							<div className="customer-reviews__progress-bar__container"></div>
+							<div
+								className="customer-reviews__progress-bar__container"
+								style={{
+									width: getPercentageOfRating(125, 135),
+								}}
+							></div>
 						</div>
 						<div>126</div>
 					</div>
@@ -34,7 +43,10 @@ const CustomerReviews = () => {
 							{getStars(4)}
 						</div>
 						<div className="customer-reviews__progress-bar">
-							<div className="customer-reviews__progress-bar__container"></div>
+							<div
+								className="customer-reviews__progress-bar__container"
+								style={{ width: getPercentageOfRating(4, 135) }}
+							></div>
 						</div>
 						<div>4</div>
 					</div>
@@ -43,7 +55,10 @@ const CustomerReviews = () => {
 							{getStars(3)}
 						</div>
 						<div className="customer-reviews__progress-bar">
-							<div className="customer-reviews__progress-bar__container"></div>
+							<div
+								className="customer-reviews__progress-bar__container"
+								style={{ width: getPercentageOfRating(1, 135) }}
+							></div>
 						</div>
 						<div>1</div>
 					</div>
@@ -52,7 +67,10 @@ const CustomerReviews = () => {
 							{getStars(2)}
 						</div>
 						<div className="customer-reviews__progress-bar">
-							<div className="customer-reviews__progress-bar__container"></div>
+							<div
+								className="customer-reviews__progress-bar__container"
+								style={{ width: getPercentageOfRating(1, 135) }}
+							></div>
 						</div>
 						<div>1</div>
 					</div>
@@ -61,7 +79,10 @@ const CustomerReviews = () => {
 							{getStars(1)}
 						</div>
 						<div className="customer-reviews__progress-bar">
-							<div className="customer-reviews__progress-bar__container"></div>
+							<div
+								className="customer-reviews__progress-bar__container"
+								style={{ width: getPercentageOfRating(0, 135) }}
+							></div>
 						</div>
 						<div>0</div>
 					</div>

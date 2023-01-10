@@ -45,6 +45,11 @@
 				gap: 30px;
 				color: $text-color-secondary;
 
+				&:hover {
+					opacity: 0.5;
+					cursor: pointer;
+				}
+
 				&__stars {
 					display: flex;
 					flex-direction: row;
@@ -66,7 +71,7 @@
 
 		&__container {
 			height: inherit;
-			width: 50%;
+			// width: 50%;
 			border-radius: inherit;
 			background-color: $star-rating-color;
 		}
