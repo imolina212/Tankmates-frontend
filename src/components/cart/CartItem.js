@@ -6,6 +6,7 @@ import {
 import { useDispatch } from "react-redux";
 import QuantityPicker from "./../quantityPicker/QuantityPicker";
 import { MdClear } from "react-icons/md";
+import { Link } from "react-router-dom";
 import "./CartItem.scss";
 
 function CartItem({ id, image, title, price, quantity = 0 }) {
@@ -14,9 +15,17 @@ function CartItem({ id, image, title, price, quantity = 0 }) {
 	return (
 		<div className="cartItem">
 			<>
-				<img className="cartItem__image" src={image[0]} alt="item" />
+				<Link to={`/shop/${id}`}>
+					<img
+						className="cartItem__image"
+						src={image[0]}
+						alt="item"
+					/>
+				</Link>
 				<div className="cartItem__info">
-					<p className="cartItem__title">{title}</p>
+					<Link to={`/shop/${id}`} className="cartItem__title">
+						{title}
+					</Link>
 					<p className="cartItem__price">
 						<small>$</small>
 						<strong>{price}</strong>
