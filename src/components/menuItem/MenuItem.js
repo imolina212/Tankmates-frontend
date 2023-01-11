@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import "./MenuItem.scss";
 
-const MenuItem = ({ text, ...props }) => {
+const MenuItem = ({ text, relative, ...props }) => {
 	const [displaySubMenu, setDisplaySubMenu] = useState(false);
 
 	return (
@@ -11,6 +11,7 @@ const MenuItem = ({ text, ...props }) => {
 			className="menuItem"
 			onMouseEnter={() => setDisplaySubMenu(true)}
 			onMouseLeave={() => setDisplaySubMenu(false)}
+			style={relative && { position: "relative" }}
 		>
 			{text}
 			{props.children && <MdKeyboardArrowDown className="arrow" />}
