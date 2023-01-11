@@ -7,6 +7,8 @@ import MegaMenu from "../megaMenu/MegaMenu";
 import { MdKeyboardArrowDown, MdClear } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
+import SubMenu from "../subMenu/SubMenu";
+import SubMenuItem from "./../subMenuItem/SubMenuItem";
 import "./NavBar.scss";
 
 function NavBar({ loggedIn, setUserId }) {
@@ -28,10 +30,6 @@ function NavBar({ loggedIn, setUserId }) {
 		});
 		return total;
 	};
-
-	// useEffect(() => {
-	// 	setExpandNavbar(true);
-	// }, []);
 
 	const handleClick = () => {
 		setExpandNavbar(false);
@@ -124,13 +122,29 @@ function NavBar({ loggedIn, setUserId }) {
 						<MegaMenu />
 					</MenuItem>
 					<Link to="/tanks">
-						<MenuItem text="My Tanks" />
+						<MenuItem text="My Tanks" relative>
+							<SubMenu>
+								<SubMenuItem text="Display tank" />
+								<SubMenuItem text="Planted tank" />
+								<SubMenuItem text="Create a tank" />
+							</SubMenu>
+						</MenuItem>
 					</Link>
 					<Link to="/about">
-						<MenuItem text="About" />
+						<MenuItem text="About" relative>
+							<SubMenu>
+								<SubMenuItem text="About us" />
+								<SubMenuItem text="Meet the team" />
+							</SubMenu>
+						</MenuItem>
 					</Link>
 					<Link to="/help">
-						<MenuItem text="Help" />
+						<MenuItem text="Help" relative>
+							<SubMenu>
+								<SubMenuItem text="FAQ" />
+								<SubMenuItem text="Contact us" />
+							</SubMenu>
+						</MenuItem>
 					</Link>
 				</ul>
 				<Link
@@ -141,7 +155,7 @@ function NavBar({ loggedIn, setUserId }) {
 						text={
 							<div className="navbar__bottom__login">
 								<p className="navbar__bottom__login__greeting">
-									Hello, {loggedIn ? "Username" : "Login"}
+									Hello, {loggedIn ? "Isidro" : "Login"}
 								</p>
 								<p className="navbar__bottom__login__text">
 									Accounts & Lists
@@ -149,7 +163,7 @@ function NavBar({ loggedIn, setUserId }) {
 								</p>
 							</div>
 						}
-					/>
+					></MenuItem>
 				</Link>
 			</div>
 		</div>
