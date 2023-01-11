@@ -1,0 +1,9 @@
+@import "./../designUtils/colors";
+
+.subMenu {
+	width: 200px;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	border-bottom: 2px solid $background-green;
+}
