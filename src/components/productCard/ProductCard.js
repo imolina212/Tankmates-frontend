@@ -9,9 +9,14 @@ const ProductCard = ({
 	price,
 	brand,
 	rating,
+	in_stock,
 }) => {
+	console.log("image ->", image[0]);
 	return (
 		<div className="product-card">
+			{!in_stock && (
+				<div className="product-card__sold-out-badge">Sold Out</div>
+			)}
 			<div className="product-card__canvas">
 				<a href={`/shop/${id}`}>
 					<img src={image && image[0]} alt={title} />
