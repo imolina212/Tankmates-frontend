@@ -75,7 +75,8 @@ function Total() {
 			<div className="total__buttonStack">
 				<Button
 					name={
-						getTotal().totalPrice > 79.99
+						getTotal().totalPrice > 79.99 ||
+						Number(getTotal().totalPrice) === 0
 							? "Checkout - $" + getTotal().totalPrice
 							: "Checkout - $" +
 							  (Number(getTotal().totalPrice) + 5.99)
