@@ -1,15 +1,15 @@
 import React from "react";
 
-import getStars from "../designUtils/getStars.js";
+import RatingWidget from "../ratingWidget/RatingWidget.js";
 import "./NewReviewForm.scss";
 
-const NewReviewForm = () => {
+const NewReviewForm = ({ writeReview, setWriteReview }) => {
 	return (
-		<form className="review-form">
+		<form className={writeReview ? "review-form" : "review-form__hide"}>
 			<div className="review-form__title">Write a review</div>
 			<div className="review-form__fieldset">
 				<label>Rating</label>
-				<span className="stars">{getStars(5)}</span>
+				<RatingWidget />
 			</div>
 			<div className="review-form__fieldset rating">
 				<label htmlFor>Review Title</label>
@@ -48,7 +48,12 @@ const NewReviewForm = () => {
 				/>
 			</div>
 			<div className="review-form__fieldset-actions">
-				<div className="btn-secondary">Cancel Review</div>
+				<div
+					className="btn-secondary"
+					onClick={() => setWriteReview(!writeReview)}
+				>
+					Cancel Review
+				</div>
 				<input type="submit" value="Submit Review" />
 			</div>
 		</form>
