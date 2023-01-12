@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../../redux/cartSlice";
 import Button from "./../button/Button";
+import { TbTruckDelivery } from "react-icons/tb";
 import "./Total.scss";
 
 function Total() {
@@ -20,16 +21,64 @@ function Total() {
 
 	return (
 		<div className="total">
-			<h2>ORDER SUMMARY</h2>
-			<div>
-				<p className="total__p">
-					total ({getTotal().totalQuantity} items) :{" "}
-					<strong>${getTotal().totalPrice}</strong>
+			<div className="total__item">
+				<p className="total__p">Cart total</p>
+				<p>${getTotal().totalPrice}</p>
+			</div>
+			<div className="total__item">
+				<p className="total__p">Savings</p>
+				<p>$0.00</p>
+			</div>
+			<div className="total__item">
+				<p className="total__p">Sub-total</p>
+				<p>${getTotal().totalPrice}</p>
+			</div>
+			<div className="total__item">
+				<p className="total__p">Shipping</p>
+				<p>{getTotal().totalPrice > 79.99 ? "Free" : "$5.99"}</p>
+			</div>
+			<div className="total__item">
+				<p className="total__item__total">Total</p>
+				<p className="total__item__total zoomed">
+					$
+					{getTotal().totalPrice > 79.99
+						? getTotal().totalPrice
+						: Number(getTotal().totalPrice) + 5.99}
 				</p>
 			</div>
+			{getTotal().totalPrice < 79.99 ? (
+				<div className="total__item">
+					<div className="shipping-icon">
+						<TbTruckDelivery size={20} />
+					</div>
+					${(79.99 - getTotal().totalPrice).toFixed(2)} until
+					<span style={{ color: "green", fontWeight: "bold" }}>
+						FREE
+					</span>
+					shipping. Save $4.99.
+				</div>
+			) : (
+				<div className="shipping-msg">
+					<span>
+						<TbTruckDelivery className="shipping-icon" size={20} />
+					</span>
+					<p>
+						You get{" "}
+						<span style={{ color: "green", fontWeight: "bold" }}>
+							FREE
+						</span>{" "}
+						shipping!
+					</p>
+				</div>
+			)}
 			<div className="total__buttonStack">
 				<Button
-					name={"Checkout - $" + getTotal().totalPrice}
+					name={
+						getTotal().totalPrice > 79.99
+							? "Checkout - $" + getTotal().totalPrice
+							: "Checkout - $" +
+							  (Number(getTotal().totalPrice) + 5.99)
+					}
 					variant="primary"
 					size="sq medium extend"
 					arrow={true}

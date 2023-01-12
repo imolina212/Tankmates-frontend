@@ -3,7 +3,6 @@
 .total {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
 	width: 270px;
 	height: 110px;
 	padding: 20px;
@@ -11,13 +10,38 @@
 	min-width: 350px;
 	text-align: center;
 
-	&__p {
-		font-size: 20px;
-		font-weight: 450;
-		color: rgb(72, 77, 77);
-		text-align: center;
-		margin-top: 10px;
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		line-height: 1.5;
+
+		&__total {
+			font-weight: bold;
+		}
+		.zoomed {
+			font-size: 30px;
+		}
+		.shipping-icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: 5px;
+		}
 	}
+	.shipping-msg {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		.shipping-icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: 5px;
+		}
+	}
+
 	&__buttonStack {
 		display: flex;
 		justify-content: center;
