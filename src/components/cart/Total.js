@@ -35,7 +35,7 @@ function Total() {
 			</div>
 			<div className="total__item">
 				<p className="total__p">Shipping</p>
-				<p>{getTotal().totalPrice > 79.99 ? "Free" : "$5.99"}</p>
+				<p>{getTotal().totalPrice > 79.99 ? "Free" : "$4.99"}</p>
 			</div>
 			<div className="total__item">
 				<p className="total__item__total">Total</p>
