@@ -14,7 +14,7 @@ function Cart() {
 		<div className="cart">
 			<div className="cart__left">
 				<div>
-					<h3>Shopping Cart</h3>
+					<h3>Your Shopping Cart</h3>
 					{!cart.length && (
 						<div className="cart__left__message">
 							<p>To view cart items please</p>
