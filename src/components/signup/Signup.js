@@ -1,6 +1,6 @@
 import axios from "axios";
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Signup.scss";
 
@@ -12,6 +12,8 @@ const Signup = () => {
 	const lastname = useRef("");
 	const email = useRef("");
 	const password = useRef("");
+	const [errorMessage, setErrorMessage] = useState("");
+	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -24,10 +26,12 @@ const Signup = () => {
 		};
 		if (Object.values(payload).some((val) => !val)) return;
 		try {
-			console.log("signup.js payload", payload);
 			const response = await axios.post(`${API}/users/signup`, payload);
-			console.log("Signup.js response.data", response.data);
+			navigate("/login");
 		} catch (error) {
+			if (error.response.status === 400 && error.response.data.err) {
+				setErrorMessage(error.response.data.err);
+			}
 			console.log(error);
 		}
 	};
@@ -96,7 +100,11 @@ const Signup = () => {
 					</form>
 				</div>
 				<div className="signup__message">
-					<div className="signup__message__error"></div>
+					{errorMessage && (
+						<div className="signup__message__error">
+							{errorMessage}
+						</div>
+					)}
 					<div className="signup__message__terms">
 						By clicking "Sign up", you agree to tankmates Terms of
 						Use and Privacy Policy. California residents can review

@@ -4,6 +4,7 @@
 	background-color: #f2eee9;
 	border: 1px solid #eee;
 	padding: 40px 40px;
+	max-width: 600px;
 
 	&__heading {
 		font-size: 24px;
@@ -40,7 +41,7 @@
 	}
 	&__message {
 		text-align: center;
-		&__error span {
+		&__error {
 			color: #e02924;
 		}
 		&__terms {
