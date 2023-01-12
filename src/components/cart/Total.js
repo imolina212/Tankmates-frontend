@@ -41,7 +41,8 @@ function Total() {
 				<p className="total__item__total">Total</p>
 				<p className="total__item__total zoomed">
 					$
-					{getTotal().totalPrice > 79.99
+					{getTotal().totalPrice > 79.99 ||
+					Number(getTotal().totalPrice) === 0
 						? getTotal().totalPrice
 						: Number(getTotal().totalPrice) + 5.99}
 				</p>
