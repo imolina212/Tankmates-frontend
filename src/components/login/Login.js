@@ -18,7 +18,7 @@ const Login = ({ loggedInUserId, setUser }) => {
 		if (loggedInUserId) {
 			setTimeout(() => navigate("/tanks"), 500);
 		}
-	}, [loggedInUserId]);
+	}, [loggedInUserId, navigate]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -30,7 +30,7 @@ const Login = ({ loggedInUserId, setUser }) => {
 			});
 			setUser(response.data.id);
 		} catch (err) {
-			if (err.response.status == 400 && err.response.data.err) {
+			if (err.response.status === 400 && err.response.data.err) {
 				setErr(err.response.data.err);
 			}
 			console.log(err);
