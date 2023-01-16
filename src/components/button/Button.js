@@ -8,10 +8,14 @@ const Button = ({
 	variant = "variant",
 	size = "size",
 	arrow = false,
+	in_stock,
 	...buttonProps
 }) => {
 	return (
-		<div {...buttonProps} className={`btn ${variant} ${size}`}>
+		<div
+			{...buttonProps}
+			className={`btn ${variant} ${size} ${!in_stock && "disabled"}`}
+		>
 			{name}
 			{arrow && (
 				<IoArrowForwardCircle className="btn__arrow-icon" size={20} />

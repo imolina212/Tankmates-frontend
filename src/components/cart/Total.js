@@ -44,7 +44,7 @@ function Total() {
 					{getTotal().totalPrice > 79.99 ||
 					Number(getTotal().totalPrice) === 0
 						? Number(getTotal().totalPrice).toFixed(2)
-						: (Number(getTotal().totalPrice) + 5.99).toFixed(2)}
+						: (Number(getTotal().totalPrice) + 4.99).toFixed(2)}
 				</p>
 			</div>
 			{getTotal().totalPrice < 79.99 ? (
@@ -80,7 +80,7 @@ function Total() {
 							? "Checkout - $" +
 							  Number(getTotal().totalPrice).toFixed(2)
 							: "Checkout - $" +
-							  (Number(getTotal().totalPrice) + 5.99).toFixed(2)
+							  (Number(getTotal().totalPrice) + 4.99).toFixed(2)
 					}
 					variant="primary"
 					size="sq medium extend"
