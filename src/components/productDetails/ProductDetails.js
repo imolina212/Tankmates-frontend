@@ -85,10 +85,11 @@ function ProductDetails() {
 					/>
 					<Button
 						variant="primary"
-						name="Add To Cart"
+						name={in_stock ? "Add To Cart" : "Sold Out"}
 						size="sq large"
 						arrow={true}
 						onClick={() =>
+							in_stock &&
 							dispatch(
 								addToCart({
 									id,

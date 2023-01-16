@@ -6,7 +6,15 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice.js";
 import "./StickyProductHeader.scss";
 
-const StickyProductHeader = ({ id, title, brand, price, pic, rating }) => {
+const StickyProductHeader = ({
+	id,
+	title,
+	brand,
+	price,
+	pic,
+	rating,
+	in_stock,
+}) => {
 	const [visibility, setVisibility] = useState(false);
 	const [quantity, setQuantity] = useState(1);
 	const dispatch = useDispatch();
@@ -48,11 +56,16 @@ const StickyProductHeader = ({ id, title, brand, price, pic, rating }) => {
 				onDecrement={() => setQuantity(Math.max(quantity - 1, 1))}
 			/>
 			<Button
-				name={`Add to Cart - $${(price * quantity).toFixed(2)}`}
+				name={
+					in_stock
+						? `Add to Cart - $${(price * quantity).toFixed(2)}`
+						: "Sold Out"
+				}
 				variant="primary"
 				size="sq large"
 				arrow={true}
 				onClick={() =>
+					in_stock &&
 					dispatch(
 						addToCart({
 							id,
