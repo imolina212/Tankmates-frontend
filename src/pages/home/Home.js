@@ -26,7 +26,11 @@ export default function Home() {
 						</div>
 					</div>
 					<Link to="/shop">
-						<img src="/productImages/promo1_1.webp" alt="promo1" />
+						<img
+							src="/productImages/promo1_1.webp"
+							alt="promo1"
+							className="home-page__featured-promotions__item__image"
+						/>
 					</Link>
 				</div>
 				<div className="home-page__featured-promotions__item">
@@ -44,7 +48,11 @@ export default function Home() {
 						</div>
 					</div>
 					<Link to="/shop">
-						<img src="/productImages/promo2_1.jpg" alt="promo2" />
+						<img
+							src="/productImages/promo2_1.jpg"
+							alt="promo2"
+							className="home-page__featured-promotions__item__image"
+						/>
 					</Link>
 				</div>
 				<div className="home-page__featured-promotions__item">
@@ -62,7 +70,11 @@ export default function Home() {
 						</div>
 					</div>
 					<Link to="/shop">
-						<img src="/productImages/promo3.jpg" alt="promo3" />
+						<img
+							src="/productImages/promo3.jpg"
+							alt="promo3"
+							className="home-page__featured-promotions__item__image"
+						/>
 					</Link>
 				</div>
 			</div>

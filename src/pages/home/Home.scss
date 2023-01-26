@@ -14,20 +14,21 @@
 
 		&__item {
 			border: 1px solid $border-color;
+			border-radius: 5px;
 			position: relative;
 
-			img {
+			&__image {
 				height: 100%;
 				width: 100%;
+				border-radius: 5px;
 			}
 
 			&__content {
-				padding: 0 40px;
 				position: absolute;
-				bottom: 30px;
-				left: 0;
-				font-family: $font-stack-body;
+				bottom: 20px;
+				left: 20px;
 				color: $text-color;
+				font-family: $font-stack-body;
 
 				Button {
 					text-transform: uppercase;
@@ -81,18 +82,36 @@
 	}
 }
 
-@media (max-width: 800px) {
+@media (max-width: 989px) {
 	.home-page {
 		margin: 0px;
 
 		&__featured-promotions {
 			display: block;
-			// grid-template-columns: 1fr;
-			// grid-template-rows: repeat(3, 1fr);
-		}
-		&__item:nth-child(1) {
-			grid-column: 1;
-			grid-row: 1;
+
+			&__item {
+				height: 144px;
+				margin-bottom: 14px;
+
+				&:nth-child(1) {
+					height: 220px;
+				}
+
+				&__image {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+
+				&__content {
+					p {
+						font-size: 16px;
+					}
+					.mega-title {
+						font-size: 34px;
+					}
+				}
+			}
 		}
 	}
 }
