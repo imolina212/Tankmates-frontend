@@ -22,18 +22,8 @@ function ProductsGrid() {
 
 	return (
 		<div className="product-grid">
-			{products.map((product, index) => {
-				return (
-					<ProductCard
-						key={index}
-						id={product.id}
-						title={product.product_name}
-						brand={product.brand}
-						image={product.pic}
-						price={product.price}
-						rating={product.rating}
-					/>
-				);
+			{products.map((product) => {
+				return <ProductCard key={product.id} product={product} />;
 			})}
 		</div>
 	);
