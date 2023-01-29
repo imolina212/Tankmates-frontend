@@ -15,6 +15,7 @@ import "./ProductDetails.scss";
 
 function ProductDetails() {
 	const [product, setProduct] = useState({});
+	const [productImages, setProductImages] = useState([]);
 	const [quantity, setQuantity] = useState(1);
 	const { id } = useParams();
 	const URL = process.env.REACT_APP_API_URL;
@@ -25,6 +26,17 @@ function ProductDetails() {
 			.get(`${URL}/products/${id}`)
 			.then((response) => {
 				setProduct(response.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, [URL, id]);
+
+	useEffect(() => {
+		axios
+			.get(`${URL}/product-images/${id}`)
+			.then((response) => {
+				setProductImages(response.data);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -50,7 +62,7 @@ function ProductDetails() {
 				pic={pic}
 			/>
 			<div className="productDetails__image">
-				<ImageAndThumbnailSlider id={id} pic={pic} />
+				<ImageAndThumbnailSlider imageArray={productImages} />
 			</div>
 			{Object.keys(product).length && (
 				<div className="productDetails__info">
