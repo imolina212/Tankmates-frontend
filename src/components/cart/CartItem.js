@@ -16,11 +16,7 @@ function CartItem({ id, image, title, price, quantity = 0 }) {
 		<div className="cartItem">
 			<>
 				<Link to={`/shop/${id}`}>
-					<img
-						className="cartItem__image"
-						src={image[0]}
-						alt="item"
-					/>
+					<img className="cartItem__image" src={image} alt="item" />
 				</Link>
 				<div className="cartItem__info">
 					<Link to={`/shop/${id}`} className="cartItem__title">
