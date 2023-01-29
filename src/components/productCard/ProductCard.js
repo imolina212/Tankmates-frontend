@@ -2,17 +2,11 @@ import React from "react";
 import getStars from "../designUtils/getStars.js";
 import "./ProductCard.scss";
 
-const ProductCard = ({
-	id,
-	product_name: title,
-	pic,
-	price,
-	brand,
-	rating,
-	in_stock,
-}) => {
+const ProductCard = ({ product }) => {
+	const { id, key, title, pic, brand, price, rating, in_stock } = product;
+
 	return (
-		<div className="product-card">
+		<div className="product-card" key={key}>
 			{!in_stock && (
 				<div className="product-card__sold-out-badge">Sold Out</div>
 			)}
