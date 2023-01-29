@@ -5,13 +5,12 @@ import "./ProductCard.scss";
 const ProductCard = ({
 	id,
 	product_name: title,
-	pic: image,
+	pic,
 	price,
 	brand,
 	rating,
 	in_stock,
 }) => {
-	console.log("image ->", image[0]);
 	return (
 		<div className="product-card">
 			{!in_stock && (
@@ -19,7 +18,7 @@ const ProductCard = ({
 			)}
 			<div className="product-card__canvas">
 				<a href={`/shop/${id}`}>
-					<img src={image && image[0]} alt={title} />
+					<img src={pic} alt={title} />
 				</a>
 			</div>
 			<div className="product-card__content">
