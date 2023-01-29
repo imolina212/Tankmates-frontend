@@ -3,7 +3,8 @@ import getStars from "../designUtils/getStars.js";
 import "./ProductCard.scss";
 
 const ProductCard = ({ product }) => {
-	const { id, key, title, pic, brand, price, rating, in_stock } = product;
+	const { id, key, product_name, pic, brand, price, rating, in_stock } =
+		product;
 
 	return (
 		<div className="product-card" key={key}>
@@ -12,7 +13,7 @@ const ProductCard = ({ product }) => {
 			)}
 			<div className="product-card__canvas">
 				<a href={`/shop/${id}`}>
-					<img src={pic} alt={title} />
+					<img src={pic} alt={product_name} />
 				</a>
 			</div>
 			<div className="product-card__content">
@@ -22,7 +23,7 @@ const ProductCard = ({ product }) => {
 				<div className="product-card__content__title">
 					<a href={`/shop/${id}`}>
 						<strong>{brand}</strong>
-						<span>{title}</span>
+						<span>{product_name}</span>
 					</a>
 				</div>
 				<div className="product-card__content__rating">
