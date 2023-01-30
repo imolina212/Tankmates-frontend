@@ -42,9 +42,10 @@
 		&__logo {
 			display: flex;
 			justify-content: flex-start;
+			align-items: center;
 
 			img {
-				height: 60px;
+				height: 50px;
 				cursor: pointer;
 			}
 
