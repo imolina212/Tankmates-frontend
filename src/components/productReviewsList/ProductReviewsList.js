@@ -21,10 +21,10 @@ const ProductReviewsList = () => {
 			.catch((err) => {
 				console.log(err);
 			});
-	}, [URL, id]);
+	}, [id]);
 
 	return (
-		<div>
+		<div className="productReviewsList">
 			{productReviews.length ? (
 				productReviews.map((review) => {
 					console.log("review -->", review);
