@@ -4,22 +4,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 100%;
+	padding: 0 10px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
 	color: $icon-color;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu,
 		Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji,
 		Segoe UI Symbol;
 	font-weight: 300;
+	line-height: 30px;
 	cursor: pointer;
-	padding: 0 10px;
-	min-height: 60px;
-	max-height: 60px;
-	min-width: 75px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
 	list-style-type: none;
 	text-decoration: none;
-	line-height: 30px;
-	background-color: green;
 	z-index: 1;
 
 	&:hover {
