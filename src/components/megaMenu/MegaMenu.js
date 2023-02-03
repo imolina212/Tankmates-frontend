@@ -14,17 +14,17 @@ const MegaMenu = () => {
 				/>
 				<div className="megaMenu__category__header">Plants</div>
 				<ul>
-					<Link to="/shop">
+					<Link to="/shop/plants">
 						<li className="megaMenu__category__item">
 							Live Aquarium Plants
 						</li>
 					</Link>
-					<Link to="/shop">
+					<Link to="/shop/plants">
 						<li className="megaMenu__category__item">
 							Plant Supplies
 						</li>
 					</Link>
-					<Link to="/shop">
+					<Link to="/shop/plants">
 						<li className="megaMenu__category__item">
 							Plant Lighting
 						</li>
@@ -39,13 +39,13 @@ const MegaMenu = () => {
 				/>
 				<div className="megaMenu__category__header">Fish Supplies</div>
 				<ul>
-					<Link to="/shop">
+					<Link to="/shop/products">
 						<li className="megaMenu__category__item">Fish Food</li>
 					</Link>
-					<Link to="/shop">
+					<Link to="/shop/products">
 						<li className="megaMenu__category__item">Fish Meds</li>
 					</Link>
-					<Link to="/shop">
+					<Link to="/shop/products">
 						<li className="megaMenu__category__item">
 							Breeding Supplies
 						</li>
@@ -61,18 +61,26 @@ const MegaMenu = () => {
 				/>
 				<div className="megaMenu__category__header">Aquarium Care</div>
 				<ul>
-					<li className="megaMenu__category__item">
-						Cleaning Supplies
-					</li>
-					<li className="megaMenu__category__item">
-						Filtration & Equipment
-					</li>
-					<li className="megaMenu__category__item">
-						Lights & Headers
-					</li>
-					<li className="megaMenu__category__item">
-						Water Care Supplies
-					</li>
+					<Link to="/shop/products">
+						<li className="megaMenu__category__item">
+							Cleaning Supplies
+						</li>
+					</Link>
+					<Link to="/shop/products">
+						<li className="megaMenu__category__item">
+							Filtration & Equipment
+						</li>
+					</Link>
+					<Link to="/shop/products">
+						<li className="megaMenu__category__item">
+							Lights & Headers
+						</li>
+					</Link>
+					<Link to="/shop/products">
+						<li className="megaMenu__category__item">
+							Water Care Supplies
+						</li>
+					</Link>
 				</ul>
 			</div>
 			<div className="megaMenu__category">
