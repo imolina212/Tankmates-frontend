@@ -2,32 +2,46 @@ import React from "react";
 import getStars from "../designUtils/getStars.js";
 import "./ProductCard.scss";
 
-const ProductCard = ({ product }) => {
-	const { id, key, product_name, pic, brand, price, rating, in_stock } =
-		product;
+const ProductCard = ({ product, name }) => {
+	const {
+		id,
+		product_name,
+		plant_name,
+		pic,
+		plant_image,
+		brand,
+		price,
+		rating,
+		in_stock,
+	} = product;
 
 	return (
-		<div className="product-card" key={key}>
+		<div className="product-card">
 			{!in_stock && (
 				<div className="product-card__sold-out-badge">Sold Out</div>
 			)}
 			<div className="product-card__canvas">
-				<a href={`/shop/${id}`}>
-					<img src={pic} alt={product_name} />
+				<a href={`/shop/${name}/${id}`}>
+					<img
+						src={pic || plant_image}
+						alt={product_name || plant_name}
+					/>
 				</a>
 			</div>
 			<div className="product-card__content">
-				<div className="product-card__content__choices">
-					<p>More Choices available</p>
-				</div>
+				{product_name && (
+					<div className="product-card__content__choices">
+						<p>More Choices available</p>
+					</div>
+				)}
 				<div className="product-card__content__title">
-					<a href={`/shop/${id}`}>
-						<strong>{brand}</strong>
-						<span>{product_name}</span>
+					<a href={`/shop/${name}/${id}`}>
+						<strong>{brand && brand}</strong>
+						<span>{product_name || plant_name}</span>
 					</a>
 				</div>
 				<div className="product-card__content__rating">
-					{getStars(rating)}
+					{rating && getStars(rating)}
 				</div>
 				<div className="product-card__content__pricing">${price}</div>
 				<div className="product-card__content__message">
