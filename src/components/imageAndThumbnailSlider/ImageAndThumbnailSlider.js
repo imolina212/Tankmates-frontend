@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "./ImageAndThumbnailSlider.scss";
 
-const ImageAndThumbnailSlider = ({ imageArray }) => {
+const ImageAndThumbnailSlider = ({ imageArray, name }) => {
 	const [selectedImg, setSelectedImg] = useState(0);
 	const [hover, setHover] = useState(false);
 
 	const handleClick = (index) => {
 		setSelectedImg(index);
 	};
+
 	return (
 		imageArray.length && (
 			<div className="imageSlider">
@@ -34,7 +35,11 @@ const ImageAndThumbnailSlider = ({ imageArray }) => {
 							<IoIosArrowBack className="imageSlider__selected__btn" />
 						</div>
 						<img
-							src={imageArray[selectedImg].product_image}
+							src={
+								name === "product"
+									? imageArray[selectedImg].product_image
+									: imageArray[selectedImg].plant_image
+							}
 							alt=""
 						/>
 						<div
@@ -65,7 +70,14 @@ const ImageAndThumbnailSlider = ({ imageArray }) => {
 								}
 								onClick={() => handleClick(i)}
 							>
-								<img src={image.product_image} alt="" />
+								<img
+									src={
+										name === "product"
+											? image.product_image
+											: image.plant_image
+									}
+									alt=""
+								/>
 							</div>
 						);
 					})}
