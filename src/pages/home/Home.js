@@ -15,7 +15,7 @@ export default function Home() {
 						<h2 className="mega-title">Live Plants</h2>
 						<div>
 							<p>Live Aquarium Plants are our specialty</p>
-							<Link to="/shop">
+							<Link to="/shop/plants">
 								<Button
 									name="Shop Live Plants"
 									variant="primary dark"
@@ -25,7 +25,7 @@ export default function Home() {
 							</Link>
 						</div>
 					</div>
-					<Link to="/shop">
+					<Link to="/shop/plants">
 						<img
 							src="/productImages/promo1_1.webp"
 							alt="promo1"
@@ -37,7 +37,7 @@ export default function Home() {
 					<div className="home-page__featured-promotions__item__content">
 						<h2>Fish Food</h2>
 						<div>
-							<Link to="/shop">
+							<Link to="/shop/products">
 								<Button
 									name="Shop Fish Food"
 									variant="primary dark"
@@ -47,7 +47,7 @@ export default function Home() {
 							</Link>
 						</div>
 					</div>
-					<Link to="/shop">
+					<Link to="/shop/products">
 						<img
 							src="/productImages/promo2_1.jpg"
 							alt="promo2"
@@ -59,7 +59,7 @@ export default function Home() {
 					<div className="home-page__featured-promotions__item__content">
 						<h2>Easy Range</h2>
 						<div>
-							<Link to="/shop">
+							<Link to="/shop/products">
 								<Button
 									name="Shop the easy range"
 									variant="primary dark"
@@ -69,7 +69,7 @@ export default function Home() {
 							</Link>
 						</div>
 					</div>
-					<Link to="/shop">
+					<Link to="/shop/products">
 						<img
 							src="/productImages/promo3.jpg"
 							alt="promo3"
