@@ -1,20 +1,23 @@
-import React from 'react';
+import React from "react";
 
-import './Shop.scss'
-import ProductsGrid from '../../components/productsGrid/ProductsGrid';
-import FilterSection from '../../components/filterSection/FilterSection';
+import ProductsGrid from "../../components/productsGrid/ProductsGrid";
+import FilterSection from "../../components/filterSection/FilterSection";
+import { useParams } from "react-router-dom";
+import "./Shop.scss";
 
 function Shop() {
-    return (
-        <div className='shop-page'>
-            <div className="filter-section">
-                <FilterSection />
-            </div>
-            <div className="product-grid">
-                <ProductsGrid />
-            </div>
-        </div>
-    )
+	const { name } = useParams();
+
+	return (
+		<div className="shop-page">
+			<div className="filter-section">
+				<FilterSection />
+			</div>
+			<div className="product-grid">
+				<ProductsGrid name={name} />
+			</div>
+		</div>
+	);
 }
 
 export default Shop;
