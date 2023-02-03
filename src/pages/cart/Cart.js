@@ -18,7 +18,7 @@ function Cart() {
 					{!cart.length && (
 						<div className="cart__left__message">
 							<p>To view cart items please</p>
-							<Link to="/shop">
+							<Link to="/shop/products">
 								<Button
 									name="Continue Shopping"
 									variant="primary"
