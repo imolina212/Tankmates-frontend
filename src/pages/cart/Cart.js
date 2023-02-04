@@ -28,8 +28,8 @@ function Cart() {
 							</Link>
 						</div>
 					)}
-					{cart?.map((item) => (
-						<CartItem {...item} />
+					{cart?.map((item, index) => (
+						<CartItem key={item.id + index} {...item} />
 					))}
 				</div>
 			</div>
