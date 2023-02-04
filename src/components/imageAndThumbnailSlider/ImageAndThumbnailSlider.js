@@ -36,7 +36,7 @@ const ImageAndThumbnailSlider = ({ imageArray, name }) => {
 						</div>
 						<img
 							src={
-								name === "product"
+								name === "products"
 									? imageArray[selectedImg].product_image
 									: imageArray[selectedImg].plant_image
 							}
@@ -72,7 +72,7 @@ const ImageAndThumbnailSlider = ({ imageArray, name }) => {
 							>
 								<img
 									src={
-										name === "product"
+										name === "products"
 											? image.product_image
 											: image.plant_image
 									}
