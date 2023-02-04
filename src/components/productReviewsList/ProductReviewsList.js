@@ -10,24 +10,23 @@ const URL = process.env.REACT_APP_API_URL;
 
 const ProductReviewsList = () => {
 	const [productReviews, setProductReviews] = useState([]);
-	const { id } = useParams();
+	const { id, name } = useParams();
 
 	useEffect(() => {
 		axios
-			.get(`${URL}/product-reviews/${id}`)
+			.get(`${URL}/${name.slice(0, -1)}-reviews/${id}`)
 			.then((response) => {
 				setProductReviews(response.data);
 			})
 			.catch((err) => {
-				console.log(err);
+				throw err;
 			});
-	}, [id]);
+	}, [id, name]);
 
 	return (
 		<div className="productReviewsList">
 			{productReviews.length ? (
 				productReviews.map((review) => {
-					console.log("review -->", review);
 					const { content, date_created, rating, title, username } =
 						review;
 					return (
