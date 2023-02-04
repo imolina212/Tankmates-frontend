@@ -9,6 +9,7 @@
 
 	.qty-picker {
 		display: flex;
+		justify-content: center;
 		align-items: center;
 		height: 100%;
 		border: 1px solid $border-color;
@@ -18,17 +19,14 @@
 			padding-right: 10px;
 		}
 
-		input {
-			text-align: center;
+		&__qty {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			height: 80%;
-			width: 50px;
-			border: none;
+			width: 40px;
 		}
-		input[type="number"]::-webkit-inner-spin-button,
-		input[type="number"]::-webkit-outer-spin-button {
-			-webkit-appearance: none;
-			margin: 0;
-		}
+
 		button {
 			height: 100%;
 			width: 30px;
