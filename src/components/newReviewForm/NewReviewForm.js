@@ -12,7 +12,7 @@ const NewReviewForm = ({ writeReview, setWriteReview }) => {
 				<RatingWidget />
 			</div>
 			<div className="review-form__fieldset rating">
-				<label htmlFor>Review Title</label>
+				<label>Review Title</label>
 				<input
 					id="review-title"
 					name="review-title"
