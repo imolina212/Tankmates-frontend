@@ -17,9 +17,13 @@ const cartSlice = createSlice({
 				(item) => item.title === action.payload.title
 			);
 			if (itemInCart) {
-				itemInCart.quantity++;
+				itemInCart.quantity =
+					itemInCart.quantity + action.payload.quantity;
 			} else {
-				newCart.push({ ...action.payload, quantity: 1 });
+				newCart.push({
+					...action.payload,
+					quantity: action.payload.quantity,
+				});
 			}
 			return { ...state, cart: newCart };
 		},
