@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import getStars from "../designUtils/getStars.js";
 import CustomerReviews from "../customerReviews/CustomerReviews.js";
-import ProductReviewsList from "../productReviewsList/ProductReviewsList.js";
 import QuantityPicker from "../quantityPicker/QuantityPicker.js";
 import StickyProductHeader from "../stickyProductHeader/StickyProductHeader.js";
 import Button from "../button/Button.js";
@@ -16,50 +15,78 @@ import "./ProductDetails.scss";
 function ProductDetails() {
 	const [product, setProduct] = useState({});
 	const [productImages, setProductImages] = useState([]);
+	const [productReviews, setProductReviews] = useState([]);
+	const [error, setError] = useState("");
 	const [quantity, setQuantity] = useState(1);
-	const { id } = useParams();
+	const { id, productType } = useParams();
 	const URL = process.env.REACT_APP_API_URL;
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		axios
-			.get(`${URL}/products/${id}`)
+			.get(`${URL}/${productType}/${id}`)
 			.then((response) => {
-				setProduct(response.data);
+				if (response.data) {
+					setProduct(response.data);
+				}
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	}, [URL, id]);
+	}, [URL, productType, id]);
 
 	useEffect(() => {
 		axios
-			.get(`${URL}/product-images/${id}`)
+			.get(`${URL}/${productType.slice(0, -1)}-images/${id}`)
 			.then((response) => {
-				setProductImages(response.data);
+				if (response.data) {
+					setProductImages(response.data);
+				}
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	}, [URL, id]);
+	}, [URL, productType, id]);
+
+	useEffect(() => {
+		axios
+			.get(`${URL}/${productType.slice(0, -1)}-reviews/${id}`)
+			.then((response) => {
+				if (response.data && typeof response.data === "object") {
+					setProductReviews(response.data);
+					setError(null);
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, [URL, productType, id]);
 
 	const {
-		product_name,
 		brand,
-		rating,
-		price,
+		co2_requirement,
+		description,
+		image,
 		in_stock,
-		product_description,
-		pic,
+		min_temp,
+		max_temp,
+		min_ph,
+		max_ph,
+		origin,
+		placement,
+		price,
+		name,
+		rating,
+		scientific_name,
+		skill_level,
 	} = product;
 
 	return (
 		<div className="productDetails">
 			<StickyProductHeader
-				id={id}
-				title={product_name}
-				price={price}
-				pic={pic}
+				product={product}
+				quantity={quantity}
+				setQuantity={setQuantity}
 			/>
 			<div className="productDetails__image">
 				<ImageAndThumbnailSlider imageArray={productImages} />
@@ -67,13 +94,15 @@ function ProductDetails() {
 			{Object.keys(product).length && (
 				<div className="productDetails__info">
 					<div className="productDetails__info__title">
-						{product_name}
-						<div>
-							<button>By {brand}</button>
-						</div>
+						{name}
+						{brand && (
+							<div>
+								<button>By {brand}</button>
+							</div>
+						)}
 					</div>
 					<div className="productDetails__info__rating">
-						{getStars(rating)}
+						{rating && getStars(rating)}
 					</div>
 					<div className="productDetails__info__price">$ {price}</div>
 					<div className="productDetails__info__availability">
@@ -85,7 +114,7 @@ function ProductDetails() {
 						)}
 					</div>
 					<div className="productDetails__info__description">
-						{product_description}
+						{description}
 					</div>
 					<QuantityPicker
 						label="Quantity :"
@@ -105,11 +134,12 @@ function ProductDetails() {
 							dispatch(
 								addToCart({
 									id,
-									title: product_name,
+									title: name,
 									brand,
-									image: pic,
+									image,
 									price,
 									rating,
+									quantity,
 								})
 							)
 						}
@@ -123,14 +153,17 @@ function ProductDetails() {
 				<div className="productDetails__specifications__details">
 					<p>How To Use:</p>
 					<p>Plant Info </p>
-					<p>Scientific Name: Vesicularia sp. </p>
-					<p>Native To: Southeast Asia </p>
-					<p>Skill Level: Easy </p>
-					<p>Growth Rate: Slow</p>
-					<p>Light Demand: Low</p>
-					<p>Temperature: 65-80 Fahrenheit</p>
-					<p>pH: 6.8-8.0</p>
-					<p>CO2: None</p>
+					<p>Scientific Name: {scientific_name} </p>
+					<p>Native To: {origin} </p>
+					<p>
+						Temperature: {min_temp}-{max_temp} Fahrenheit
+					</p>
+					<p>
+						pH: {min_ph}-{max_ph}
+					</p>
+					<p>CO2: {co2_requirement}</p>
+					<p>Skill Level: {skill_level} </p>
+					<p>Placement: {placement} </p>
 					<p>
 						Your Java Moss Mat can be used in a variety of different
 						ways:
@@ -151,10 +184,13 @@ function ProductDetails() {
 				</div>
 			</div>
 			<div className="productDetails__reviews">
-				<CustomerReviews />
-				<div className="productDetails__review-list">
-					<ProductReviewsList />
-				</div>
+				{productReviews && (
+					<CustomerReviews
+						error={error}
+						productReviews={productReviews}
+						setProductReviews={setProductReviews}
+					/>
+				)}
 			</div>
 		</div>
 	);
