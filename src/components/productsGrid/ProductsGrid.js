@@ -6,19 +6,19 @@ import "./ProductsGrid.scss";
 
 const API = process.env.REACT_APP_API_URL;
 
-function ProductsGrid({ name }) {
+function ProductsGrid({ productType }) {
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
 		axios
-			.get(`${API}/${name}`)
+			.get(`${API}/${productType}`)
 			.then((response) => {
 				setProducts(response.data);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	}, [name]);
+	}, [productType]);
 
 	return (
 		<div className="product-grid">
@@ -27,7 +27,7 @@ function ProductsGrid({ name }) {
 					<ProductCard
 						key={product.id}
 						product={product}
-						name={name}
+						productType={productType}
 					/>
 				);
 			})}
