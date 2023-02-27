@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Home from "./pages/home/Home";
 import Cart from "./pages/cart/Cart";
@@ -16,16 +16,18 @@ import NewTankLog from "./components/newTankLog/NewTankLog";
 import About from "./pages/about/About";
 import Signup from "./components/signup/Signup";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import BreadCrumbs from "./components/breadCrumbs/BreadCrumbs";
 import "./App.scss";
 
 function App() {
 	const [userId, setUserId] = useState(0);
-
+	const location = useLocation();
 	return (
 		<div className="App">
 			<ScrollToTop />
 			<NavBar loggedIn={userId} setUserId={setUserId} />
 			<div className="page-content">
+				{location.pathname.length > 1 && <BreadCrumbs />}
 				<Routes loggedInUserId={userId}>
 					<Route
 						exact
@@ -33,11 +35,11 @@ function App() {
 						element={<Home loggedInUserId={userId} />}
 					/>
 					<Route
-						path="/shop"
+						path="/shop/:productType"
 						element={<Shop loggedInUserId={userId} />}
 					/>
 					<Route
-						path="/shop/:id"
+						path="/shop/:productType/:id"
 						element={<ProductDetails loggedInUserId={userId} />}
 					/>
 					<Route

@@ -1,0 +1,22 @@
+@import "./../designUtils/colors";
+
+.breadcrumbs {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	color: green;
+	padding: 22px 20px;
+
+	.crumb a {
+		padding: 0 10px;
+		color: inherit;
+	}
+	.crumb span {
+		padding: 0;
+	}
+
+	&__home-link {
+		padding-right: 10px;
+		color: $background-green;
+	}
+}

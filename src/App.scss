@@ -13,7 +13,16 @@
 .page-content {
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 133px 55px 0px;
+}
+
+@media only screen and (max-width: 750px) {
+	.App {
+		margin: 0;
+	}
+	.page-content {
+		margin: 0;
+		padding: 133px 16px 0px;
+	}
 }
 
 @media only screen and (max-width: 440px) {
