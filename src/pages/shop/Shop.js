@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import "./Shop.scss";
 
 function Shop() {
-	const { name } = useParams();
+	const { productType } = useParams();
 
 	return (
 		<div className="shop-page">
@@ -14,7 +14,7 @@ function Shop() {
 				<FilterSection />
 			</div>
 			<div className="product-grid">
-				<ProductsGrid name={name} />
+				<ProductsGrid productType={productType} />
 			</div>
 		</div>
 	);
