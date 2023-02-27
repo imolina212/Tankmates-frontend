@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "./ImageAndThumbnailSlider.scss";
 
-const ImageAndThumbnailSlider = ({ imageArray, name }) => {
+const ImageAndThumbnailSlider = ({ imageArray }) => {
 	const [selectedImg, setSelectedImg] = useState(0);
 	const [hover, setHover] = useState(false);
 
@@ -34,14 +34,7 @@ const ImageAndThumbnailSlider = ({ imageArray, name }) => {
 						>
 							<IoIosArrowBack className="imageSlider__selected__btn" />
 						</div>
-						<img
-							src={
-								name === "products"
-									? imageArray[selectedImg].product_image
-									: imageArray[selectedImg].plant_image
-							}
-							alt=""
-						/>
+						<img src={imageArray[selectedImg].image} alt="" />
 						<div
 							className={
 								hover
@@ -59,7 +52,7 @@ const ImageAndThumbnailSlider = ({ imageArray, name }) => {
 					</div>
 				</div>
 				<div className="imageSlider__collection">
-					{imageArray?.map((image, i) => {
+					{imageArray.map((image, i) => {
 						return (
 							<div
 								key={image.id}
@@ -70,14 +63,7 @@ const ImageAndThumbnailSlider = ({ imageArray, name }) => {
 								}
 								onClick={() => handleClick(i)}
 							>
-								<img
-									src={
-										name === "products"
-											? image.product_image
-											: image.plant_image
-									}
-									alt=""
-								/>
+								<img src={image.image} alt="" />
 							</div>
 						);
 					})}
