@@ -76,6 +76,11 @@
 		&__rating {
 			color: $star-rating-color;
 			margin-bottom: 5px;
+
+			span {
+				color: $text-color;
+				padding-left: 8px;
+			}
 		}
 
 		&__pricing {

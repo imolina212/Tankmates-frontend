@@ -55,6 +55,9 @@ const ProductCard = ({ productType, product }) => {
 				</div>
 				<div className="product-card__content__rating">
 					{getStars(getProductRating(productReviews))}
+					<span className="product-card__content__rating__text">
+						{productReviews.length} Reviews
+					</span>
 				</div>
 				<div className="product-card__content__pricing">${price}</div>
 				<div className="product-card__content__message">
