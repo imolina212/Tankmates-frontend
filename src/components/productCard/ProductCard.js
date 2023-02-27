@@ -1,9 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import axios from "axios";
 import getStars from "../designUtils/getStars.js";
 import "./ProductCard.scss";
 
-const ProductCard = ({ product, productType }) => {
-	const { id, name, image, brand, price, rating, in_stock } = product;
+const API = process.env.REACT_APP_API_URL;
+
+const ProductCard = ({ productType, product }) => {
+	const { id, name, image, brand, price, in_stock } = product;
+	const [productReviews, setProductReviews] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get(`${API}/${productType.slice(0, -1)}-reviews/${id}`)
+			.then((response) => {
+				if (response.data && typeof response.data === "object") {
+					setProductReviews(response.data);
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, [productType, id]);
+
+	const getProductRating = (productReviews) => {
+		if (productReviews.length === 0) return 0;
+		let rating = 0;
+
+		for (const review of productReviews) {
+			rating = rating + review.rating;
+		}
+		return rating / productReviews.length;
+	};
+
 	return (
 		<div className="product-card">
 			{!in_stock && (
@@ -20,12 +49,12 @@ const ProductCard = ({ product, productType }) => {
 				</div>
 				<div className="product-card__content__title">
 					<a href={`/shop/${productType}/${id}`}>
-						<strong>{brand}</strong>
+						<strong>{brand && brand}</strong>
 						<span>{name}</span>
 					</a>
 				</div>
 				<div className="product-card__content__rating">
-					{getStars(rating)}
+					{getStars(getProductRating(productReviews))}
 				</div>
 				<div className="product-card__content__pricing">${price}</div>
 				<div className="product-card__content__message">
