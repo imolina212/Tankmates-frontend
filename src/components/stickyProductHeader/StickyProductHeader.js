@@ -6,18 +6,10 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice.js";
 import "./StickyProductHeader.scss";
 
-const StickyProductHeader = ({
-	id,
-	title,
-	brand,
-	price,
-	pic,
-	rating,
-	in_stock,
-}) => {
+const StickyProductHeader = ({ product, quantity, setQuantity }) => {
 	const [visibility, setVisibility] = useState(false);
-	const [quantity, setQuantity] = useState(1);
 	const dispatch = useDispatch();
+	const { id, name, brand, price, image, rating, in_stock } = product;
 
 	const changeVisibilityOnScroll = () => {
 		if (window.scrollY >= 400) {
@@ -38,11 +30,11 @@ const StickyProductHeader = ({
 			}
 		>
 			<div className="sticky-product-header__image">
-				<img src={pic} alt="product-thumbnail" />
+				<img src={image} alt="product-thumbnail" />
 			</div>
 			<div className="sticky-product-header__details">
 				<div className="sticky-product-header__details__title">
-					{title}
+					{name}
 				</div>
 				<div className="sticky-product-header__details__price">
 					$ {price}
@@ -69,11 +61,12 @@ const StickyProductHeader = ({
 					dispatch(
 						addToCart({
 							id,
-							title,
+							title: name,
 							brand,
-							pic,
+							image,
 							price,
 							rating,
+							quantity,
 						})
 					)
 				}
