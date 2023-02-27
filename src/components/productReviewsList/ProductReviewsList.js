@@ -1,36 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import axios from "axios";
-import { useParams } from "react-router-dom";
 import getStars from "../designUtils/getStars";
 import { IoPersonOutline } from "react-icons/io5";
 import "./ProductReviewsList.scss";
 
-const URL = process.env.REACT_APP_API_URL;
-
-const ProductReviewsList = () => {
-	const [productReviews, setProductReviews] = useState([]);
-	const { id, name } = useParams();
-
-	useEffect(() => {
-		axios
-			.get(`${URL}/${name.slice(0, -1)}-reviews/${id}`)
-			.then((response) => {
-				setProductReviews(response.data);
-			})
-			.catch((err) => {
-				throw err;
-			});
-	}, [id, name]);
-
+const ProductReviewsList = ({ productReviews }) => {
 	return (
 		<div className="productReviewsList">
 			{productReviews.length ? (
-				productReviews.map((review) => {
+				productReviews?.map((review, index) => {
 					const { content, date_created, rating, title, username } =
 						review;
 					return (
-						<div className="productReviewsList__item">
+						<div
+							className="productReviewsList__item"
+							key={review.id + index}
+						>
 							<div className="productReviewsList__item__rating">
 								<span className="productReviewsList__item__rating__stars">
 									{getStars(rating)}
@@ -49,7 +34,7 @@ const ProductReviewsList = () => {
 									{username}
 								</div>
 								<div className="productReviewsList__item__profile__location">
-									San Fransisco, CA, US
+									NewYork, NY, US
 								</div>
 							</div>
 							<div className="productReviewsList__item__content">
