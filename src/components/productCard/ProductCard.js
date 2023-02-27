@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 import getStars from "../designUtils/getStars.js";
+import getProductRating from "../designUtils/getProductRating.js";
 import "./ProductCard.scss";
 
 const API = process.env.REACT_APP_API_URL;
@@ -22,16 +23,6 @@ const ProductCard = ({ productType, product }) => {
 				console.log(err);
 			});
 	}, [productType, id]);
-
-	const getProductRating = (productReviews) => {
-		if (productReviews.length === 0) return 0;
-		let rating = 0;
-
-		for (const review of productReviews) {
-			rating = rating + review.rating;
-		}
-		return rating / productReviews.length;
-	};
 
 	return (
 		<div className="product-card">

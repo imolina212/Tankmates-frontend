@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import axios from "axios";
 import getStars from "../designUtils/getStars.js";
+import getProductRating from "../designUtils/getProductRating";
 import CustomerReviews from "../customerReviews/CustomerReviews.js";
 import QuantityPicker from "../quantityPicker/QuantityPicker.js";
 import StickyProductHeader from "../stickyProductHeader/StickyProductHeader.js";
@@ -102,7 +103,7 @@ function ProductDetails() {
 						)}
 					</div>
 					<div className="productDetails__info__rating">
-						{rating && getStars(rating)}
+						{getStars(getProductRating(productReviews))}
 					</div>
 					<div className="productDetails__info__price">$ {price}</div>
 					<div className="productDetails__info__availability">
