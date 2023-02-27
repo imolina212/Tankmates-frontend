@@ -3,13 +3,34 @@ import React, { useState } from "react";
 import getStars from "../designUtils/getStars";
 import Button from "./../button/Button";
 import NewReviewForm from "../newReviewForm/NewReviewForm";
+import ProductReviewsList from "../productReviewsList/ProductReviewsList";
 import "./CustomerReviews.scss";
 
-const CustomerReviews = () => {
+const CustomerReviews = ({ productReviews, setProductReviews }) => {
 	const [writeReview, setWriteReview] = useState(true);
 
 	const getPercentageOfRating = (number, total) => {
+		if (total === 0) return 0;
 		return `${(number / total).toFixed(2) * 100}%`;
+	};
+
+	let ratingAvg = productReviews.length
+		? productReviews
+				.map((review) => review?.rating)
+				.reduce((a, b) => a + b, 0) / productReviews.length
+		: 0;
+
+	const getTargetRatingCount = (productReviews, target) => {
+		let ratingCount = {};
+
+		for (let i = 0; i < productReviews.length; i++) {
+			if (ratingCount[productReviews[i].rating]) {
+				ratingCount[productReviews[i].rating]++;
+			} else {
+				ratingCount[productReviews[i].rating] = 1;
+			}
+		}
+		return ratingCount[target] || 0;
 	};
 
 	return (
@@ -18,10 +39,12 @@ const CustomerReviews = () => {
 			<div className="customer-reviews__overview">
 				<div className="customer-reviews__overview__summary">
 					<p>
-						<span className="stars">{getStars(5)}</span>
-						<span className="average">5 out of 5</span>
+						<span className="stars">{getStars(ratingAvg)}</span>
+						<span className="average">{ratingAvg} out of 5</span>
 					</p>
-					<p className="text">Based on 132 reviews</p>
+					<p className="text">
+						Based on {productReviews.length} reviews
+					</p>
 				</div>
 				<div className="customer-reviews__overview__histogram">
 					<div className="customer-reviews__overview__histogram__item">
@@ -32,11 +55,20 @@ const CustomerReviews = () => {
 							<div
 								className="customer-reviews__progress-bar__container"
 								style={{
-									width: getPercentageOfRating(125, 135),
+									width: getPercentageOfRating(
+										getTargetRatingCount(productReviews, 5),
+										productReviews.length
+									),
 								}}
 							></div>
 						</div>
-						<div>126</div>
+						<div>
+							{
+								productReviews.filter(
+									(review) => review.rating === 5
+								).length
+							}
+						</div>
 					</div>
 					<div className="customer-reviews__overview__histogram__item">
 						<div className="customer-reviews__overview__histogram__item__stars">
@@ -45,10 +77,21 @@ const CustomerReviews = () => {
 						<div className="customer-reviews__progress-bar">
 							<div
 								className="customer-reviews__progress-bar__container"
-								style={{ width: getPercentageOfRating(4, 135) }}
+								style={{
+									width: getPercentageOfRating(
+										getTargetRatingCount(productReviews, 4),
+										productReviews.length
+									),
+								}}
 							></div>
 						</div>
-						<div>4</div>
+						<div>
+							{
+								productReviews?.filter(
+									(review) => review.rating === 4
+								).length
+							}
+						</div>
 					</div>
 					<div className="customer-reviews__overview__histogram__item">
 						<div className="customer-reviews__overview__histogram__item__stars">
@@ -57,10 +100,21 @@ const CustomerReviews = () => {
 						<div className="customer-reviews__progress-bar">
 							<div
 								className="customer-reviews__progress-bar__container"
-								style={{ width: getPercentageOfRating(1, 135) }}
+								style={{
+									width: getPercentageOfRating(
+										getTargetRatingCount(productReviews, 3),
+										productReviews.length
+									),
+								}}
 							></div>
 						</div>
-						<div>1</div>
+						<div>
+							{
+								productReviews.filter(
+									(review) => review.rating === 3
+								).length
+							}
+						</div>
 					</div>
 					<div className="customer-reviews__overview__histogram__item">
 						<div className="customer-reviews__overview__histogram__item__stars">
@@ -69,10 +123,21 @@ const CustomerReviews = () => {
 						<div className="customer-reviews__progress-bar">
 							<div
 								className="customer-reviews__progress-bar__container"
-								style={{ width: getPercentageOfRating(1, 135) }}
+								style={{
+									width: getPercentageOfRating(
+										getTargetRatingCount(productReviews, 2),
+										productReviews.length
+									),
+								}}
 							></div>
 						</div>
-						<div>1</div>
+						<div>
+							{
+								productReviews.filter(
+									(review) => review.rating === 2
+								).length
+							}
+						</div>
 					</div>
 					<div className="customer-reviews__overview__histogram__item">
 						<div className="customer-reviews__overview__histogram__item__stars">
@@ -81,10 +146,21 @@ const CustomerReviews = () => {
 						<div className="customer-reviews__progress-bar">
 							<div
 								className="customer-reviews__progress-bar__container"
-								style={{ width: getPercentageOfRating(0, 135) }}
+								style={{
+									width: getPercentageOfRating(
+										getTargetRatingCount(productReviews, 1),
+										productReviews.length
+									),
+								}}
 							></div>
 						</div>
-						<div>0</div>
+						<div>
+							{
+								productReviews?.filter(
+									(review) => review.rating === 1
+								).length
+							}
+						</div>
 					</div>
 				</div>
 				<div className="customer-reviews__overview__button">
@@ -107,6 +183,12 @@ const CustomerReviews = () => {
 				<NewReviewForm
 					writeReview={writeReview}
 					setWriteReview={setWriteReview}
+				/>
+			</div>
+			<div>
+				<ProductReviewsList
+					productReviews={productReviews}
+					setProductReviews={setProductReviews}
 				/>
 			</div>
 		</div>
