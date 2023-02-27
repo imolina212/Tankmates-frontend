@@ -12,12 +12,12 @@ const Button = ({
 	...buttonProps
 }) => {
 	return (
-		<div {...buttonProps} className={`btn ${variant} ${size}`}>
+		<button {...buttonProps} className={`btn ${variant} ${size}`}>
 			{name}
 			{arrow && (
 				<IoArrowForwardCircle className="btn__arrow-icon" size={20} />
 			)}
-		</div>
+		</button>
 	);
 };
 
