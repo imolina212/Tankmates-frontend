@@ -17,6 +17,9 @@ import About from "./pages/about/About";
 import Signup from "./components/signup/Signup";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import BreadCrumbs from "./components/breadCrumbs/BreadCrumbs";
+import Register from "./components/register/Register";
+import Reset from "./components/reset/Reset";
+import Dashboard from "./components/dashboard/Dashboard";
 import "./App.scss";
 
 function App() {
@@ -72,6 +75,9 @@ function App() {
 							/>
 						}
 					/>
+					<Route exact path="/register" element={<Register />} />
+					<Route exact path="/reset" element={<Reset />} />
+					<Route exact path="/dashboard" element={<Dashboard />} />
 					<Route
 						path="/signup"
 						element={
